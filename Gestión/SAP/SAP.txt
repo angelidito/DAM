@@ -1,0 +1,4 @@
+/o	Gestor de sesiones
+/i	Cierra la sesión actual
+/n	Cierra transaccion
+/nCOD	Cierra transacción y abre la correspondiente el codigo escrito tambien (/n COD) 
