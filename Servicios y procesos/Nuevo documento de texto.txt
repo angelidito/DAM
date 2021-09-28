@@ -1,0 +1,103 @@
+
+Con ciclos de 0.4 segundos:
+
+A:	5 segundos	12.5 ciclos
+B:	3 segundos	7.5 ciclos
+C:	6 segundos	15 ciclos	
+D:	5 segundos	12.5 ciclos
+
+
+Cada letra es un ciclo del procesador, dedicado a este proceso en concreto. Las minusculas indican cuando el proceso ha acabado.
+
+
+
+
+Sin tiempos de espera en los procesos, los resultados habrían sido los siguientes:
+
+	~ Secuencial:
+          5.2     8.4             14         19.2
+            |       |              |            |
+AAAAAAAAAAAAaBBBBBBBbCCCCCCCCCCCCCCcDDDDDDDDDDDDd
+
+	~ Concurrente:
+	                                         19.2
+                                           18.8 |
+                            12             18 | |
+                             |              | | |
+ABCDABCDABCDABCDABCDABCDABCDAbCDACDACDACDACDaCdCc
+
+
+
+Sin embargo, como los tiempos de espera existen, obtenemos esto:
+
+	~ Secuencial:
+          5.2         10.4                  18            25.2
+            |            |                   |               |
+AAAAAAAAAAAAaBBBBB     BBbCCCCCCCCCCC     CCCcDDDDD   DDDDDDDd
+                 |                  |             |
+                 |                  |             |__D espera 1 seg   
+                 |                  |
+                 |                  |_C espera disco a leer 2 seg
+                 |
+                 |_B espera impresora 2 seg
+
+	~ Concurrente:
+                                          18.2
+                            12.8      16.8   |    21.6      
+                               |         |   |       |
+ABCDABCDABCDABCDABCDACDBACDBACDbACDACDACAa DDd    CCCc
+                 |                   | |
+                 |                   | |_C espera disco a leer 2 seg
+                 |                   |
+                 |                   |_D espera 1 seg   
+                 |              
+                 |_B espera impresora 2 seg
+
+ Momento medio de finalización de proceso secuencial: 14.7
+Momento medio de finalización de proceso concurrente: 17.35
+                             Tiempo total secuencial: 25.2
+                                  Tiempo total final: 21.6
+
+Se aprovecha mejor el tiempo y los ciclos del procesador, ya que no hay que esperar junto con los procesos, sino que se puede aprovechar ese tiempo para otros procesos.
+
+
+
+Con ciclos de 0.3 segundos:
+
+A:	5 segundos	16.66 ciclos
+B:	3 segundos	10 ciclos
+C:	6 segundos	20 ciclos	
+D:	5 segundos	16.66 ciclos
+
+Sin embargo, como los tiempos de espera existen, obtenemos esto:
+
+	~ Secuencial:
+              5.1             10.2                       18.3                 24.6
+                |                |                          |                    |
+AAAAAAAAAAAAAAAAaBBBBBBB       BBbCCCCCCCCCCCCCCC       CCCCcDDDDDDDDDDDDDD    DDd
+                       |                        |                         |
+                       |                        |                         |__D espera 1       seg   
+                       |                        |
+                       |                        |_C espera 2 seg
+                       |
+                       |_B espera 2 seg
+
+	~ Concurrente:
+	                                                   17.7
+                                       12.9         16.8  |   19.8               
+                                          |            |  |      |
+ABCDABCDABCDABCDABCDABCDABCDACDACDBACDBACDbACDACDACDACAaDDd  CCCCc
+                         |                         | |       
+                         |                         | |_C espera 2 seg
+                         |                         |
+                         |                         |_D espera 1 seg   
+                         |              
+                         |_B espera 2 seg
+
+
+ Momento medio de finalización de proceso secuencial: 14.7
+Momento medio de finalización de proceso concurrente: 14.55
+                             Tiempo total secuencial: 24.6
+                                  Tiempo total final: 19.8
+
+Parece que se aprovecha mejor el tiempo y los ciclos del procesador con ciclos más cortos.
