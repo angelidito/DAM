@@ -2,3 +2,19 @@
 /i	Cierra la sesión actual
 /n	Cierra transaccion
 /nCOD	Cierra transacción y abre la correspondiente el codigo escrito tambien (/n COD) 
+
+
+
+
+
+
+
+Transacciones:
+
+MMBE	Visualizar el stock
+VA01	Crear ordenes de venta
+VA03	Visualizar documentos de ventas
+MMR1	Crear material (Acceso)
+ME01	Actualizar libro de pedidos: Acceso
+MM02	Modificar material (Acceso)
+BP		Tratar interlocutor comercial
