@@ -17,19 +17,23 @@ Es posible usar un cliente web aunque no con la totalidad de las funciones.
 
 4. ¿Integraciones con otras aplicaciones
 software?¿Cuáles?
+Ofrece muchas posibilidades de integración de aplicaciones empresariales, tanto en la nube como en entornos híbridos. Por ejemplo: CRM, Middleware y la nube
 
 
 5. ¿Soporte técnico? ¿Qué tipo, telefónico, 24/7?
+Online, telefónico, documentación.
 
 
 6. ¿Se hacen desarrollos a medida?
-
+Hay adaptaciones, pero no hay desarrollos a medida como tal.
 
 7. ¿Hay actualizaciones de versiones?
+Soporte y mantenimiento hasta 2027.
 
 
-8. ¿Hay formación para usuarios? ¿Documentación
-para la formación de usuarios?
+
+8. ¿Hay formación para usuarios? ¿Documentación para la formación de usuarios?
+Existen cursos oficiales de pago.
 
 
 
@@ -38,66 +42,85 @@ para la formación de usuarios?
 
 Odoo
 
-1. ¿Es modular? ¿Qué módulos tiene? ¿Planificación
-de la producción? ¿Gestión de Materiales? ¿Ventas y
-distribución?¿Mantenimiento?¿Sistemas de Proyectos?¿Gestión de
-calidad?¿Contabilidad Financiera?¿Recursos humanos?¿Inteligencia de negocio?
-
+1. ¿Es modular? ¿Qué módulos tiene? 
+Finanzas
+Ventas
+Sitios web
+Intentario y MRP
+RRHH
+Marketing
+Servicios
+Productividad
 
 2. ¿Qué método de instalación tiene?  ¿Cloud o servidores?
+Ambos
 
 
 3. ¿Es posible movilidad de uso en el ERP- versión
 web? ¿Lo puedo ejecutar desde cualquier punto o en la oficina?
+Dispone de cliente web y de escritorio.
 
 
 4. ¿Integraciones con otras aplicaciones
-software?¿Cuáles?
+software? ¿Cuáles?
+Se pueden comprar aplicaciones de distintos autores.
 
 
 5. ¿Soporte técnico? ¿Qué tipo, telefónico, 24/7?
+Tickets de soporte y teléfonos de emergencia. 24/7 de lunes a viernes.
+Foros de la comunidad.
 
 
 6. ¿Se hacen desarrollos a medida?
-
+Se pueden hacer ya que es software libre.
 
 7. ¿Hay actualizaciones de versiones?
+Continuamente. Tanto de la comunidad como de la versión de pago.
 
-
-8. ¿Hay formación para usuarios? ¿Documentación
-para la formación de usuarios?
-
+8. ¿Hay formación para usuarios? ¿Documentaciónpara la formación de usuarios?
+Tutoriales, dorucmentación y certificaciones
 
 
 
 
 webERP
 
-1. ¿Es modular? ¿Qué módulos tiene? ¿Planificación
-de la producción? ¿Gestión de Materiales? ¿Ventas y
-distribución?¿Mantenimiento?¿Sistemas de Proyectos?¿Gestión de
-calidad?¿Contabilidad Financiera?¿Recursos humanos?¿Inteligencia de negocio?
-
+1. ¿Es modular? ¿Qué módulos tiene? 
+Seguridad
+Ventas y pedidos
+Impuestos
+Cuentas por cobrar
+Cuentas por pagar
+Intentario
+Compras
+Banco
+Libro mayor
+Fabricación
+Contratación
+Activos fijos
 
 2. ¿Qué método de instalación tiene?  ¿Cloud o servidores?
-
+¿?
 
 3. ¿Es posible movilidad de uso en el ERP- versión
 web? ¿Lo puedo ejecutar desde cualquier punto o en la oficina?
-
+¿?
 
 4. ¿Integraciones con otras aplicaciones
 software?¿Cuáles?
-
+¿?
 
 5. ¿Soporte técnico? ¿Qué tipo, telefónico, 24/7?
+Manuales, foros y listas de correo.
 
 
 6. ¿Se hacen desarrollos a medida?
+Sí
 
 
 7. ¿Hay actualizaciones de versiones?
+Última versión del 23 de junio de 2019.
 
 
-8. ¿Hay formación para usuarios? ¿Documentación
-para la formación de usuarios?
+8. ¿Hay formación para usuarios? ¿Documentación para la formación de usuarios?
+Hay foros, wiki y documentción.
