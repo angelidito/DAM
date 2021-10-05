@@ -12,7 +12,7 @@ namespace Tarea11
         {
             Console.WriteLine("¿Cuántos alumnos hay?");
 
-            double n = Convert.ToInt32(Console.ReadLine());
+            int n = Convert.ToInt32(Console.ReadLine());
 
             double sum = 0;
 

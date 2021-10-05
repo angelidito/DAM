@@ -27,4 +27,8 @@ open class Person(name: String, surname: String) {
     constructor(name: String, surname: String, age: Int) : this(name, surname) {
         this.age = age
     }
+
+    open fun visualizar(){
+        println(this.surname + ", " + this.name +"; " + this.age + " años.")
+    }
 }

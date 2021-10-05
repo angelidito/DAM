@@ -29,33 +29,33 @@ namespace Tarea10a
                     a = Int32.Parse(Console.ReadLine());
                     Console.WriteLine("Escriba el segundo nº: ");
                     b = Int32.Parse(Console.ReadLine());
+                    Console.Write("Resultado: ");
+                    switch (opt)
+                    {
+                        case 1:
+                            Console.WriteLine(a + " + " + b + " = " + (a + b));
+                            break;
+                        case 2:
+                            Console.WriteLine(a + " - " + b + " = " + (a - b));
+                            break;
+                        case 3:
+                            Console.WriteLine(a + " * " + b + " = " + (a * b));
+                            break;
+                        case 4:
+                            Console.WriteLine(a + " / " + b + " = " + (a / b));
+                            break;
+                        case 5:
+                            Console.WriteLine(a + " % " + b + " = " + (a % b));
+                            break;
+                        case 0:
+                            Console.WriteLine("¡Adiós!");
+                            break;
+                        default:
+                            Console.WriteLine("Error inesperado");
+                            break;
+                    }
+                    Console.WriteLine();
                 }
-                Console.Write("Resultado: ");
-                switch (opt)
-                {
-                    case 1:
-                        Console.WriteLine(a + " + " + b + " = " + (a + b));
-                        break;
-                    case 2:
-                        Console.WriteLine(a + " - " + b + " = " + (a - b));
-                        break;
-                    case 3:
-                        Console.WriteLine(a + " * " + b + " = " + (a * b));
-                        break;
-                    case 4:
-                        Console.WriteLine(a + " / " + b + " = " + (a / b));
-                        break;
-                    case 5:
-                        Console.WriteLine(a + " % " + b + " = " + (a % b));
-                        break;
-                    case 0:
-                        Console.WriteLine("¡Adiós!");
-                        break;
-                    default:
-                        Console.WriteLine("Error inesperado");
-                        break;
-                }
-                Console.WriteLine();
 
             } while (opt != 0);
         }

@@ -24,11 +24,15 @@ fun main() {
 //
 //    helloWorld()
 
-    var person1 = Person(name = "Mori", surname = "M")
-    println("Nombre: ${person1.name}; Apellido: ${person1.surname}, Edad: ${person1.age}")
+//    var person1 = Person(name = "Mori", surname = "M")
+//    println("Nombre: ${person1.name}; Apellido: ${person1.surname}, Edad: ${person1.age}")
+//
+//    var person2 = Person("Luka", "Knavish", 22)
+//    println("Nombre: ${person2.name}; Apellido: ${person2.surname}, Edad: ${person2.age}")
 
-    var person2 = Person("Luka", "Knavish", 22)
-    println("Nombre: ${person2.name}; Apellido: ${person2.surname}, Edad: ${person2.age}")
+    var alumn = Alumn("Mori", "M", 2, 24)
+
+    alumn.visualizar()
 
 }
 
