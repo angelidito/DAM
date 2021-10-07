@@ -29,7 +29,7 @@ open class Vehículo3(marca: String, modelo: String, color: String) {
         this.color = color
     }
 
-    fun mostrarDatos() {
-        print("${marca} ${modelo} ${color}")
+    open fun mostrarDatos() {
+        print("$marca $modelo: $color")
     }
 }

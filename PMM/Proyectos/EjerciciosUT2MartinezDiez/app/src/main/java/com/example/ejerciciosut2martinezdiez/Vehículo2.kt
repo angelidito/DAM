@@ -30,6 +30,6 @@ class Vehículo2(marca: String, modelo: String, color: String) {
     }
 
     fun mostrarDatos() {
-        println("${marca} ${modelo} ${color}")
+        println("$marca $modelo $color")
     }
 }

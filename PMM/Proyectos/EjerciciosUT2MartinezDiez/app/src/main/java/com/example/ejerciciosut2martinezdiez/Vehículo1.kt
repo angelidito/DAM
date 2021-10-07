@@ -24,6 +24,6 @@ class Vehículo1 {
         }
 
     fun mostrarDatos() {
-        println("${marca} ${modelo} ${color}")
+        println("$marca $modelo $color")
     }
 }

@@ -1,6 +1,6 @@
-/o	Gestor de sesiones
-/i	Cierra la sesión actual
-/n	Cierra transaccion
+/o		Gestor de sesiones
+/i		Cierra la sesión actual
+/n		Cierra transaccion
 /nCOD	Cierra transacción y abre la correspondiente el codigo escrito tambien (/n COD) 
 
 
@@ -17,7 +17,13 @@ VA03	Visualizar documentos de ventas
 MMR1	Crear material (Acceso)
 ME01	Actualizar libro de pedidos: Acceso
 MM02	Modificar material (Acceso)
+
 BP		Tratar interlocutor comercial
+
+XD - Clientes / Deudor
+XD01	Modificar
+XD02	Crear
+XD03	Consultar
 
 
 

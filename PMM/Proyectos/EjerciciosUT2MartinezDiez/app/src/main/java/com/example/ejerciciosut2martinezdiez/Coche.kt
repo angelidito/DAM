@@ -8,4 +8,9 @@ class Coche(
     var nPlazas: Int = 2
 ) : Vehículo3(marca, modelo, color) {
 
+    override fun mostrarDatos() {
+        super.mostrarDatos()
+        println(", $nPuertas puertas y $nPlazas plazas")
+    }
+
 }
