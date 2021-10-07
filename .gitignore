@@ -1,3 +1,6 @@
 
 ~$*.docx
 ~$*.pptx
+/Acceso a datos/ACDB-NB/nbproject/private/
+/Acceso a datos/ACDB-NB/build/
+/Acceso a datos/ACDB-NB/dist/
