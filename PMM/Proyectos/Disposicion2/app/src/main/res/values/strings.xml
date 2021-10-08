@@ -1,6 +1,9 @@
 <resources>
-    <string name="app_name">Disposicion2</string>
+    <string name="app_name">Disposicion</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="prg_mov">Programación de móviles</string>
+    <string name="segundo_texto">Segundo texto.</string>
+	<string name="boton">Botón</string>
 </resources>

@@ -1,0 +1,8 @@
+C:\Mori\DAM\Interfaces\Tareas\Tarea19\bin\Debug\Tarea19.exe.config
+C:\Mori\DAM\Interfaces\Tareas\Tarea19\bin\Debug\Tarea19.exe
+C:\Mori\DAM\Interfaces\Tareas\Tarea19\bin\Debug\Tarea19.pdb
+C:\Mori\DAM\Interfaces\Tareas\Tarea19\obj\Debug\Tarea19.csproj.AssemblyReference.cache
+C:\Mori\DAM\Interfaces\Tareas\Tarea19\obj\Debug\Tarea19.csproj.SuggestedBindingRedirects.cache
+C:\Mori\DAM\Interfaces\Tareas\Tarea19\obj\Debug\Tarea19.csproj.CoreCompileInputs.cache
+C:\Mori\DAM\Interfaces\Tareas\Tarea19\obj\Debug\Tarea19.exe
+C:\Mori\DAM\Interfaces\Tareas\Tarea19\obj\Debug\Tarea19.pdb

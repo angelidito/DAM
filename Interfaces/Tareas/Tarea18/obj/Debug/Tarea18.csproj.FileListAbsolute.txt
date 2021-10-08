@@ -1,0 +1,2 @@
+C:\Mori\DAM\Interfaces\Tareas\Tarea18\obj\Debug\Tarea18.csproj.AssemblyReference.cache
+C:\Mori\DAM\Interfaces\Tareas\Tarea18\obj\Debug\Tarea18.csproj.CoreCompileInputs.cache
