@@ -23,6 +23,7 @@ public class ACDBNB {
 		String files[];
 		File f;
 		File f2;
+		File carpeta;
 
 		// dir = "C:\\Mori\\DAM";
 		// f = new File(dir);
@@ -42,9 +43,11 @@ public class ACDBNB {
 		// }
 		// }
 
-		dir = "C:\\Mori";
-		f = new File(dir);
-		createFile(f);
+		// dir = "C:\\Mori";
+		// carpeta = new File(dir);
+		// createFile(carpeta);
+
+		getDataFromFile(new File("C:\\Mori\\DAM\\Horario.xlsx"));
 
 	}
 
@@ -53,7 +56,7 @@ public class ACDBNB {
 	 * 
 	 * @param ruta Fichero a Crear
 	 */
-	private static void createFile(File ruta) {
+	public static void createFile(File ruta) {
 		Scanner sc;
 		File file;
 		String fileName;
@@ -109,12 +112,49 @@ public class ACDBNB {
 	}
 
 	/**
+	 * Crea un fichero en la ruta espeficicada. Si y solo si no existe.
+	 * 
+	 * @param ruta Fichero a Crear
+	 */
+	public static void createTxt(File ruta) {
+		File file;
+		String fileName;
+
+		sc = new Scanner(System.in);
+		System.out.println("¿Cómo desea llamar al nuevo archivo de texto?");
+		file = new File(ruta, fileName);
+
+		if (!ruta.exists())
+			ruta.mkdir();
+		if (!ruta.isDirectory())
+			System.out.println(ruta.getPath() + " ya existe y NO es un directorio");
+		else
+			try {
+				if (file.createNewFile()) {
+					System.out.println("Archivo creado:");
+					getDataFromFile(file);
+				} else {
+					System.out.print("Archivo el archivo no ha podido ser creado");
+					if (file.exists())
+						System.out.println(" porque ya existe.");
+					else
+						System.out.println(" por algún motivo.");
+
+				}
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+	}
+
+	/**
 	 * Imprime los datos un fichero. El fichero es pasado cómo parámetro.
 	 * 
 	 * @param f Fichero cuyos datos se van a mostrar por pantalla.
 	 */
 	public static void getDataFromFile(File f) {
 		System.out.println("Nombre del fichero: " + f.getName());
+		System.out.println("Extensión: " + getExtension(f));
 		System.out.println("Tamaño: " + f.length());
 		System.out.println("Ruta: " + f.getPath());
 		System.out.println("Ruta absoluta: " + f.getAbsolutePath());
@@ -173,6 +213,35 @@ public class ACDBNB {
 		}
 		System.out.print("|_");
 
+	}
+
+	public static String scanNextLine() {
+		Scanner sc;
+		String rturn;
+
+		sc = new Scanner(System.in);
+		rturn = sc.nextLine();
+		sc.close();
+		return rturn;
+	}
+
+	public static void print(String str) {
+		System.out.print(str);
+	}
+
+	public static void println(String str) {
+		System.out.println(str);
+	}
+
+	public static String getExtension(File file) {
+		String name;
+		int dotIndex;
+
+		name = file.getName();
+		dotIndex = name.lastIndexOf(".");
+		if (dotIndex == -1)
+			return "no_extension";
+		return name.substring(dotIndex);
 	}
 
 }
