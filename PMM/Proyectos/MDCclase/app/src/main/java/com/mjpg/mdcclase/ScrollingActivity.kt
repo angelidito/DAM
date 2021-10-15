@@ -6,10 +6,11 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.mjpg.mdcclase.databinding.ActivityScrollingBinding
 
 class ScrollingActivity : AppCompatActivity() {
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,6 +18,13 @@ class ScrollingActivity : AppCompatActivity() {
 
 
         setContentView(R.layout.activity_scrolling)
+        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener {
+            if (findViewById<BottomAppBar>(R.id.bottom_app_bar).fabAlignmentMode
+                == BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
+            )
+                findViewById<BottomAppBar>(R.id.bottom_app_bar).fabAlignmentMode =
+                    BottomAppBar.FAB_ALIGNMENT_MODE_END
+        }
 
 
     }
