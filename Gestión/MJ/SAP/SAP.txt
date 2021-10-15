@@ -21,8 +21,8 @@ MM02	Modificar material (Acceso)
 BP		Tratar interlocutor comercial
 
 XD - Clientes / Deudor
-XD01	Modificar
-XD02	Crear
+XD01	Crear
+XD02	Modificar
 XD03	Consultar
 
 
