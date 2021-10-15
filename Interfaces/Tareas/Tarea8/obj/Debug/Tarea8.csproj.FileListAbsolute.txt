@@ -1,7 +1,0 @@
-C:\Users\dam\source\repos\Tarea8\bin\Debug\Tarea8.exe.config
-C:\Users\dam\source\repos\Tarea8\bin\Debug\Tarea8.exe
-C:\Users\dam\source\repos\Tarea8\bin\Debug\Tarea8.pdb
-C:\Users\dam\source\repos\Tarea8\obj\Debug\Tarea8.csproj.AssemblyReference.cache
-C:\Users\dam\source\repos\Tarea8\obj\Debug\Tarea8.csproj.CoreCompileInputs.cache
-C:\Users\dam\source\repos\Tarea8\obj\Debug\Tarea8.exe
-C:\Users\dam\source\repos\Tarea8\obj\Debug\Tarea8.pdb

@@ -1,0 +1,7 @@
+C:\Users\dam\source\repos\Tarea16\bin\Debug\Tarea16.exe.config
+C:\Users\dam\source\repos\Tarea16\bin\Debug\Tarea16.exe
+C:\Users\dam\source\repos\Tarea16\bin\Debug\Tarea16.pdb
+C:\Users\dam\source\repos\Tarea16\obj\Debug\Tarea16.csproj.AssemblyReference.cache
+C:\Users\dam\source\repos\Tarea16\obj\Debug\Tarea16.csproj.CoreCompileInputs.cache
+C:\Users\dam\source\repos\Tarea16\obj\Debug\Tarea16.exe
+C:\Users\dam\source\repos\Tarea16\obj\Debug\Tarea16.pdb

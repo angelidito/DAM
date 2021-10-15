@@ -1,7 +1,0 @@
-C:\Mori\DAM\Interfaces\Tareas\Tarea10a\bin\Debug\Tarea10a.exe.config
-C:\Mori\DAM\Interfaces\Tareas\Tarea10a\bin\Debug\Tarea10a.exe
-C:\Mori\DAM\Interfaces\Tareas\Tarea10a\bin\Debug\Tarea10a.pdb
-C:\Mori\DAM\Interfaces\Tareas\Tarea10a\obj\Debug\Tarea10a.csproj.AssemblyReference.cache
-C:\Mori\DAM\Interfaces\Tareas\Tarea10a\obj\Debug\Tarea10a.csproj.CoreCompileInputs.cache
-C:\Mori\DAM\Interfaces\Tareas\Tarea10a\obj\Debug\Tarea10a.exe
-C:\Mori\DAM\Interfaces\Tareas\Tarea10a\obj\Debug\Tarea10a.pdb

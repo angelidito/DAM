@@ -1,7 +1,0 @@
-C:\Users\dam\source\repos\Tarea15\bin\Debug\Tarea15.exe.config
-C:\Users\dam\source\repos\Tarea15\bin\Debug\Tarea15.exe
-C:\Users\dam\source\repos\Tarea15\bin\Debug\Tarea15.pdb
-C:\Users\dam\source\repos\Tarea15\obj\Debug\Tarea15.csproj.AssemblyReference.cache
-C:\Users\dam\source\repos\Tarea15\obj\Debug\Tarea15.csproj.CoreCompileInputs.cache
-C:\Users\dam\source\repos\Tarea15\obj\Debug\Tarea15.exe
-C:\Users\dam\source\repos\Tarea15\obj\Debug\Tarea15.pdb

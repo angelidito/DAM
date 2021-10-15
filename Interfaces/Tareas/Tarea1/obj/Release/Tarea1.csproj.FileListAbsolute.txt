@@ -1,6 +1,0 @@
-C:\Mori\DAM\Interfaces\Tema 2\Tarea1\bin\Release\Tarea1.exe.config
-C:\Mori\DAM\Interfaces\Tema 2\Tarea1\bin\Release\Tarea1.exe
-C:\Mori\DAM\Interfaces\Tema 2\Tarea1\bin\Release\Tarea1.pdb
-C:\Mori\DAM\Interfaces\Tema 2\Tarea1\obj\Release\Tarea1.csproj.CoreCompileInputs.cache
-C:\Mori\DAM\Interfaces\Tema 2\Tarea1\obj\Release\Tarea1.exe
-C:\Mori\DAM\Interfaces\Tema 2\Tarea1\obj\Release\Tarea1.pdb

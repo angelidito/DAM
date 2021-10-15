@@ -1,7 +1,0 @@
-C:\Users\dam\source\repos\Tarea3\bin\Debug\Tarea3.exe.config
-C:\Users\dam\source\repos\Tarea3\bin\Debug\Tarea3.exe
-C:\Users\dam\source\repos\Tarea3\bin\Debug\Tarea3.pdb
-C:\Users\dam\source\repos\Tarea3\obj\Debug\Tarea3.csproj.AssemblyReference.cache
-C:\Users\dam\source\repos\Tarea3\obj\Debug\Tarea3.csproj.CoreCompileInputs.cache
-C:\Users\dam\source\repos\Tarea3\obj\Debug\Tarea3.exe
-C:\Users\dam\source\repos\Tarea3\obj\Debug\Tarea3.pdb
