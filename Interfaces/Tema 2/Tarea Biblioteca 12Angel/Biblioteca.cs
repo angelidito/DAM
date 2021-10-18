@@ -27,41 +27,51 @@ namespace Tarea_Biblioteca_12Angel
 			bool añadido;
 
 			añadido = false;
-			for (int i = 0; i < listaLibros.Length; i++)
+			for (int i = 0; i < listaLibros.Length && !añadido; i++)
 				if (listaLibros[i] == null)
 				{
 					listaLibros[i] = nuevoLibro;
 					añadido = true;
 				}
 			if (!añadido)
-				Console.WriteLine("No queda espacio en la biblioteca. No se pueden añadir más libros");)
+				Console.WriteLine("No queda espacio en la biblioteca. No se pueden añadir más libros");
 		}
 
 		public void BorrarLibro(string titulo)
 		{
 			bool borrado;
 			Libro libro;
+
 			borrado = false;
-			for (int i = 0; i < listaLibros.Length &&!borrado; i++)
+			for (int i = 0; i < listaLibros.Length && !borrado; i++)
 			{
 				libro = listaLibros[i];
-				if (String.Equals(libro.ObtenerTitulo(), titulo))
+				if (libro != null && String.Equals(libro.ObtenerTitulo(), titulo))
 				{
-					libro = null;
+					listaLibros[i] = null;
 					borrado = true;
 				}
 			}
+			if (borrado)
+				Console.WriteLine("Se ha borrado {0}.", titulo);
+			else
+				Console.WriteLine("No se ha borrado {0}.", titulo);
 		}
 
 		public void Mostrar()
 		{
+			bool hayLibros = false;
 			foreach (Libro libro in listaLibros)
-			{
-				libro.Mostrar();
-			}
+				if (libro != null)
+				{
+					libro.Mostrar();
+					hayLibros = true;
+				}
+			if (!hayLibros)
+				Console.WriteLine("No hay libros en la biblioteca.");
 		}
 	}
 
 
 }
-}
+

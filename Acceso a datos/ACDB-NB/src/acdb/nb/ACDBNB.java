@@ -6,6 +6,8 @@
 package acdb.nb;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -17,8 +19,9 @@ public class ACDBNB {
 
 	/**
 	 * @param args the command line arguments
+	 * @throws IOException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		String dir;
 		String files[];
 		File f;
@@ -47,8 +50,10 @@ public class ACDBNB {
 		// carpeta = new File(dir);
 		// createFile(carpeta);
 
-		getDataFromFile(new File("C:\\Mori\\DAM\\Horario.xlsx"));
+		// getDataFromFile(new File("C:\\Mori\\DAM\\Horario.xlsx"));
 
+		// leerFichero(new File("C:\\Mori\\txt.txt"));
+		leerFicheroBuff(new File("C:\\Mori\\txt.txt"));
 	}
 
 	/**
@@ -119,9 +124,11 @@ public class ACDBNB {
 	public static void createTxt(File ruta) {
 		File file;
 		String fileName;
+		Scanner sc;
 
 		sc = new Scanner(System.in);
 		System.out.println("¿Cómo desea llamar al nuevo archivo de texto?");
+		fileName = sc.nextLine();
 		file = new File(ruta, fileName);
 
 		if (!ruta.exists())
@@ -145,6 +152,8 @@ public class ACDBNB {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+
+		sc.close();
 	}
 
 	/**
@@ -244,4 +253,34 @@ public class ACDBNB {
 		return name.substring(dotIndex);
 	}
 
+	public static void leerFichero(File file) throws IOException {
+		if (file.exists() && file.isFile()) {
+			FileReader fReader;
+
+			fReader = new FileReader(file);
+			int ch;
+			while ((ch = fReader.read()) != -1) {
+				System.out.printf("%d ", ch);
+			}
+
+			fReader.close();
+
+		}
+	}
+
+	public static void leerFicheroBuff(File file) throws IOException {
+		if (file.exists() && file.isFile()) {
+			FileReader fReader;
+			int aux;
+			char[] cbuf;
+
+			cbuf= new char[120];
+			fReader = new FileReader(file);
+			aux = fReader.read(cbuf);
+			System.out.printf("%d: %s ", aux, String.valueOf(cbuf));
+
+			fReader.close();
+
+		}
+	}
 }

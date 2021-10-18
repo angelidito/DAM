@@ -15,7 +15,7 @@ namespace Tarea_Biblioteca_12Angel
 
 		public void Mostrar()
 		{
-			Console.WriteLine("{0}, {1}", apellidos, nombre);
+			Console.Write("{0}, {1}", apellidos, nombre);
 		}
 	}
 }

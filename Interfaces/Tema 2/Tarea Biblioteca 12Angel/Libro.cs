@@ -26,7 +26,9 @@ namespace Tarea_Biblioteca_12Angel
 
 		public void Mostrar()
 		{
-			Console.WriteLine("{0} - {1}; ISBN: {2}", titulo, autor, isbn);
+			Console.Write("{0} - ", titulo);
+			autor.Mostrar();
+			Console.WriteLine("; ISBN: {0}", isbn);
 		}
 
 		public string ObtenerTitulo()
