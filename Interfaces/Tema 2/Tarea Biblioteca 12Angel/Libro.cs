@@ -1,33 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Tarea_Biblioteca_12Angel
 {
-    internal class Libro
-    {
+	internal class Libro
+	{
 		private string titulo;
 		private int isbn;
-		private Autor autor;
+		private Autor autor = null;
 
-		public Libro(string titulo, int isbn, Autor autor)
+		public Libro(string titulo, int isbn)
 		{
 			this.titulo = titulo;
 			this.isbn = isbn;
-			this.autor = autor;
 		}
 
-		public void AñadirAutor(Autor autor)
+		public void AñadirAutor()
 		{
-			this.autor = autor;
+			String nombre;
+			String apellidos;
+
+			Console.WriteLine("Respecto al autor del libro:\n    - ¿Cuál es su nombre?");
+			nombre = Console.ReadLine();
+
+			Console.WriteLine("    - ¿Cómo se apellida?");
+			apellidos = Console.ReadLine();
+
+			this.autor = new Autor(nombre, apellidos);
 		}
 
 		public void Mostrar()
 		{
-			Console.Write("{0} - ", titulo);
-			autor.Mostrar();
+			Console.Write("{0}", titulo);
+			if (this.autor != null)
+			{
+				Console.Write(" - ");
+				autor.Mostrar();
+			}
 			Console.WriteLine("; ISBN: {0}", isbn);
 		}
 

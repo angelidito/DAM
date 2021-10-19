@@ -1,40 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Tarea_Biblioteca_12Angel
 {
 	internal class Biblioteca
 	{
-		public Libro[] listaLibros;
+		public List<Libro> listaLibros;
 
 		public Biblioteca(int capacidad)
 		{
-			this.listaLibros = new Libro[capacidad];
+			this.listaLibros = new List<Libro>();
 		}
 
 		public int NumeroLibros()
 		{
-			int num;
-
-			num = 0;
-			foreach (Libro l in listaLibros)
-				if (l != null)
-					num++;
-			return num;
+			return listaLibros.Count;
 		}
 
-		public void AñadirLibro(Libro nuevoLibro)
+		public void AñadirLibro(Libro libro)
 		{
-			bool añadido;
-
-			añadido = false;
-			for (int i = 0; i < listaLibros.Length && !añadido; i++)
-				if (listaLibros[i] == null)
-				{
-					listaLibros[i] = nuevoLibro;
-					añadido = true;
-				}
-			if (!añadido)
-				Console.WriteLine("No queda espacio en la biblioteca. No se pueden añadir más libros");
+			listaLibros.Add(libro);
 		}
 
 		public void BorrarLibro(string titulo)
@@ -43,12 +28,12 @@ namespace Tarea_Biblioteca_12Angel
 			Libro libro;
 
 			borrado = false;
-			for (int i = 0; i < listaLibros.Length && !borrado; i++)
+			for (int i = 0; i < listaLibros.Count && !borrado; i++)
 			{
 				libro = listaLibros[i];
 				if (libro != null && String.Equals(libro.ObtenerTitulo(), titulo))
 				{
-					listaLibros[i] = null;
+					listaLibros.RemoveAt(i);
 					borrado = true;
 				}
 			}
@@ -60,15 +45,12 @@ namespace Tarea_Biblioteca_12Angel
 
 		public void Mostrar()
 		{
-			bool hayLibros = false;
-			foreach (Libro libro in listaLibros)
-				if (libro != null)
-				{
-					libro.Mostrar();
-					hayLibros = true;
-				}
-			if (!hayLibros)
+			if (NumeroLibros() == 0)
 				Console.WriteLine("No hay libros en la biblioteca.");
+			else
+				foreach (Libro libro in listaLibros)
+					if (libro != null)
+						libro.Mostrar();
 		}
 	}
 

@@ -63,25 +63,16 @@ namespace Tarea_Biblioteca_12Angel
 		private static void AñadirLibro()
 		{
 			string titulo;
-			string nombre;
-			string apellidos;
 			int isbn;
 			Libro libro;
-			Autor autor;
 
 			Console.WriteLine("¿Cuál es el título del libro que desea añadir?");
 			titulo = Console.ReadLine();
-			
-			Console.WriteLine("Respecto al autor del libro:\n    - ¿Cuál es su nombre?");
-			nombre = Console.ReadLine();
-			
-			Console.WriteLine("    - ¿Cómo se apellida?");
-			apellidos = Console.ReadLine();
-			
 			Console.WriteLine("¿Cuál es el ISBN?");
 			isbn = Convert.ToInt32(Console.ReadLine());
-			autor = new Autor(nombre, apellidos);
-			libro = new Libro(titulo, isbn, autor);
+
+			libro = new Libro(titulo, isbn);
+			libro.AñadirAutor();
 
 			biblioteca.AñadirLibro(libro);
 		}

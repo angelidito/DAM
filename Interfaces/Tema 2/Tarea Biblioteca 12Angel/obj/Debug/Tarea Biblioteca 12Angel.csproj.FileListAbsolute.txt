@@ -2,7 +2,6 @@ C:\Mori\DAM\Interfaces\Tema 2\Tarea Biblioteca 12Angel\bin\Debug\Tarea Bibliotec
 C:\Mori\DAM\Interfaces\Tema 2\Tarea Biblioteca 12Angel\bin\Debug\Tarea Biblioteca 12Angel.exe
 C:\Mori\DAM\Interfaces\Tema 2\Tarea Biblioteca 12Angel\bin\Debug\Tarea Biblioteca 12Angel.pdb
 C:\Mori\DAM\Interfaces\Tema 2\Tarea Biblioteca 12Angel\obj\Debug\Tarea Biblioteca 12Angel.csproj.AssemblyReference.cache
-C:\Mori\DAM\Interfaces\Tema 2\Tarea Biblioteca 12Angel\obj\Debug\Tarea Biblioteca 12Angel.csproj.SuggestedBindingRedirects.cache
 C:\Mori\DAM\Interfaces\Tema 2\Tarea Biblioteca 12Angel\obj\Debug\Tarea Biblioteca 12Angel.csproj.CoreCompileInputs.cache
 C:\Mori\DAM\Interfaces\Tema 2\Tarea Biblioteca 12Angel\obj\Debug\Tarea Biblioteca 12Angel.exe
 C:\Mori\DAM\Interfaces\Tema 2\Tarea Biblioteca 12Angel\obj\Debug\Tarea Biblioteca 12Angel.pdb

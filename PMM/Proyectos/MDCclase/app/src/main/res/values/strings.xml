@@ -104,5 +104,8 @@
     <string name="card_to_go">Ir</string>
     <string name="card_historial" >Historial </string>
     <string name="card_invalid_url">Url invalidad</string>
+	<string name="mensaje_evento_exito">evento exito</string>
+	<string name="texto_compra">Has comprado y te he cobrado</string>
+    <string name="bbb">Texto bonito y barato pero no bueno aaaahh</string>
 
 </resources>

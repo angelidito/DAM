@@ -10,7 +10,27 @@
       "ProjectGuid": "4dd83e9b-1904-4d35-8e3b-40bd8ebbe971",
       "DisplayName": "Tarea10",
       "ColorIndex": 1
+    },
+    "75037d1c-8b32-44f3-b152-2119d83eb95c": {
+      "ProjectGuid": "75037d1c-8b32-44f3-b152-2119d83eb95c",
+      "DisplayName": "Tarea20",
+      "ColorIndex": 2
+    },
+    "776e572d-0440-4df2-807c-d0888c42d9e9": {
+      "ProjectGuid": "776e572d-0440-4df2-807c-d0888c42d9e9",
+      "DisplayName": "Tarea19",
+      "ColorIndex": 3
+    },
+    "8cad3e6e-1700-4bbd-9ce9-5cbad283c3c7": {
+      "ProjectGuid": "8cad3e6e-1700-4bbd-9ce9-5cbad283c3c7",
+      "DisplayName": "Tarea16",
+      "ColorIndex": 4
+    },
+    "b1fe0a2f-1559-45dd-8473-779cdf13ba18": {
+      "ProjectGuid": "b1fe0a2f-1559-45dd-8473-779cdf13ba18",
+      "DisplayName": "Tarea17",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 6
 }
