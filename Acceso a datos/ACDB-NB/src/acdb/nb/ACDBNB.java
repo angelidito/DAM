@@ -8,6 +8,7 @@ package acdb.nb;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -53,7 +54,8 @@ public class ACDBNB {
 		// getDataFromFile(new File("C:\\Mori\\DAM\\Horario.xlsx"));
 
 		// leerFichero(new File("C:\\Mori\\txt.txt"));
-		leerFicheroBuff(new File("C:\\Mori\\txt.txt"));
+		// leerFicheroBuff(new File("C:\\Mori\\txt.txt"));
+		escribir();
 	}
 
 	/**
@@ -274,7 +276,7 @@ public class ACDBNB {
 			int aux;
 			char[] cbuf;
 
-			cbuf= new char[120];
+			cbuf = new char[120];
 			fReader = new FileReader(file);
 			aux = fReader.read(cbuf);
 			System.out.printf("%d: %s ", aux, String.valueOf(cbuf));
@@ -282,5 +284,18 @@ public class ACDBNB {
 			fReader.close();
 
 		}
+	}
+
+	public static void escribir() throws IOException{
+
+		File file = new File("C:\\Mori\\asdfgh.txt");
+		FileWriter fWriter = new FileWriter(file);
+		if (!file.exists()){
+			file.createNewFile();
+			fWriter.write("Escribimos al crearlo.\n");
+		}
+		fWriter.append('C');
+
+		fWriter.close();
 	}
 }
