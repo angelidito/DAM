@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<!-- saved from url=(0041)https://w3.ual.es/~jjfdez/SOA/pract6.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+   
+   <meta name="GENERATOR" content="Mozilla/4.51 [en] (X11; I; IRIX64 6.2 IP28) [Netscape]">
+   <title>Llamadas al Sistema para Gestión de Procesos</title>
+</head>
+<body bgcolor="#C0C0C0" bgproperties="fixed">
+&nbsp;
+<table border="" nosave="">
+<tbody><tr nosave="">
+<td nosave=""><b><font size="+4">Llamadas al sistema para
+gestión de procesos</font></b></td>
+</tr>
+</tbody></table>
+
+<h1>
+&nbsp;</h1>
+
+<h2>
+<b>Contenidos</b></h2>
+
+<ul>
+<li>
+<font size="+0"><a href="https://w3.ual.es/~jjfdez/SOA/pract6.html#Objetivos">Objetivos</a></font></li>
+
+<li>
+<font size="+0"><a href="https://w3.ual.es/~jjfdez/SOA/pract6.html#Introducci%C3%B3n">Introducción</a></font></li>
+
+<li>
+<font size="+0"><a href="https://w3.ual.es/~jjfdez/SOA/pract6.html#Creaci%C3%B3n%20de%20procesos.%20System%20call">Creación
+de procesos</a>. <i>System call</i>&nbsp; <tt>fork</tt></font></li>
+
+<li>
+<font size="+0"><a href="https://w3.ual.es/~jjfdez/SOA/pract6.html#Terminaci%C3%B3n%20de%20procesos.%20System%20call%20exit%20y">Terminación
+de procesos</a>. <i>System call</i>&nbsp; <tt>exit</tt> y <tt>wait</tt></font></li>
+
+<li>
+<font size="+0"><a href="https://w3.ual.es/~jjfdez/SOA/pract6.html#Ejecuci%C3%B3n%20de%20nuevos%20programas.%20System%20call">Ejecución
+de nuevos programas</a>. <i>System call&nbsp; </i><tt>exec</tt></font></li>
+
+<li>
+<font size="+0"><a href="https://w3.ual.es/~jjfdez/SOA/pract6.html#Env%C3%ADo%20de%20se%C3%B1ales%20entre">Envío de señales
+entre procesos</a></font></li>
+</ul>
+
+<h2>
+<a name="Objetivos"></a>Objetivos</h2>
+<font size="+0">Con la realización de las prácticas de este
+módulo, el alumno se familiarizará con llamadas al sistema
+relacionadas con la creación y destrucción de procesos así
+como el lanzamiento de nuevos programas (<tt>fork</tt>,
+<tt>exec</tt>,
+<tt>wait</tt>,
+etc.), además deberá asentar los conocimientos adquiridos
+en anteriores prácticas.</font>
+<h2>
+<a name="Introducción"></a>Introducción</h2>
+El sistema operativo UNIX dispone de un conjunto de llamadas al sistema
+que definen una poderosa interfaz para la programación de aplicaciones
+(API) que involucren multiples procesos; abriendo las puertas a la programación
+concurrente. Este interfaz suministra al desarrollador de <i>software</i>
+herramientas tanto para la creación, sincronización y comunicación
+de nuevos procesos, como la capacidad de ejecutar nuevos programas.
+<p>Entre los aspectos más destacados de la gestión de procesos
+en UNIX se encuentra la forma en que éstos se crean y cómo
+se ejecutan nuevos programas. Aunque se mostrarán las llamadas al
+sistema correspondientes más adelante en esta práctica, es
+conveniente presentar una visión inicial conjunta que permita entender
+mejor la forma en que estas llamadas se utilizan.
+</p><p>El <i>kernel</i> crea un nuevo proceso, proceso hijo, realizando una
+copia (clonación) del proceso que realiza la llamada al sistema
+<tt>fork</tt>
+(proceso padre). Así, salvo el PID y el PPID los dos procesos serán
+inicialmente idénticos. De esta forma los nuevos procesos obtienen
+una copia de los recursos del padre (heredan el entorno).
+</p><center>
+<p><img src="./Llamadas al Sistema para Gestión de Procesos_files/Fork1.gif" height="328" width="602"></p></center>
+
+<p>Sin embargo no se ejecuta ningún nuevo programa, para conseguir
+esto, uno de los procesos ha de realizar otra llamada al sistema, <tt>exec</tt>,
+para reinicializar (recubrir) sus segmentos de datos de usuario e instrucciones
+a partir de un programa en disco. En este caso no aparece ningún
+proceso nuevo.
+</p><center>
+<p><img src="./Llamadas al Sistema para Gestión de Procesos_files/Fork2.gif" height="328" width="602"></p></center>
+
+<p>Cuando un proceso termina (muere), el sistema operativo lo elimina recuperando
+sus recursos para que puedan ser usados por otros.
+</p><h2>
+<a name="Creación de procesos. System call"></a>Creación de procesos.
+<i>System
+call</i> <tt>fork</tt></h2>
+<b><tt>#include &lt;unistd.h&gt;</tt></b>
+<p><b><tt>int fork ()</tt></b>
+</p><p><tt>fork</tt><b><i> </i></b>crea un nuevo proceso; pero <b>no</b> lo
+inicia desde un nuevo programa. Los segmentos de datos de usuario y del
+sistema y el segmento de instrucciones del nuevo proceso (hijo) son copias
+casi exactas del proceso que realizó la llamada (padre). El valor
+de retorno de <tt>fork</tt> es:
+<br>&nbsp;
+</p><center><table border="2" cellspacing="0" cellpadding="4" width="611">
+<tbody><tr>
+<td width="71%">Proceso hijo</td>
+
+<td width="29%">0</td>
+</tr>
+
+<tr>
+<td width="71%">Proceso padre</td>
+
+<td width="29%">PID del proceso hijo</td>
+</tr>
+
+<tr>
+<td width="71%"><tt>fork</tt> fracasa y no puede crear un nuevo proceso.</td>
+
+<td width="29%">-1&nbsp;</td>
+</tr>
+</tbody></table></center>
+
+<p>El proceso hijo hereda la mayoría de los atributos del proceso
+padre, ya que se copian de su segmento de datos del sistema. Sólo
+algunos atributos difieren entre ambos:
+</p><blockquote>
+<ul>
+<li>
+<b>PID</b></li>
+</ul>
+
+<ul>
+<li>
+<b>archivos:</b> El hijo obtiene una copia de la tabla de descriptores
+de archivo del proceso padre, con lo que comparten el puntero del archivo.
+Si uno de los procesos cambia ese puntero (realiza una operación
+de E/S) la siguiente operación de E/S realizada por el otro proceso
+se hará a partir de la posición indicada por el puntero modificado
+por el primer proceso. Sin embargo, al existir dos tablas de descriptores
+de archivos si un proceso cierra su descriptor, el otro no se ve afectado.</li>
+</ul>
+</blockquote>
+
+<blockquote><tt><font size="-1">Apis.ual.es&gt; cat ej_fork.c</font></tt>
+<br><tt><font size="-1">#include &lt;unistd.h&gt;</font></tt>
+<br><tt><font size="-1">#include &lt;stdio.h&gt;</font></tt>
+<br><tt><font size="-1">main (arc, argv)</font></tt>
+<br><tt><font size="-1">int argc;</font></tt>
+<br><tt><font size="-1">char *argv[];</font></tt>
+<br><tt><font size="-1">{</font></tt>
+<blockquote><tt><font size="-1">int pidHijo;</font></tt>
+<br><tt><font size="-1">printf ("Ejemplo de fork. Este proceso va a crear
+otro proceso\n");</font></tt>
+<br><tt><font size="-1">if (pidHijo=fork()) /* Código ejecutado por
+el padre */</font></tt>
+<blockquote><tt><font size="-1">printf ("Proceso PADRE: He creado un nuevo
+proceso cuyo PID es %i\n", pidHijo);</font></tt></blockquote>
+</blockquote>
+</blockquote>
+
+<blockquote>
+<blockquote><tt><font size="-1">else /* Código ejecutado por el hijo
+*/</font></tt></blockquote>
+</blockquote>
+
+<blockquote>
+<blockquote>
+<blockquote><tt><font size="-1">printf ("Proceso HIJO: El contenido de mi
+variable PID es %i\n", pidHijo);</font></tt></blockquote>
+</blockquote>
+</blockquote>
+
+<blockquote>
+<blockquote><tt><font size="-1">/* Esta línea es ejecutada por los
+dos procesos */</font></tt>
+<br><tt><font size="-1">printf ("Fin del proceso cuya variable pidHijo vale
+%i\n", pidHijo);</font></tt>
+<br><tt><font size="-1">}</font></tt></blockquote>
+<tt><font size="-1">Apis.ual.es &gt; cc ej_fork.c -o ej.fork</font></tt>
+<br><tt><font size="-1">Apis.ual.es &gt; ej_fork</font></tt>
+<br><tt><font size="-1">Ejemplo de fork. Este proceso va a crear otro proceso</font></tt>
+<br><tt><font size="-1">Proceso HIJO: El contenido de mi variable PID es
+0</font></tt>
+<br><tt><font size="-1">Proceso PADRE: He creado un nuevo proceso cuyo PID
+es 23654</font></tt>
+<br><tt><font size="-1">Fin del proceso cuya variable pidHijo vale 23654</font></tt>
+<br><tt><font size="-1">Fin del proceso cuya variable pidHijo vale 0</font></tt>
+<br><tt><font size="-1">Apis.ual.es&gt;</font></tt></blockquote>
+
+<h2>
+<a name="Terminación de procesos. System call exit y"></a>Terminación
+de procesos. <i>System call</i> <tt>exit</tt> y <tt>wait</tt></h2>
+<b><tt><font size="+0">#include &lt;unistd.h&gt;</font></tt></b>
+<p><b><tt><font size="+0">void exit (int status)</font></tt></b>
+</p><p><tt>exit</tt> finaliza al proceso que la llamó, con un código
+de estado igual al <i>byte</i> menos significativo del parámetro
+entero <tt>status</tt>. Todos los descriptores de archivo abiertos son
+cerrados y sus buffers sincronizados. Si hay procesos hijo cuando el padre
+ejecuta un <tt>exit</tt>, el PPID de los hijos se cambia a 1 (proceso <tt>init</tt>).
+Es la única llamada al sistema que nunca retorna.
+</p><p>El valor del parámetro <tt>status</tt> se utiliza para comunicar
+al proceso padre la forma en que el proceso hijo termina. Por convenio,
+este valor suele ser 0 si el proceso termina correctamente y cualquier
+otro valor en caso de terminación anormal. El proceso padre puede
+obtener este valor a traves de la llamada al sistema <tt>wait</tt>.
+</p><p><b><tt><font size="+0">#include &lt;unistd.h&gt;</font></tt></b>
+</p><p><b><tt><font size="+0">int wait (int *statusp)</font></tt></b>
+</p><p>Si hay varios procesos hijos, <tt>wait</tt> espera hasta que uno de
+ellos termina. No es posible especificar por qué hijo se espera.
+<tt>wait</tt>
+retorna el PID del hijo que termina (o -1 si no se crearon hijos o si ya
+no hay hijos por los que esperar) y almacena el código del estado
+de finalización del proceso hijo (parámetro <tt>status</tt>
+en su llamada al sistema <tt>exit</tt>) en la dirección apuntada
+por el parámetro <tt>statusp</tt>.
+</p><p>Un proceso puede terminar en un momento en el que su padre no le esté
+esperando. Como el <i>kernel</i> debe asegurar que el padre pueda esperar
+por cada proceso, los procesos hijos por los que el padre no espera se
+convierten en procesos <i>zombie</i> (se descartan su segmentos pero siguen
+ocupando una entrada en la tabla de procesos del <i>kernel</i>). Cuando
+el padre realiza una llamada <tt>wait</tt>, el proceso hijo es eliminado
+de la tabla de procesos.
+</p><p>No es obligatorio que todo proceso padre espere a sus hijos.
+</p><p>Un proceso puede terminar por:
+<br>&nbsp;
+</p><center><table border="2" cellspacing="0" cellpadding="4" width="675">
+<tbody><tr>
+<td width="47%">Causa de terminación</td>
+
+<td width="53%">Contenido de <tt>*statusp</tt></td>
+</tr>
+
+<tr>
+<td width="47%">Llamada al sistema <b><i>exit</i></b></td>
+
+<td width="53%"><i>byte</i> más a la derecha = 0
+<br><i>byte</i> de la izquierda contiene el valor del parámetro
+<tt>status</tt>
+de exit</td>
+</tr>
+
+<tr>
+<td width="47%">Recibe una señal</td>
+
+<td width="53%">En los <b>7 bits</b> más a la derecha se almacena
+el número de señal que termino con el proceso. Si el 8º
+bit más a la derecha está a 1 el proceso fue detenido por
+el <i>kernel</i> y se generó un volcado del proceso en un archivo
+<tt>core</tt>.</td>
+</tr>
+
+<tr>
+<td width="47%">Caída del sistema
+<br>(p.e: pérdida de la alimentación del equipo.)</td>
+
+<td width="53%">Todos los procesos desaparecen bruscamente. No hay nada
+que devolver.</td>
+</tr>
+</tbody></table></center>
+
+<h2>
+<a name="Ejecución de nuevos programas. System call"></a>Ejecución
+de nuevos programas. <i>System call </i><tt>exec</tt></h2>
+La llamada al sistema <tt>exec</tt> permite remplazar los segmentos de
+instrucciones y de datos de usuario por otros nuevos a partir de un archivo
+ejecutable en disco, con lo que se consigue que un proceso deje de ejecutar
+instrucciones de un programa y comience a ejecutar instrucciones de un
+nuevo programa. <tt>exec</tt> no crea ningún proceso nuevo.
+<p>Como el proceso continua activo su segmento de datos del sistema apenas
+es perturbado, la mayoría de sus atributos permanecen inalterados.
+En particular, los descriptores de archivos abiertos permanecen abiertos
+después de un <tt>exec</tt>. Esto es importante puesto que algunas
+funciones de la librería C (como <tt>printf</tt>) utilizan buffers
+internos para aumentar el rendimiento de la E/S; si un proceso realiza
+un <tt>exec</tt> y no se han volcado (sincronizado) antes los buffers internos,
+los datos de estos buffers se perderán. Por ello es habitual cerrar
+los descriptores abiertos antes de realizar una llamada al sistema <tt>exec</tt>.
+</p><p>Hay 6 formas de realizar una llamada al sistema <tt>exec</tt>:
+</p><blockquote><tt><font size="-1">#include &lt;unistd.h&gt;</font></tt>
+<br><tt><font size="-1">int execl (char *path, char *arg0, char *arg1, .
+. . ,char *argN, char *null)</font></tt>
+<br><tt><font size="-1">int execle (char *path, char *arg0, . . . ,char *argN,
+char *null, char *envp[])</font></tt>
+<br><tt><font size="-1">int execlp (char *file, char *arg0, char *arg1, .
+. . ,char *argN, char *null)</font></tt>
+<br><tt><font size="-1">int execv (char *path, char *argv[])</font></tt>
+<br><tt><font size="-1">int execve (char *path, char *argv[], char *envp[])</font></tt>
+<br><tt><font size="-1">int execvp (char *file, char *argv[])</font></tt></blockquote>
+El resultado de la llamada al sistema <tt>exec</tt> sólo esta disponible
+si la llamada fracasa (-1).
+<p>Descripción de los argumentos:
+<br>&nbsp;
+</p><center><table border="2" cellspacing="0" cellpadding="4" width="703">
+<tbody><tr>
+<td width="32%"><b><font size="+0">Nombre del argumento</font></b></td>
+
+<td width="68%"><b><font size="+0">Descripción</font></b></td>
+</tr>
+
+<tr>
+<td width="32%"><tt>path</tt><b><i>, </i></b><tt>file</tt></td>
+
+<td width="68%">nombre del nuevo programa a ejecutar con su trayectoria.
+Ejemplo: "<tt>/bin/cp"</tt>
+<p>Las versiones de <tt>exec</tt><b><i> </i></b>que utilizan <tt>file</tt>
+en lugar de <tt>path</tt> utilizan la variable de entorno <tt>PATH</tt>
+para localizar el programa a ejecutar, por lo que en esos casos no es necesario
+especificar la trayectoria al programa si este se encuentra en alguno de
+los directorios especificados en <tt>PATH</tt></p></td>
+</tr>
+
+<tr>
+<td width="32%"><tt>arg0</tt></td>
+
+<td width="68%">primer argumento del programa. Por convención suele
+asignarse el nombre del programa sin la trayectoria. Ejemplo: "<tt>cp</tt>"</td>
+</tr>
+
+<tr>
+<td width="32%"><tt>arg1 ... argN</tt>
+<p><tt>null</tt></p></td>
+
+<td width="68%">Conjunto de parámetros que recibe el programa para
+su ejecución. Ejemplo:
+<blockquote><tt>toupper.c</tt>&nbsp; <tt>seguridad</tt>.</blockquote>
+El parámetro formal <tt>null</tt> debe ser remplazado por el parámetro
+real <tt>NULL</tt><b>.</b></td>
+</tr>
+
+<tr>
+<td width="32%"><tt>argv</tt></td>
+
+<td width="68%">Matriz de punteros a cadenas de caracteres. Estas cadenas
+de caracteres constituyen la lista de argumentos disponibles para el nuevo
+programa. El último de los punteros debe ser <tt>NULL</tt>. Por
+convención, este array debe contener al menos un elemento (nombre
+del programa).</td>
+</tr>
+
+<tr>
+<td width="32%"><tt>envp</tt></td>
+
+<td width="68%">Matriz de punteros a cadenas de caracteres. Estas cadenas
+de caracteres constituyen el entorno de ejecución del nuevo programa.</td>
+</tr>
+</tbody></table></center>
+
+<p>A continuación se presenta una tabla comparativa de las diferentes
+versiones de <tt>exec</tt>:
+<br>&nbsp;
+</p><center><table border="" cellpadding="4" width="649">
+<tbody><tr>
+<td width="25%"><b><font size="+0">Versión</font></b></td>
+
+<td width="28%"><b><font size="+0">Formato argumentos</font></b></td>
+
+<td width="23%"><b><font size="+0">Paso del entorno</font></b></td>
+
+<td width="23%"><b><font size="+0">¿Utiliza <tt>PATH</tt>?</font></b></td>
+</tr>
+
+<tr>
+<td width="25%"><tt>execl</tt></td>
+
+<td width="28%">lista</td>
+
+<td width="23%">automático</td>
+
+<td width="23%">no</td>
+</tr>
+
+<tr>
+<td width="25%"><tt>execv</tt></td>
+
+<td width="28%">array</td>
+
+<td width="23%">automático</td>
+
+<td width="23%">no</td>
+</tr>
+
+<tr>
+<td width="25%"><tt>execle</tt></td>
+
+<td width="28%">lista</td>
+
+<td width="23%">manual</td>
+
+<td width="23%">no</td>
+</tr>
+
+<tr>
+<td width="25%"><tt>execve</tt></td>
+
+<td width="28%">array</td>
+
+<td width="23%">manual</td>
+
+<td width="23%">no</td>
+</tr>
+
+<tr>
+<td width="25%"><tt>execlp</tt></td>
+
+<td width="28%">lista</td>
+
+<td width="23%">automático</td>
+
+<td width="23%">sí</td>
+</tr>
+
+<tr>
+<td width="25%"><tt>execvp</tt></td>
+
+<td width="28%">array</td>
+
+<td width="23%">automático</td>
+
+<td width="23%">sí</td>
+</tr>
+</tbody></table></center>
+
+<p>El nuevo programa puede acceder a los argumentos a través de
+<tt>argc</tt>
+y <tt>argv</tt> de su función <tt>main</tt>.
+<br>&nbsp;
+</p><h2>
+<a name="Envío de señales entre"></a>Envío de señales entre
+procesos</h2>
+Se define una señal, como un mensaje enviado a un proceso determinado.
+Este mensaje no es más que un número entero. Un proceso cuando
+recibe una señal puede optar por tres posibles alternativas para
+procesarla:
+<ul>
+<li>
+Ignorar la señal recibida.</li>
+
+<li>
+Ejecutar una acción por defecto.</li>
+
+<li>
+Ejecutar una acción determinada, especificada por el usuario en
+el propio proceso.</li>
+</ul>
+Algunas de las señales más comunes, utilizadas en UNIX son:
+<ul>
+<li>
+<tt>SIGINT</tt> =&gt; Señal de interrupción: Enviada desde el
+terminal (teclado) por medio de <tt>Ctrl+c</tt>.</li>
+
+<li>
+<tt>SIGQUIT</tt> =&gt; Enviada desde el terminal por el carácter <i>quit</i>
+(<tt>Ctrl+\</tt>). El proceso activo termina produciendo un archivo <tt>core</tt>.</li>
+
+<li>
+<tt>SIGKILL</tt> =&gt; Mata un proceso.</li>
+</ul>
+El resto de señales están definidas en el archivo de cabecera
+<tt>/usr/include/signal.h</tt>
+<h3>
+<b>Prioridades de las señales</b></h3>
+Todas las señales tienen la misma prioridad. A diferencia de las
+interrupciones Hardware, las señales se procesan siguiendo la filosofía
+FIFO (<i>First In First Out</i>). Cuando una señal se envía
+a un proceso, se ejecuta el manejador correspondiente, y mientras este
+manejador no termine su ejecución, ninguna otra señal podrá
+ser recibida por el proceso anterior.
+<h3>
+<b>Asignación de un manejador de señal</b></h3>
+Como se ha comentado anteriormente, puede ocurrir que un proceso no quiera
+ejecutar el manejador por defecto asociado a un tipo de señal. Para
+este caso, existe una función <tt>signal()</tt> en la biblioteca
+stándard ANSI C, la cual tiene la siguiente sintaxis, (para una
+información más detallada consultar el manual):
+<blockquote>
+<blockquote><tt>signal (sig, func)</tt></blockquote>
+</blockquote>
+donde:
+<blockquote>
+<blockquote><tt>sig</tt> =&gt; Número entero que representa una señal
+definida en <tt>/usr/include/signal.h</tt>
+<p><tt>func</tt> =&gt; Especifica la dirección de un manejador de señal,
+dada por el usuario en el proceso.</p></blockquote>
+</blockquote>
+Para las señales <tt>SIGKILL</tt>, <tt>SIGSTOP</tt> y <tt>SIGCONT</tt>
+no es posible asignar un manejador que no sea el de defecto. Existen dos
+manejadores predefinidos en <tt>/usr/include/signal.h</tt>:
+<blockquote>
+<blockquote><tt>SIG_DFL</tt> =&gt; Manejador por defecto
+<p><tt>SIG_IGN</tt> =&gt; Manejador que ignora la señal recibida.</p></blockquote>
+</blockquote>
+
+<h3>
+<b>Envío de señales a otros procesos</b></h3>
+Para poder enviar una señal a otro proceso, es necesario realizar
+la llamada al sistema <tt>kill()</tt>. Su formato o sintaxis es, (para
+una información más detallada consultar el manual):
+<blockquote>
+<blockquote><tt>ret = kill (pid, sig)</tt></blockquote>
+</blockquote>
+donde:
+<blockquote>
+<blockquote><tt>pid</tt> =&gt; Identificador del proceso al cual va dirigida
+la señal.
+<p><tt>sig</tt> =&gt; Señal enviada.
+</p><p><tt>ret</tt> =&gt; 0 (Éxito) 1 (Error)</p></blockquote>
+</blockquote>
+La llamada al sistema <tt>pause()</tt>, provoca la suspensión de
+la ejecución del proceso, hasta que se recibe una señal.
+Siempre retorna -1.
+<br>&nbsp;
+
+
+</body></html>

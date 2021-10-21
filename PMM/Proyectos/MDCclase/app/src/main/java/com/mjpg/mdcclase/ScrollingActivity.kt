@@ -8,6 +8,8 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.snackbar.Snackbar
 import com.mjpg.mdcclase.databinding.ActivityScrollingBinding
@@ -52,22 +54,31 @@ class ScrollingActivity : AppCompatActivity() {
             ).setAnchorView(binding.fab).show()
         }
 
-        binding.content.btnSkip?.setOnClickListener {
-            binding.content.cvAd?.visibility = View.GONE
+        binding.content.btnSkip.setOnClickListener {
+            binding.content.cvAd.visibility = View.GONE
         }
 
-        binding.content.btnBuy?.setOnClickListener {
+        binding.content.btnBuy.setOnClickListener {
             Snackbar.make(it, R.string.texto_compra, Snackbar.LENGTH_SHORT)
                 .setAction(getString(R.string.bbb)) {
                     Toast.makeText(this, "probando", Toast.LENGTH_LONG).show()
                 }
-                    .setAnchorView(binding.fab)
-                    .show()
-
-
-
+                .setAnchorView(binding.fab)
+                .show()
         }
-
+        binding.content.imgCover.let {  //i.ytimg.com/vi/uNhAHzUpsXq/hqdefault.jpg
+            Glide.with(this)
+                .load("https://images.8tracks.com/cover/i/009/398/588/dgfhfh-331.jpg?rect=2,0,496,496&q=98&fm=jpg&fit=max")
+                .centerCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(it)
+        }
+        binding.content.cbEnablePass.setOnClickListener {
+            binding.content.tilPassword.isEnabled = !binding.content.tilPassword.isEnabled
+        }
+        val texto = binding.content.etUrl.text.toString()
+        if (texto.isEmpty())
+            ;
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

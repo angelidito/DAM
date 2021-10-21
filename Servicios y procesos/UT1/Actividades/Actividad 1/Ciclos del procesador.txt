@@ -1,0 +1,157 @@
+NOTA: para visualizar correctamente la información, la fuente del texto debe ser monoespaciada y no haber desdoble de lineas (wrap).
+      Abrir por ejemplo con Sublime Text o Notepad.
+
+Leyenda:
+    - Cada letra ─A, B, C o D─ simboliza un ciclo del procesador dedicado a un proceso en concreto.
+    - Las minusculas indican que el proceso acaba en ese ciclo.
+    - Los guiones entre letras son ciclos donde no se ejecuta ningún proceso.
+    - En cada minúscula está marcado el tiempo que ha tardado cada proceso en finalizar.
+    - Ciertos procesos necesitan esperar cierto tiempo en momentos determinados.
+        Esto está marcado por debajo, indicando el tiempo que deben esperar para volver a ser ejecutados.
+
+
+Ejercicio con ciclos de 0.4 segundos:
+
+A:	5 segundos	12.5 ciclos
+B:	3 segundos	7.5 ciclos
+C:	6 segundos	15 ciclos	
+D:	5 segundos	12.5 ciclos
+
+
+Sin tiempos de espera en los procesos, los resultados habrían sido los siguientes:
+
+	~ Secuencial:
+          5.2     8.4             14         19.2
+            |       |              |            |
+AAAAAAAAAAAAaBBBBBBBbCCCCCCCCCCCCCCcDDDDDDDDDDDDd
+
+	~ Concurrente:
+	                                         19.2
+                                           18.8 |
+                            12             18 | |
+                             |              | | |
+ABCDABCDABCDABCDABCDABCDABCDAbCDACDACDACDACDaCdCc
+
+
+
+Sin embargo, como los tiempos de espera existen, obtenemos esto:
+
+	~ Secuencial:
+          5.2         10.4                  18            25.2
+            |            |                   |               |
+AAAAAAAAAAAAaBBBBB-----BBbCCCCCCCCCCC-----CCCcDDDDD---DDDDDDDd
+                 |                  |             |
+                 |                  |             |__D espera 1 seg   
+                 |                  |
+                 |                  |_C espera disco a leer 2 seg
+                 |
+                 |_B espera impresora 2 seg
+
+	~ Concurrente:
+                                           18
+                            12.8       17.2 |19.6      
+                               |          | |   |
+ABCDABCDABCDABCDABCDACDBACDBACDbACDACDACADaDdCCCc
+                 |                   | |
+                 |                   | |_C espera disco a leer 2 seg
+                 |                   |
+                 |                   |_D espera 1 seg   
+                 |              
+                 |_B espera impresora 2 seg
+
+ Momento medio de finalización de proceso secuencial: 14.7
+Momento medio de finalización de proceso concurrente: 16.9
+                             Tiempo total secuencial: 25.2
+                            Tiempo total concurrente: 19.6
+
+Se aprovecha mucho mejor el tiempo y los ciclos del procesador, ya que no hay que esperar junto con los procesos, sino que se puede aprovechar ese tiempo para otros procesos.
+
+
+
+
+Ejercicio con ciclos de 0.3 segundos:
+
+A:	5 segundos	16.66 ciclos
+B:	3 segundos	10 ciclos
+C:	6 segundos	20 ciclos	
+D:	5 segundos	16.66 ciclos
+
+Sin embargo, como los tiempos de espera existen, obtenemos esto:
+
+	~ Secuencial:
+              5.1             10.2                       18.3                 24.6
+                |                |                          |                    |
+AAAAAAAAAAAAAAAAaBBBBBBB-------BBbCCCCCCCCCCCCCCC-------CCCCcDDDDDDDDDDDDDD----DDd
+                       |                        |                         |
+                       |                        |                         |__D espera 1       seg   
+                       |                        |
+                       |                        |_C espera 2 seg
+                       |
+                       |_B espera 2 seg
+
+	~ Concurrente:
+	                                                   17.7
+                                       12.9         16.8  |   19.8               
+                                          |            |  |      |
+ABCDABCDABCDABCDABCDABCDABCDACDACDBACDBACDbACDACDACDACAaDDd--CCCCc
+                         |                         | |       
+                         |                         | |_C espera 2 seg
+                         |                         |
+                         |                         |_D espera 1 seg   
+                         |              
+                         |_B espera 2 seg
+
+
+ Momento medio de finalización de proceso secuencial: 14.55
+Momento medio de finalización de proceso concurrente: 16.8
+                             Tiempo total secuencial: 24.6
+                            Tiempo total concurrente: 19.8
+
+Parece que se aprovecha mejor el tiempo y los ciclos del procesador con ciclos de menor duración.
+Parece que de media los procesos tardan más en finalizar, pero el tiempo total es menor.
+
+
+
+
+
+Ejercicio con ciclos de 1.1 segundos:
+
+A:  5 segundos  5 ciclos
+B:  3 segundos  3 ciclos
+C:  6 segundos  6 ciclos   
+D:  5 segundos  5 ciclos
+
+Sin embargo, como los tiempos de espera existen, obtenemos esto:
+
+    ~ Secuencial:
+  5.5   11    19.8  26.4
+    |    |       |     |
+AAAAaBB  bCCCC  CcDDDD d
+      |      |       |
+      |      |       |__D espera 1 seg   
+      |      |
+      |      |_C espera 2 seg
+      |
+      |_B espera 2 seg
+
+    ~ Concurrente:
+               20.9
+              19.8|                                    
+        11  17.6 ||               
+         |     | ||
+ABCDABCDAbCDACDaCdc 
+     |       ||       
+     |       ||_D espera 2 seg
+     |       |
+     |       |_C espera 2 seg   
+     |       
+     |_B espera 2 seg
+
+
+ Momento medio de finalización de proceso secuencial: 13.18
+Momento medio de finalización de proceso concurrente: 17.33
+                             Tiempo total secuencial: 26.4
+                            Tiempo total concurrente: 20.9
+
+Por probar he hecho esto y empiezo a pensar si mi planteamiento es del todo correcto.
+Acorta los tiempos más que con los ciclos de 0.4 segundos, pero menos que los ciclos de 0.3...
