@@ -1,0 +1,10 @@
+C:\Mori\DAM\Interfaces\Tema3\12Angel\Solución Vacía\Prog_01_02\bin\Debug\Prog_01_02.exe.config
+C:\Mori\DAM\Interfaces\Tema3\12Angel\Solución Vacía\Prog_01_02\bin\Debug\Prog_01_02.exe
+C:\Mori\DAM\Interfaces\Tema3\12Angel\Solución Vacía\Prog_01_02\bin\Debug\Prog_01_02.pdb
+C:\Mori\DAM\Interfaces\Tema3\12Angel\Solución Vacía\Prog_01_02\obj\Debug\Prog_01_02.csproj.SuggestedBindingRedirects.cache
+C:\Mori\DAM\Interfaces\Tema3\12Angel\Solución Vacía\Prog_01_02\obj\Debug\Prog_01_02.Form1.resources
+C:\Mori\DAM\Interfaces\Tema3\12Angel\Solución Vacía\Prog_01_02\obj\Debug\Prog_01_02.Properties.Resources.resources
+C:\Mori\DAM\Interfaces\Tema3\12Angel\Solución Vacía\Prog_01_02\obj\Debug\Prog_01_02.csproj.GenerateResource.cache
+C:\Mori\DAM\Interfaces\Tema3\12Angel\Solución Vacía\Prog_01_02\obj\Debug\Prog_01_02.csproj.CoreCompileInputs.cache
+C:\Mori\DAM\Interfaces\Tema3\12Angel\Solución Vacía\Prog_01_02\obj\Debug\Prog_01_02.exe
+C:\Mori\DAM\Interfaces\Tema3\12Angel\Solución Vacía\Prog_01_02\obj\Debug\Prog_01_02.pdb

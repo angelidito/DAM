@@ -1,5 +1,6 @@
 package com.mjpg.mdcclase
 
+import android.graphics.Color
 import android.os.Bundle
 
 
@@ -7,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.webkit.URLUtil
 import android.widget.Toast
+import androidx.core.net.toUri
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.material.bottomappbar.BottomAppBar
@@ -19,6 +22,8 @@ import com.mjpg.mdcclase.databinding.ActivityScrollingBinding
 class ScrollingActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityScrollingBinding
+
+    private val usrsPwrd = listOf(Pair("user", "user"), Pair("MJ", "MJ"), Pair("mori", "mori"))
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +40,8 @@ class ScrollingActivity : AppCompatActivity() {
 //                findViewById<BottomAppBar>(R.id.bottom_app_bar).fabAlignmentMode =
 //                    BottomAppBar.FAB_ALIGNMENT_MODE_END
 //            else
-////                if (findViewById<BottomAppBar>(R.id.bottom_app_bar).fabAlignmentMode == BottomAppBar.FAB_ALIGNMENT_MODE_END)
+////                if (findViewById<BottomAppBar>(R.id.bottom_app_bar).fabAlignmentMode
+////                      == BottomAppBar.FAB_ALIGNMENT_MODE_END)
 //                findViewById<BottomAppBar>(R.id.bottom_app_bar).fabAlignmentMode =
 //                    BottomAppBar.FAB_ALIGNMENT_MODE_CENTER
 //        }
@@ -66,19 +72,51 @@ class ScrollingActivity : AppCompatActivity() {
                 .setAnchorView(binding.fab)
                 .show()
         }
-        binding.content.imgCover.let {  //i.ytimg.com/vi/uNhAHzUpsXq/hqdefault.jpg
-            Glide.with(this)
-                .load("https://images.8tracks.com/cover/i/009/398/588/dgfhfh-331.jpg?rect=2,0,496,496&q=98&fm=jpg&fit=max")
-                .centerCrop()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(it)
-        }
+//        binding.content.imgCover.let {  //i.ytimg.com/vi/uNhAHzUpsXq/hqdefault.jpg
+//        }
+        cargarImagen()
+
         binding.content.cbEnablePass.setOnClickListener {
             binding.content.tilPassword.isEnabled = !binding.content.tilPassword.isEnabled
         }
-        val texto = binding.content.etUrl.text.toString()
-        if (texto.isEmpty())
-            ;
+
+        binding.content.etUrl.onFocusChangeListener = View.OnFocusChangeListener { _, focus ->
+            val url = binding.content.etUrl.text.toString()
+            var error = ""
+            if (!focus) {
+                if (url.isNotEmpty() || url != "") {
+                    if (URLUtil.isValidUrl(url)) {
+                        cargarImagen(url)
+                    } else {
+                        error = "URL incorrecta"
+                    }
+                } else {
+                    cargarImagen()
+                    error = "campo vacío"
+                }
+                binding.content.tilUrl.error = error
+            }
+        }
+        binding.content.toggleButton.addOnButtonCheckedListener { group, checkedId, isChecked ->
+            binding.content.root.setBackgroundColor(
+                when (checkedId) {
+                    R.id.btnBlue -> Color.BLUE
+                    R.id.btnRed -> Color.RED
+                    else -> Color.GREEN
+                }
+            )
+        }
+    }
+
+    fun cargarImagen(
+        url: String = "https://images.8tracks.com/cover/i/009/398/588/dgfhfh-331.jpg?" +
+                "rect=2,0,496,496&q=98&fm=jpg&fit=max"
+    ) {
+        Glide.with(this)
+            .load(url)
+            .centerCrop()
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .into(binding.content.imgCover)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
