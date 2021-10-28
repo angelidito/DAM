@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Primator {
@@ -23,12 +24,18 @@ public class Primator {
 			// + "%n\t2. Escoger hasta qué nº mostrar los primos." + "%n\t3. Comprobar si un
 			// nº es primo."
 			// + "%n\t0. Salir del programa.%n");
-			System.out.printf(
-					"%nActualmente hay %d primos calculados.%n" + "El mayor primo es el %s." + "%nEscoja una opcion:%n"
-							+ "\t1. Calcular primos hasta un nº.%n" + "\t2. Mostrar los primos almacenados.%n"
-							+ "\t3. Exportar a \"%s\".%n" + "\t4. Calcular los 50 primos siguientes.%n"
-							+ "\t5. Calcular primos durante 5 minutos.%n" + "\t0. Salir del programa.%n",
-					primos.size(), primos.size() == 0 ? "NoData" : primos.get(primos.size() - 1).toString(),
+			System.out.printf("%nActualmente hay %d primos calculados.%n" //
+					+ "El mayor primo es el %s.%n" //
+					+ "Escoja una opcion:%n" //
+					+ "\t  1. Calcular primos hasta un nº%n" //
+					+ "\t  2. Calcular los X primos siguientes%n" //
+					+ "\t  3. Calcular primos durante X minutos%n" //
+					+ "\t  4. Mostrar primos%n" //
+					+ "\t  5. Guardar%n" //
+					+ "\t  0. Guardar y salir%n" //
+					+ "\t -1. Salir sin guardar%n" //
+					+ "\t-42. Borrar datos%n" //
+					, primos.size(), primos.size() == 0 ? "NoData" : primos.get(primos.size() - 1).toString(),
 					rutaArchivoPrimos);
 			op = sc.nextInt();
 			switch (op) {
@@ -37,42 +44,101 @@ public class Primator {
 				loadPrimesUntil(sc.nextInt());
 				break;
 			case 2:
+				System.out.printf("¿Cuántos primos más quieres calcular?%n");
+				calcMorePrimes(sc.nextInt());
+				break;
+			case 3:
+				System.out.printf("¿Cuántos minutos quieres estar calculando nuevos primos?%n");
+				calcMorePrimesFor(sc.nextInt());
+			case 5:
+				System.out.printf("%nGuardando...%n");
+				exportPrimes();
+				System.out.println("\n¡Guardado!");
+				break;
+			case 4:
 				for (Long primo : primos)
 					System.out.print(primo + ", ");
 				System.out.println();
 				break;
-			case 3:
-				archivoPrimos.createNewFile();
-				FileWriter primosWriter = new FileWriter(archivoPrimos);
-				String cadenaPrimos = "";
-				for (Long primo : primos)
-					cadenaPrimos += primo + "\n";
-				primosWriter.write(cadenaPrimos);
-				primosWriter.close();
-				break;
-			case 4:
-				calcMorePrimes(50);
-				break;
-			case 5:
-
-				break;
 			case 0:
-				System.out.printf("%nAdiós%n");
+				System.out.printf("%nGuardando...%n");
+				exportPrimes();
+				System.out.println("\n¡Guardado!");
+				System.out.printf("%n%nAdiós%n");
+				break;
+			case -1:
+				System.out.printf("%n%nAdiós%n");
+				break;
+			case -42:
+				primos = new ArrayList<Long>();
+				init();
 				break;
 			default:
 				System.out.printf("%nEscoja una opción entre las disponibles.%n");
 				break;
 			}
-		} while (op != 0);
+		} while (op != 0 && op != 9);
 		sc.close();
 
 	}
 
-	private static void calcMorePrimes(int i) {
-		int objetivo = i + primos.size();
-		long max = primos.get(primos.size() - 1);
-		while (objetivo < primos.size()) {
+	private static void calcMorePrimesFor(int minutes) {
+		long n = primos.get(primos.size() - 1) + 2;
+		Date inicio = new Date();
+		long horaBucleAnterior = inicio.getTime();
+		long fin = inicio.getTime() + (minutes * 60 * 1000);
+		System.out.println("Inicio: " + inicio + "\n");
+		while (inicio.getTime() < fin) {
+			if (isPrime(n))
+				primos.add(n);
+			n += 2;
+			if (horaBucleAnterior <= inicio.getTime() - 5000) {
+				System.out.printf("\t\tTiempo restante: %d minutos y %d segundos%n" //
+						+ "\tTotal primos: %d%n" //
+						+ "\t Mayor primo: %d%n%n" //
+						, (fin - inicio.getTime()) / 60000, (fin - inicio.getTime()) / 1000, primos.size(),
+						primos.get(primos.size() - 1));
+				horaBucleAnterior = inicio.getTime();
+			}
+			inicio = new Date();
+		}
+		System.out.println("\nFin: " + new Date());
+	}
 
+	private static void exportPrimes() throws IOException {
+		archivoPrimos.createNewFile();
+		FileWriter primosWriter = new FileWriter(archivoPrimos);
+		String cadenaPrimos = "";
+		int size = primos.size();
+		int index = 0;
+
+		int contador = 1;
+		System.out.println("0%..............100%");
+		primosWriter.write(cadenaPrimos);
+		while (index < size) {
+			primosWriter.append(primos.get(index++) + "\n");
+			while ((0.05 * contador) <= (index / size)) {
+				System.out.print("■");
+				contador++;
+			}
+		}
+		while (contador <= 20) {
+			// System.out.print(contador);
+			System.out.printf("■");
+			contador++;
+		}
+
+		primosWriter.close();
+	}
+
+	private static void calcMorePrimes(int cantidad) {
+		int objetivo = cantidad + primos.size();
+		long n = primos.get(primos.size() - 1) + 2;
+
+		while (primos.size() < objetivo) {
+			if (isPrime(n) && !primos.contains(n))
+				primos.add(n);
+			n += 2;
 		}
 	}
 
@@ -96,7 +162,16 @@ public class Primator {
 			System.out.println("Algo ha ido mal.");
 			e.printStackTrace();
 		}
+		init();
+	}
 
+	private static void init() {
+		if (primos.size() < 3) {
+			long aux = 1;
+			primos.add(aux++);
+			primos.add(aux++);
+			primos.add(aux);
+		}
 	}
 
 	public static boolean isPrime(long n) {
@@ -112,20 +187,20 @@ public class Primator {
 	}
 
 	private static void loadPrimesUntil(long n) {
-		long aux = 1;
-		if (n >= aux && !primos.contains(aux))
-			primos.add(aux);
-		aux++;
-		if (n >= aux && !primos.contains(aux))
-			primos.add(aux);
-		aux++;
-		if (n >= aux && !primos.contains(aux))
-			primos.add(aux);
-		if (n >= 5)
-			for (long i = 5; i <= n; i++) {
+
+		if (n >= 5) {
+			// Por ejemplo, si el último es 3, empieza a probar el 5
+			// Si es 131, empieza por el 15
+			// De esta manera al calcular primos hasta, por ejemplo
+			// el 1000 y luego el 2000, no hace dos veces el 5 al 1000.
+			// Directamente empieza en el 997 + 2, o sea, el último primo+2
+			long i = primos.get(primos.size() - 1) + 2;
+			while (i <= n) {
 				if (isPrime(i) && !primos.contains(i))
 					primos.add(i);
+				i += 2;
 			}
+		}
 	}
 
 	// public static boolean isPrime(int n) {
