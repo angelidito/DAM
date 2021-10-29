@@ -9,9 +9,17 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Primator {
-
+	/**
+	 * 
+	 */
 	private static String rutaArchivoPrimos = "primos.txt";
+	/**
+	 * 
+	 */
 	private static File archivoPrimos = new File(rutaArchivoPrimos);
+	/**
+	 * 
+	 */
 	private static ArrayList<Long> primos = new ArrayList<Long>();
 
 	public static void main(String[] args) throws Exception {
@@ -82,6 +90,58 @@ public class Primator {
 
 	}
 
+	/**
+	 * 
+	 */
+	private static void exportPrimes() {
+		FileWriter primosWriter;
+		try {
+			archivoPrimos.createNewFile();
+		} catch (IOException e) {
+			System.err.printf("Error al crear el archivo %s", archivoPrimos.getAbsolutePath());
+		}
+		try {
+			primosWriter = new FileWriter(archivoPrimos);
+
+			String cadenaPrimos = "";
+			int size = primos.size();
+			int index = 0;
+
+			int contador = 1;
+			System.out.println("0%..............100%");
+			primosWriter.write(cadenaPrimos);
+
+			while (index < size) {
+				primosWriter.append(primos.get(index++) + "\n");
+				while ((0.05 * contador) <= (index / size)) {
+					System.out.print("■");
+					contador++;
+				}
+				primosWriter.close();
+			}
+		while (contador <= 20) {
+			// System.out.print(contador);
+			System.out.printf("■");
+			contador++;
+		}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	private static void init() {
+		if (primos.size() < 3) {
+			long aux = 1;
+			primos.add(aux++);
+			primos.add(aux++);
+			primos.add(aux);
+		}
+	}
+
+	/**
+	 * @param minutes
+	 */
 	private static void calcMorePrimesFor(int minutes) {
 		long n = primos.get(primos.size() - 1) + 2;
 		Date inicio = new Date();
@@ -105,40 +165,30 @@ public class Primator {
 		System.out.println("\nFin: " + new Date());
 	}
 
-	private static void exportPrimes() throws IOException {
-		archivoPrimos.createNewFile();
-		FileWriter primosWriter = new FileWriter(archivoPrimos);
-		String cadenaPrimos = "";
-		int size = primos.size();
-		int index = 0;
-
-		int contador = 1;
-		System.out.println("0%..............100%");
-		primosWriter.write(cadenaPrimos);
-		while (index < size) {
-			primosWriter.append(primos.get(index++) + "\n");
-			while ((0.05 * contador) <= (index / size)) {
-				System.out.print("■");
-				contador++;
-			}
-		}
-		while (contador <= 20) {
-			// System.out.print(contador);
-			System.out.printf("■");
-			contador++;
-		}
-
-		primosWriter.close();
-	}
-
+	/**
+	 * @param cantidad
+	 */
 	private static void calcMorePrimes(int cantidad) {
 		int objetivo = cantidad + primos.size();
 		long n = primos.get(primos.size() - 1) + 2;
+		Date inicio = new Date();
+		long horaBucleAnterior = inicio.getTime();
 
 		while (primos.size() < objetivo) {
 			if (isPrime(n) && !primos.contains(n))
 				primos.add(n);
 			n += 2;
+			if (horaBucleAnterior <= inicio.getTime() - 5000) {
+				System.out.printf("\t\tPrimos por hallar: %d%n" //
+						+ "\tTotal primos: %d%n" //
+						+ "\t Mayor primo: %d%n%n" //
+						, //
+						objetivo - primos.size(), //
+						primos.size(), //
+						primos.get(primos.size() - 1));
+				horaBucleAnterior = inicio.getTime();
+			}
+			inicio = new Date();
 		}
 	}
 
@@ -165,15 +215,10 @@ public class Primator {
 		init();
 	}
 
-	private static void init() {
-		if (primos.size() < 3) {
-			long aux = 1;
-			primos.add(aux++);
-			primos.add(aux++);
-			primos.add(aux);
-		}
-	}
-
+	/**
+	 * @param n
+	 * @return boolean
+	 */
 	public static boolean isPrime(long n) {
 		if (n < 1)
 			return false;
@@ -186,6 +231,9 @@ public class Primator {
 		return true;
 	}
 
+	/**
+	 * @param n
+	 */
 	private static void loadPrimesUntil(long n) {
 
 		if (n >= 5) {
@@ -203,19 +251,10 @@ public class Primator {
 		}
 	}
 
-	// public static boolean isPrime(int n) {
-	// if (n < 1)
-	// return false;
-	// if (n < 3)
-	// return true;
-	// if (n % 2 == 0)
-	// return false;
-	// for (int i = 1; i < n / 2; i += 2)
-	// if (n % i == 0)
-	// return false;
-	// return true;
-	// }
-
+	/**
+	 * @param n
+	 * @return boolean
+	 */
 	public static boolean isPrimeBad(long n) {
 		if (n < 1)
 			return false;

@@ -5,17 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.mjpg.userssp.databinding.ItemUsersAltBinding
 
 
-class UsuarioAdapter(private val usuarios: List<Usuario>) :
+class UsuarioAdapter(private val usuarios: List<Usuario>, private val listener: EventosListener) :
     RecyclerView.Adapter<UsuarioAdapter.ViewHolder>() {
 
     private lateinit var context: Context
 
-    inner class ViewHolder(view: View):RecyclerView.ViewHolder(view) {
-        val binding = ItemUsersAltBinding.bind(view)
-    }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         this.context = parent.context
@@ -26,8 +26,31 @@ class UsuarioAdapter(private val usuarios: List<Usuario>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val usuario = usuarios.get(position)
         holder.binding.tvName.text = usuario.personalizado()
+        with(holder) {
+            setListener(usuario, position)
+            binding.tvName.text = usuario.personalizado()
+            binding.tvOrder.text = (position + 1).toString()
+            Glide.with(context)
+                .load(usuario.url)
+                .centerCrop()
+                .circleCrop()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(holder.binding.imgPhoto)
+        }
+
     }
 
     override fun getItemCount(): Int = usuarios.size
 
+
+
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val binding = ItemUsersAltBinding.bind(view)
+
+        fun setListener(usuario: Usuario, posicion: Int) {
+            binding.root.setOnClickListener {
+                listener.onClickListener(usuario, posicion)
+            }
+        }
+    }
 }
