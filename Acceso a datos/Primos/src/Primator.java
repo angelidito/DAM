@@ -22,7 +22,7 @@ public class Primator {
 	 */
 	private static ArrayList<Long> primos = new ArrayList<Long>();
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args)  {
 		int op;
 		Scanner sc = new Scanner(System.in);
 		updatePrimosFromFile();
@@ -39,7 +39,8 @@ public class Primator {
 					+ "\t  2. Calcular los X primos siguientes%n" //
 					+ "\t  3. Calcular primos durante X minutos%n" //
 					+ "\t  4. Mostrar primos%n" //
-					+ "\t  5. Guardar%n" //
+					+ "\t  5. Tests velocidad%n" //
+					+ "\t  6. Guardar%n" //
 					+ "\t  0. Guardar y salir%n" //
 					+ "\t -1. Salir sin guardar%n" //
 					+ "\t-42. Borrar datos%n" //
@@ -58,7 +59,7 @@ public class Primator {
 			case 3:
 				System.out.printf("¿Cuántos minutos quieres estar calculando nuevos primos?%n");
 				calcMorePrimesFor(sc.nextInt());
-			case 5:
+			case 6: 
 				System.out.printf("%nGuardando...%n");
 				exportPrimes();
 				System.out.println("\n¡Guardado!");
@@ -68,6 +69,9 @@ public class Primator {
 					System.out.print(primo + ", ");
 				System.out.println();
 				break;
+				case 5:
+				System.out.printf("¿Hasta qué número quieres calcular los primos?%n");
+				testVelocidad(sc.nextInt());
 			case 0:
 				System.out.printf("%nGuardando...%n");
 				exportPrimes();
