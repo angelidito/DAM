@@ -17,10 +17,9 @@ public class App {
 		// System.out.println(linea);
 		// for (String linea : lista2)
 		// System.out.println(linea);
-
+		boolean castellana;
 		for (String ciudadEsp : lista2) {
-			boolean castellana = false;
-
+			castellana = false;
 			for (String ciudadCyL : lista1)
 				if (ciudadCyL.compareTo(ciudadEsp) == 0)
 					castellana= true;
