@@ -22,7 +22,8 @@ public class Primator {
 	 */
 	private static ArrayList<Long> primos = new ArrayList<Long>();
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) {
+
 		int op;
 		Scanner sc = new Scanner(System.in);
 		updatePrimosFromFile();
@@ -59,7 +60,7 @@ public class Primator {
 			case 3:
 				System.out.printf("¿Cuántos minutos quieres estar calculando nuevos primos?%n");
 				calcMorePrimesFor(sc.nextInt());
-			case 6: 
+			case 6:
 				System.out.printf("%nGuardando...%n");
 				exportPrimes();
 				System.out.println("\n¡Guardado!");
@@ -69,17 +70,20 @@ public class Primator {
 					System.out.print(primo + ", ");
 				System.out.println();
 				break;
-				case 5:
-				System.out.printf("¿Hasta qué número quieres calcular los primos?%n");
+			case 5:
+				System.out.printf("%n¡TEST DE VELOCIDAD!%n%n¿Hasta qué número quieres calcular los primos?%n");
 				testVelocidad(sc.nextInt());
+				// System.out.printf("%nPresiona Enter para continuar...");
+				// sc.nextLine();
+				break;
 			case 0:
 				System.out.printf("%nGuardando...%n");
 				exportPrimes();
 				System.out.println("\n¡Guardado!");
-				System.out.printf("%n%nAdiós%n");
+				System.out.printf("%n%nAdiós%n%n");
 				break;
 			case -1:
-				System.out.printf("%n%nAdiós%n");
+				System.out.printf("%n%nAdiós%n%n");
 				break;
 			case -42:
 				primos = new ArrayList<Long>();
@@ -89,8 +93,57 @@ public class Primator {
 				System.out.printf("%nEscoja una opción entre las disponibles.%n");
 				break;
 			}
-		} while (op != 0 && op != 9);
+		} while (op != 0 && op != -1);
 		sc.close();
+
+	}
+
+	private static void testVelocidad(int n) {
+
+		String txt = "Eficiente: ";
+		Date inicioEficiente;
+		Date finEficiente;
+		Date inicioIneficiente;
+		Date finIneficiente;
+
+		inicioEficiente = new Date();
+		for (long i = 1; i <= n; i++) {
+
+			if (isPrime(i)) {
+				txt += i + ", ";
+				// OJO: COMENTO ESTAS DOS LINEAS PORQUE CUENTO CON
+				// QUE YA ESTÁ CARGADO EL ARRAYLIST DE PRIMOS Y NO TENEMOS
+				// QUE AÑADIR NINGUNO.
+				// SI NOS PRONEMOS A HACER EL CONTAINS EN EL TEST DE
+				// VELOCIDAD, VA MÁS LENTO.
+				// LOS PRIMOS SE CARGAN AL ARRAYLIST CON LAS OTRAS OPCIONES DEL MENÚ
+				// if (!primos.contains(i))
+				// primos.add(i);
+			}
+		}
+		finEficiente = new Date();
+
+		txt += "\nIneficiente: ";
+
+		inicioIneficiente = new Date();
+		for (long i = 1; i <= n; i++) {
+
+			if (isPrimeIneficiente(i))
+				txt += i + ", ";
+		}
+		finIneficiente = new Date();
+
+		System.out.println(txt);
+		System.out.println();
+
+		System.out.println("Método eficiente.");
+		System.out.println("        Inicio: " + inicioEficiente);
+		System.out.println("           Fin: " + finEficiente);
+		System.out.println("  Tiempo total: " + (finEficiente.getTime() - inicioEficiente.getTime()) + "ms");
+		System.out.println("\nMétodo ineficiente.");
+		System.out.println("        Inicio: " + inicioIneficiente);
+		System.out.println("           Fin: " + finIneficiente);
+		System.out.println("  Tiempo total: " + (finIneficiente.getTime() - inicioIneficiente.getTime()) + "ms");
 
 	}
 
@@ -123,11 +176,11 @@ public class Primator {
 				}
 				primosWriter.close();
 			}
-		while (contador <= 20) {
-			// System.out.print(contador);
-			System.out.printf("■");
-			contador++;
-		}
+			while (contador <= 20) {
+				// System.out.print(contador);
+				System.out.printf("■");
+				contador++;
+			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -157,9 +210,9 @@ public class Primator {
 				primos.add(n);
 			n += 2;
 			if (horaBucleAnterior <= inicio.getTime() - 5000) {
-				System.out.printf("\t\tTiempo restante: %d minutos y %d segundos%n" //
-						+ "\tTotal primos: %d%n" //
-						+ "\t Mayor primo: %d%n%n" //
+				System.out.printf("\tTiempo restante: %d minutos y %d segundos%n" //
+						+ "\t   Total primos: %d%n" //
+						+ "\t    Mayor primo: %d%n%n" //
 						, (fin - inicio.getTime()) / 60000, (fin - inicio.getTime()) / 1000, primos.size(),
 						primos.get(primos.size() - 1));
 				horaBucleAnterior = inicio.getTime();
@@ -183,9 +236,9 @@ public class Primator {
 				primos.add(n);
 			n += 2;
 			if (horaBucleAnterior <= inicio.getTime() - 5000) {
-				System.out.printf("\t\tPrimos por hallar: %d%n" //
-						+ "\tTotal primos: %d%n" //
-						+ "\t Mayor primo: %d%n%n" //
+				System.out.printf("\tPrimos por hallar: %d%n" //
+						+ "\t     Total primos: %d%n" //
+						+ "\t      Mayor primo: %d%n%n" //
 						, //
 						objetivo - primos.size(), //
 						primos.size(), //
@@ -259,14 +312,14 @@ public class Primator {
 	 * @param n
 	 * @return boolean
 	 */
-	public static boolean isPrimeBad(long n) {
+	private static boolean isPrimeIneficiente(long n) {
 		if (n < 1)
 			return false;
 		if (n < 3)
 			return true;
 		if (n % 2 == 0)
 			return false;
-		for (long i = 1; i < n / 2; i += 2)
+		for (long i = 3; i < n / 2; i += 2)
 			if (n % i == 0)
 				return false;
 		return true;
