@@ -6,10 +6,10 @@ public class Orden {
 
 	public static void main(String[] args) {
 		Semaphore semaphore = new Semaphore(0);
-		Saludo t1 = new Saludo(1, semaphore);
 		Saludo t2 = new Saludo(2, semaphore);
-		t1.start();
+		Saludo t1 = new Saludo(1, semaphore);
 		t2.start();
+		t1.start();
 		try {
 			t1.join();
 			t2.join();
