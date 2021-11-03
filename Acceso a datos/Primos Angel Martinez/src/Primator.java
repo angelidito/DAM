@@ -10,94 +10,123 @@ import java.util.Scanner;
 
 public class Primator {
 	/**
-	 * 
+	 * Ruta relativa del fichero donde se van a escribir los primos calculados
 	 */
 	private static String rutaArchivoPrimos = "primos.txt";
 	/**
-	 * 
+	 * Fichero que donde se escriben los primos calculados
 	 */
 	private static File archivoPrimos = new File(rutaArchivoPrimos);
 	/**
-	 * 
+	 * Lista de primos calculados
 	 */
 	private static ArrayList<Long> primos = new ArrayList<Long>();
 
-	public static void main(String[] args) {
+	/**
+	 * Para la entradad de datos por consola
+	 */
+	private static Scanner read;
 
+	/**
+	 * Programa principal.
+	 * 
+	 * Dispone de un menú con múltiples opciones.
+	 * 
+	 * @param args not used
+	 */
+	public static void main(String[] args) {
 		int op;
-		Scanner sc = new Scanner(System.in);
+
 		updatePrimosFromFile();
+		read = new Scanner(System.in);
 		do {
-			// System.out.printf("%nEscoja una opcion:" + "%n\t1. Mostrar primos del uno al
-			// 1000."
-			// + "%n\t2. Escoger hasta qué nº mostrar los primos." + "%n\t3. Comprobar si un
-			// nº es primo."
-			// + "%n\t0. Salir del programa.%n");
-			System.out.printf("%nActualmente hay %d primos calculados.%n" //
-					+ "El mayor primo es el %s.%n" //
-					+ "Escoja una opcion:%n" //
-					+ "\t  1. Calcular primos hasta un nº%n" //
+			System.out.printf("%n%n¡Primator!%n%n" //
+					+ "    Primos calculados: %d.%n" //
+					+ "          Primo mayor: %s.%n%n" //
+					+ "Escoja una opción:%n" //
+					+ "\t  1. Calcular primos hasta un nº X%n" //
 					+ "\t  2. Calcular los X primos siguientes%n" //
 					+ "\t  3. Calcular primos durante X minutos%n" //
-					+ "\t  4. Mostrar primos%n" //
+					+ "\t  4. Mostrar primos (atención, si hay muchos puede tardar)%n" //
 					+ "\t  5. Tests velocidad%n" //
-					+ "\t  6. Guardar%n" //
+					+ "\t  6. Comprobar si un nº es primo%n" //
+					+ "\t  7. Guardar%n" //
 					+ "\t  0. Guardar y salir%n" //
 					+ "\t -1. Salir sin guardar%n" //
 					+ "\t-42. Borrar datos%n" //
 					, primos.size(), primos.size() == 0 ? "NoData" : primos.get(primos.size() - 1).toString(),
 					rutaArchivoPrimos);
-			op = sc.nextInt();
-			switch (op) {
-			case 1:
-				System.out.printf("¿Hasta qué número quieres calcular los primos?%n");
-				loadPrimesUntil(sc.nextInt());
-				break;
-			case 2:
-				System.out.printf("¿Cuántos primos más quieres calcular?%n");
-				calcMorePrimes(sc.nextInt());
-				break;
-			case 3:
-				System.out.printf("¿Cuántos minutos quieres estar calculando nuevos primos?%n");
-				calcMorePrimesFor(sc.nextInt());
-			case 6:
-				System.out.printf("%nGuardando...%n");
-				exportPrimes();
-				System.out.println("\n¡Guardado!");
-				break;
-			case 4:
-				for (Long primo : primos)
-					System.out.print(primo + ", ");
-				System.out.println();
-				break;
-			case 5:
-				System.out.printf("%n¡TEST DE VELOCIDAD!%n%n¿Hasta qué número quieres calcular los primos?%n");
-				testVelocidad(sc.nextInt());
-				// System.out.printf("%nPresiona Enter para continuar...");
-				// sc.nextLine();
-				break;
-			case 0:
-				System.out.printf("%nGuardando...%n");
-				exportPrimes();
-				System.out.println("\n¡Guardado!");
-				System.out.printf("%n%nAdiós%n%n");
-				break;
-			case -1:
-				System.out.printf("%n%nAdiós%n%n");
-				break;
-			case -42:
-				primos = new ArrayList<Long>();
-				init();
-				break;
-			default:
-				System.out.printf("%nEscoja una opción entre las disponibles.%n");
-				break;
-			}
+			op = switchMenu();
 		} while (op != 0 && op != -1);
-		sc.close();
 
 	}
 
+	/**
+	 * Pide por teclado una opción y ejecuta el case corespondiente del switch.
+	 * 
+	 * @return La opción introducida por teclado
+	 */
+	private static int switchMenu() {
+		int op;
+
+		System.out.print("Mi opción: ");
+		op = read.nextInt();
+		switch (op) {
+		case 1:
+			System.out.printf("¿Hasta qué número quieres calcular los primos?%n");
+			loadPrimesUntil(read.nextInt());
+			break;
+		case 2:
+			System.out.printf("¿Cuántos primos más quieres calcular?%n");
+			calcMorePrimes(read.nextInt());
+			break;
+		case 3: // case 3 ejecuta también case 6
+			System.out.printf("¿Cuántos minutos quieres estar calculando nuevos primos?%n");
+			calcMorePrimesFor(read.nextInt());
+			// exportPrimes();
+			// break;
+		case 6:
+			System.out.printf("%nGuardando...%n");
+			exportPrimes();
+			System.out.println("\n¡Guardado!");
+			break;
+		case 4:
+			for (Long primo : primos)
+				System.out.print(primo + ", ");
+			System.out.println();
+			break;
+		case 5:
+			System.out.printf("%n¡TEST DE VELOCIDAD!%n%n¿Hasta qué número quieres calcular los primos?%n");
+			testVelocidad(read.nextInt());
+			break;
+		case -42:
+			primos = new ArrayList<Long>();
+			init();
+			break;
+		case 0: // case 0 ejecuta también case -1
+			System.out.printf("%nGuardando...%n");
+			exportPrimes();
+			System.out.println("\n¡Guardado!");
+		case -1:
+			System.out.printf("%n%nAdiós%n%n");
+			read.close();
+			break;
+		default:
+			System.out.printf("%nEscoja una opción entre las disponibles.%n");
+			break;
+		}
+		return op;
+	}
+
+	/**
+	 * Test de velocidad de dos algoritmos diferentes.
+	 * 
+	 * Imprime dos veces por consola los primos del 1 al primo más alto menor o
+	 * igual que el parámetro n. Muestra también por consola el tiempo que ha
+	 * tardado cada algoritmo en hacerlo.
+	 * 
+	 * @param n Número hasta el que comprobar si son o no primos.
+	 */
 	private static void testVelocidad(int n) {
 
 		String txt = "Eficiente: ";
@@ -111,14 +140,8 @@ public class Primator {
 
 			if (isPrime(i)) {
 				txt += i + ", ";
-				// OJO: COMENTO ESTAS DOS LINEAS PORQUE CUENTO CON
-				// QUE YA ESTÁ CARGADO EL ARRAYLIST DE PRIMOS Y NO TENEMOS
-				// QUE AÑADIR NINGUNO.
-				// SI NOS PRONEMOS A HACER EL CONTAINS EN EL TEST DE
-				// VELOCIDAD, VA MÁS LENTO.
-				// LOS PRIMOS SE CARGAN AL ARRAYLIST CON LAS OTRAS OPCIONES DEL MENÚ
-				// if (!primos.contains(i))
-				// primos.add(i);
+				if (i > primos.get(primos.size() - 1))
+					primos.add(i);
 			}
 		}
 		finEficiente = new Date();
@@ -174,8 +197,8 @@ public class Primator {
 					System.out.print("■");
 					contador++;
 				}
-				primosWriter.close();
 			}
+			primosWriter.close();
 			while (contador <= 20) {
 				// System.out.print(contador);
 				System.out.printf("■");
@@ -204,17 +227,19 @@ public class Primator {
 		Date inicio = new Date();
 		long horaBucleAnterior = inicio.getTime();
 		long fin = inicio.getTime() + (minutes * 60 * 1000);
-		System.out.println("Inicio: " + inicio + "\n");
+		System.out.println("Inicio: " + inicio);
 		while (inicio.getTime() < fin) {
 			if (isPrime(n))
 				primos.add(n);
 			n += 2;
 			if (horaBucleAnterior <= inicio.getTime() - 5000) {
-				System.out.printf("\tTiempo restante: %d minutos y %d segundos%n" //
+				long minutosRestantes = (fin - inicio.getTime()) / 60000;
+				long segundosRestantes = (fin - inicio.getTime()) / 1000 - minutosRestantes * 60;
+
+				System.out.printf("%n%n\tTiempo restante: %d minutos y %d segundos%n" //
 						+ "\t   Total primos: %d%n" //
-						+ "\t    Mayor primo: %d%n%n" //
-						, (fin - inicio.getTime()) / 60000, (fin - inicio.getTime()) / 1000, primos.size(),
-						primos.get(primos.size() - 1));
+						+ "\t    Mayor primo: %d" //
+						, minutosRestantes, segundosRestantes, primos.size(), primos.get(primos.size() - 1));
 				horaBucleAnterior = inicio.getTime();
 			}
 			inicio = new Date();
@@ -231,14 +256,16 @@ public class Primator {
 		Date inicio = new Date();
 		long horaBucleAnterior = inicio.getTime();
 
+		System.out.println("Inicio: " + inicio);
+
 		while (primos.size() < objetivo) {
-			if (isPrime(n) && !primos.contains(n))
+			if (isPrime(n) && n > primos.get(primos.size() - 1))
 				primos.add(n);
 			n += 2;
 			if (horaBucleAnterior <= inicio.getTime() - 5000) {
-				System.out.printf("\tPrimos por hallar: %d%n" //
+				System.out.printf("%n%n\tPrimos por hallar: %d%n" //
 						+ "\t     Total primos: %d%n" //
-						+ "\t      Mayor primo: %d%n%n" //
+						+ "\t      Mayor primo: %d" //
 						, //
 						objetivo - primos.size(), //
 						primos.size(), //
@@ -247,6 +274,8 @@ public class Primator {
 			}
 			inicio = new Date();
 		}
+		System.out.println("\nFin: " + new Date());
+
 	}
 
 	private static void updatePrimosFromFile() {
@@ -301,7 +330,7 @@ public class Primator {
 			// Directamente empieza en el 997 + 2, o sea, el último primo+2
 			long i = primos.get(primos.size() - 1) + 2;
 			while (i <= n) {
-				if (isPrime(i) && !primos.contains(i))
+				if (isPrime(i) && i > primos.get(primos.size() - 1))
 					primos.add(i);
 				i += 2;
 			}
