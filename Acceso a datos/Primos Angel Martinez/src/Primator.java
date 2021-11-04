@@ -49,8 +49,7 @@ public class Primator {
 					+ "\t  3. Calcular primos durante X minutos%n" //
 					+ "\t  4. Mostrar primos (atención, si hay muchos puede tardar)%n" //
 					+ "\t  5. Tests velocidad%n" //
-					+ "\t  6. Comprobar si un nº es primo%n" //
-					+ "\t  7. Guardar%n" //
+					+ "\t  6. Guardar%n" //
 					+ "\t  0. Guardar y salir%n" //
 					+ "\t -1. Salir sin guardar%n" //
 					+ "\t-42. Borrar datos%n" //
@@ -84,7 +83,7 @@ public class Primator {
 			System.out.printf("¿Cuántos minutos quieres estar calculando nuevos primos?%n");
 			calcMorePrimesFor(read.nextInt());
 			// exportPrimes();
-			// break;
+			break;
 		case 6:
 			System.out.printf("%nGuardando...%n");
 			exportPrimes();
@@ -97,17 +96,17 @@ public class Primator {
 			break;
 		case 5:
 			System.out.printf("%n¡TEST DE VELOCIDAD!%n%n¿Hasta qué número quieres calcular los primos?%n");
-			testVelocidad(read.nextInt());
+			testVelocidad(read.nextInt(), false);
 			break;
 		case -42:
 			primos = new ArrayList<Long>();
 			init();
 			break;
-		case 0: // case 0 ejecuta también case -1
+		case 0: // Guardar
 			System.out.printf("%nGuardando...%n");
 			exportPrimes();
 			System.out.println("\n¡Guardado!");
-		case -1:
+		case -1: // y salir
 			System.out.printf("%n%nAdiós%n%n");
 			read.close();
 			break;
@@ -122,12 +121,13 @@ public class Primator {
 	 * Test de velocidad de dos algoritmos diferentes.
 	 * 
 	 * Imprime dos veces por consola los primos del 1 al primo más alto menor o
-	 * igual que el parámetro n. Muestra también por consola el tiempo que ha
-	 * tardado cada algoritmo en hacerlo.
+	 * igual que el parámetro n, si así se desea. Muestra también por consola el
+	 * tiempo que ha tardado cada algoritmo en hacerlo.
 	 * 
-	 * @param n Número hasta el que comprobar si son o no primos.
+	 * @param n           Número hasta el que comprobar si son o no primos.
+	 * @param printPrimes Si se desea mostrar los primos por consola o no.
 	 */
-	private static void testVelocidad(int n) {
+	private static void testVelocidad(int n, boolean printPrimes) {
 
 		String txt = "Eficiente: ";
 		Date inicioEficiente;
@@ -155,8 +155,8 @@ public class Primator {
 				txt += i + ", ";
 		}
 		finIneficiente = new Date();
-
-		System.out.println(txt);
+		if (printPrimes)
+			System.out.println(txt);
 		System.out.println();
 
 		System.out.println("Método eficiente.");
@@ -171,6 +171,13 @@ public class Primator {
 	}
 
 	/**
+	 * Escribe los datos del arraylist de primos en un archivo.
+	 * 
+	 * La ruta del archivo se corresponde al atributo rutaArchivoPrimos de esta
+	 * clase.
+	 * 
+	 * Imprime por pantalla le proceso, pero al ser tan rápido, no se aprecia el
+	 * avance gradual.
 	 * 
 	 */
 	private static void exportPrimes() {
@@ -210,28 +217,36 @@ public class Primator {
 
 	}
 
+	/**
+	 * Inicializa el arraylist de primos si no tiene los tres primeros.
+	 */
 	private static void init() {
-		if (primos.size() < 3) {
-			long aux = 1;
-			primos.add(aux++);
-			primos.add(aux++);
+		long aux = 1;
+		if (primos.size() < 1)
 			primos.add(aux);
-		}
+		aux = 2;
+		if (primos.size() < 2)
+			primos.add(aux);
+		aux = 3;
+		if (primos.size() < 3)
+			primos.add(aux);
 	}
 
 	/**
-	 * @param minutes
+	 * Calcula primos durante los minutos especificados.
+	 * 
+	 * @param minutes Minutos durnate los que estar calculando primos.
 	 */
 	private static void calcMorePrimesFor(int minutes) {
-		long n = primos.get(primos.size() - 1) + 2;
+		long prosiblePrimo = primos.get(primos.size() - 1) + 2;
 		Date inicio = new Date();
 		long horaBucleAnterior = inicio.getTime();
 		long fin = inicio.getTime() + (minutes * 60 * 1000);
 		System.out.println("Inicio: " + inicio);
 		while (inicio.getTime() < fin) {
-			if (isPrime(n))
-				primos.add(n);
-			n += 2;
+			if (isPrime(prosiblePrimo))
+				primos.add(prosiblePrimo);
+			prosiblePrimo += 2;
 			if (horaBucleAnterior <= inicio.getTime() - 5000) {
 				long minutosRestantes = (fin - inicio.getTime()) / 60000;
 				long segundosRestantes = (fin - inicio.getTime()) / 1000 - minutosRestantes * 60;
@@ -247,21 +262,44 @@ public class Primator {
 		System.out.println("\nFin: " + new Date());
 	}
 
+	// private static void add(long primo, boolean appendToFile) {
+	// primos.add(primo);
+	// if (appendToFile && false) {
+	// FileWriter primosWriter;
+	// if (!archivoPrimos.exists())
+	// try {
+	// archivoPrimos.createNewFile();
+	// } catch (IOException e) {
+	// System.err.printf("Error al crear el archivo %s",
+	// archivoPrimos.getAbsolutePath());
+	// }
+	// try {
+	// primosWriter = new FileWriter(archivoPrimos);
+	// primosWriter.append(primo + "\n");
+	// primosWriter.close();
+	// } catch (IOException e) {
+	// e.printStackTrace();
+	// }
+	// }
+	// }
+
 	/**
-	 * @param cantidad
+	 * Calcula la cantidad de primos especificados. 
+	 * 
+	 * @param cantidad Cantidad de primos a calcular
 	 */
 	private static void calcMorePrimes(int cantidad) {
 		int objetivo = cantidad + primos.size();
-		long n = primos.get(primos.size() - 1) + 2;
+		long prosiblePrimo = primos.get(primos.size() - 1) + 2;
 		Date inicio = new Date();
 		long horaBucleAnterior = inicio.getTime();
 
 		System.out.println("Inicio: " + inicio);
 
 		while (primos.size() < objetivo) {
-			if (isPrime(n) && n > primos.get(primos.size() - 1))
-				primos.add(n);
-			n += 2;
+			if (isPrime(prosiblePrimo) && prosiblePrimo > primos.get(primos.size() - 1))
+				primos.add(prosiblePrimo);
+			prosiblePrimo += 2;
 			if (horaBucleAnterior <= inicio.getTime() - 5000) {
 				System.out.printf("%n%n\tPrimos por hallar: %d%n" //
 						+ "\t     Total primos: %d%n" //
@@ -278,6 +316,9 @@ public class Primator {
 
 	}
 
+	/**
+	 * Carga los datos del archivo de primos al arraylist.
+	 */
 	private static void updatePrimosFromFile() {
 		if (!archivoPrimos.exists())
 			return;
@@ -302,8 +343,12 @@ public class Primator {
 	}
 
 	/**
-	 * @param n
-	 * @return boolean
+	 * Comprueba si un número es primo. 
+	 * 
+	 * Es la versión eficiente
+	 * 
+	 * @param n Número a comprobar
+	 * @return boolean true si es primo; false si no lo es.
 	 */
 	public static boolean isPrime(long n) {
 		if (n < 1)
@@ -318,7 +363,9 @@ public class Primator {
 	}
 
 	/**
-	 * @param n
+	 * Calcula primos hasta el número especificado. 
+	 * 
+	 * @param n Número máximo a comprobar si es primo.
 	 */
 	private static void loadPrimesUntil(long n) {
 
@@ -338,8 +385,12 @@ public class Primator {
 	}
 
 	/**
-	 * @param n
-	 * @return boolean
+	 * Comprueba si un número es primo. 
+	 * 
+	 * Es la versión no tan eficiente
+	 * 
+	 * @param n Número a comprobar
+	 * @return boolean true si es primo; false si no lo es.
 	 */
 	private static boolean isPrimeIneficiente(long n) {
 		if (n < 1)
