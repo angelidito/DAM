@@ -10,7 +10,10 @@
 		android:supportsRtl="true"
 		android:theme="@style/Theme.1BlackFriday">
 		<activity
-			android:name="com.ammd.blackfriday.MainActivity"
+			android:name=".ProductoActivity"
+			android:exported="true" />
+		<activity
+			android:name=".MainActivity"
 			android:exported="true">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />

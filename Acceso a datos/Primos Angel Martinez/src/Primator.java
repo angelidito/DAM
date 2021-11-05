@@ -41,8 +41,8 @@ public class Primator {
 		read = new Scanner(System.in);
 		do {
 			System.out.printf("%n%n¡Primator!%n%n" //
-					+ "    Primos calculados: %d.%n" //
-					+ "          Primo mayor: %s.%n%n" //
+					+ "    Primos calculados: %d%n" //
+					+ "          Primo mayor: %s%n%n" //
 					+ "Escoja una opción:%n" //
 					+ "\t  1. Calcular primos hasta un nº X%n" //
 					+ "\t  2. Calcular los X primos siguientes%n" //
@@ -284,7 +284,7 @@ public class Primator {
 	// }
 
 	/**
-	 * Calcula la cantidad de primos especificados. 
+	 * Calcula la cantidad de primos especificados.
 	 * 
 	 * @param cantidad Cantidad de primos a calcular
 	 */
@@ -343,7 +343,7 @@ public class Primator {
 	}
 
 	/**
-	 * Comprueba si un número es primo. 
+	 * Comprueba si un número es primo.
 	 * 
 	 * Es la versión eficiente
 	 * 
@@ -363,7 +363,7 @@ public class Primator {
 	}
 
 	/**
-	 * Calcula primos hasta el número especificado. 
+	 * Calcula primos hasta el número especificado.
 	 * 
 	 * @param n Número máximo a comprobar si es primo.
 	 */
@@ -376,16 +376,36 @@ public class Primator {
 			// el 1000 y luego el 2000, no hace dos veces el 5 al 1000.
 			// Directamente empieza en el 997 + 2, o sea, el último primo+2
 			long i = primos.get(primos.size() - 1) + 2;
+			Date inicio = new Date();
+			long horaBucleAnterior = inicio.getTime();
+
+			System.out.println("Inicio: " + inicio);
 			while (i <= n) {
 				if (isPrime(i) && i > primos.get(primos.size() - 1))
 					primos.add(i);
 				i += 2;
+				if (horaBucleAnterior <= inicio.getTime() - 5000) {
+					System.out.printf("%n%n\t         Objetivo: %d%n" //
+							+ "\tComprobando el nº: %d%n" //
+							+ "\tNúmeros restantes: %d%n" //
+							+ "\t     Total primos: %d%n" //
+							+ "\t      Mayor primo: %d" //
+							, //
+							n, i, //
+							n - i, //
+							primos.size(), //
+							primos.get(primos.size() - 1));
+					horaBucleAnterior = inicio.getTime();
+				}
+				inicio = new Date();
 			}
+			System.out.println("\nFin: " + new Date());
+
 		}
 	}
 
 	/**
-	 * Comprueba si un número es primo. 
+	 * Comprueba si un número es primo.
 	 * 
 	 * Es la versión no tan eficiente
 	 * 
