@@ -1,0 +1,32 @@
+<monumentos_soria>
+	<monumento>
+		<nombre restaurado="si">Erminta de San Saturio</nombre>
+		<entrada>no</entrada>
+		<aforo>40</aforo>
+	</monumento>
+	<monumento>
+		<nombre restaurado="si">Monasterio de San Juan de Duero</nombre>
+		<entrada>si</entrada>
+		<aforo>80</aforo>
+	</monumento>
+	<monumento>
+		<nombre restaurado="no">Monte Valonsadero</nombre>
+		<entrada>no</entrada>
+		<aforo>1000</aforo>
+	</monumento>
+	<monumento>
+		<nombre restaurado="no">Iglesia de Santo Domingo</nombre>
+		<entrada>si</entrada>
+		<aforo>90</aforo>
+	</monumento>
+	<monumento>
+		<nombre restaurado="no">Museo Numantino</nombre>
+		<entrada>si</entrada>
+		<aforo>75</aforo>
+	</monumento>
+	<monumento>
+		<nombre restaurado="si">Iglesa de San Juan de Rabanera</nombre>
+		<entrada>son</entrada>
+		<aforo>35</aforo>
+	</monumento>
+</monumentos_soria>

@@ -11,7 +11,6 @@
 
 Transacciones:
 
-MMBE	Visualizar el stock
 VA01	Crear ordenes de venta
 VA03	Visualizar documentos de ventas
 
@@ -21,6 +20,7 @@ VF01	Crear factura
 F-28	Crear entrada de pago
 
 
+MMBE	Visualizar el stock
 MMR1	Crear material (Acceso)
 ME01	Actualizar libro de pedidos: Acceso
 MM02	Modificar material (Acceso)
