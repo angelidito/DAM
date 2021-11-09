@@ -9,15 +9,15 @@ public class Check {
 		// Modificar primer parámetro entre:
 		// 0 = No usar mutex
 		// 1 = Usar mutex
-		Lector l = new Lector(1, mutex, buf);
-		Escritor e = new Escritor(1, mutex, buf);
+		Lector l = new Lector(0, mutex, buf);
+		Escritor e = new Escritor(0, mutex, buf);
 		l.start();
 		e.start();
 		try {
 			l.join();
 			e.join();
 		} catch (InterruptedException ex) {
-			System.out.println("Hilo principalinterrumpido.");
+			System.out.println("Hilo principal interrumpido.");
 		}
 		System.out.println("Proceso acabando.");
 	}
