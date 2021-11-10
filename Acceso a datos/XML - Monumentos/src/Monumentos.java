@@ -19,16 +19,20 @@ public class Monumentos {
 		NodeList nodosMonumento = root.getChildNodes();
 		for (int i = 0; i < nodosMonumento.getLength(); i++) {
 			Node nodoMonumento = nodosMonumento.item(i);
-			if (nodoMonumento.getNodeType() == Node.ELEMENT_NODE && nodoMonumento.getNodeName() == "monumento") {
-				String data[] = procesarMonumento(nodoMonumento);
+			
+			if (nodoMonumento.getNodeType() != Node.ELEMENT_NODE || nodoMonumento.getNodeName() != "monumento")
+				continue;
 
-				if (data.length == 4)
-					System.out.printf("%s:%n" //
-							+ "\t- %srestaurado%n" //
-							+ "\t- %sse puede entrar%n" //
-							+ "\t- aforo de %s personas%n%n" //
-							, data[0], data[1] != "no" ? "" : "no ", data[2] != "no" ? "" : "no ", data[3]);
-			}
+			String data[] = procesarMonumento(nodoMonumento);
+
+			if (data != null && data.length == 4)
+				System.out.printf("%s:%n" //
+						+ "\t- %s está restaurado%n" //
+						+ "\t- %s se puede entrar%n" //
+						+ "\t- aforo de %s personas%n%n" //
+						, data[0], data[1].compareTo("no") != 0 ? "sí" : "no",
+						data[2].compareTo("no") != 0 ? "sí" : "no", data[3]);
+
 		}
 
 	}
@@ -51,19 +55,28 @@ public class Monumentos {
 	private static String[] procesarMonumento(Node node) {
 		String datos[] = new String[4];
 		NodeList nList = node.getChildNodes();
+		int count = 0;
+		int n = 0;
 
-		System.out.println(nList.item(0).getNodeName());
-		System.out.println(nList.item(0).getFirstChild());
-		// System.out.println(nList.item(1).getNodeValue());
-		// System.out.println(nList.item(2).getNodeValue());
-
-		// datos[0] = nList.item(0).getFirstChild().toString();
-		// datos[1] = nList.item(0).getAttributes().item(0).getNodeValue();
-		// datos[2] = nList.item(1).getNodeValue();
-		// datos[3] = nList.item(2).getNodeValue();
-
+		while (count < 4) {
+			Node tmpNode = nList.item(n);
+			if (tmpNode.getNodeName() == "nombre") {
+				datos[0] = tmpNode.getTextContent();
+				datos[1] = tmpNode.getAttributes().item(0).getNodeValue();
+				count += 2;
+			}
+			if (tmpNode.getNodeName() == "entrada") {
+				datos[2] = tmpNode.getTextContent();
+				count++;
+			}
+			if (tmpNode.getNodeName() == "aforo") {
+				datos[3] = tmpNode.getTextContent();
+				count++;
+			}
+			n++;
+		}
 		for (int i = 0; i < datos.length; i++)
-			datos[i] = datos[i] == null ? "" : datos[i];
-		return null;
+			datos[i] = datos[i] == null ? "???" : datos[i];
+		return datos;
 	}
 }
