@@ -13,11 +13,11 @@ class Corredor extends Thread {
 	public void run() {
 		try {
 			testigo.check(id);
-			System.out.println("Soy el thread " + id + "corriendo . . .");
+			System.out.println("Soy el thread " + id + " corriendo . . .");
 			Thread.sleep((int) Math.random() * MAX_DELAY);
 			if (id != 4) {
 				int receptor = id + 1;
-				System.out.println("Terminé. Pasoel testigo al hilo " + receptor);
+				System.out.println("Terminé. Paso el testigo al hilo " + receptor);
 				testigo.next(receptor);
 			} else {
 				System.out.println("Terminé!");

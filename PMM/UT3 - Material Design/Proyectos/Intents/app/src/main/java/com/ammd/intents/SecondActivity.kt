@@ -1,8 +1,8 @@
 package com.ammd.intents
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ammd.intents.databinding.ActivityMainBinding
 import com.ammd.intents.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
@@ -23,5 +23,14 @@ class SecondActivity : AppCompatActivity() {
             R.string.msgAccept,
             usuarioRecibido?.nombre + " " + usuarioRecibido?.apellidos
         )
+        binding.btAccept.setOnClickListener {
+            val intentResult = intent
+            intentResult.putExtra("valores", binding.ratingBar.rating)
+            setResult(RESULT_OK, intentResult)
+            finish()
+        }
+        binding.btCancel.setOnClickListener {
+            setResult(RESULT_CANCELED)
+        }
     }
 }
