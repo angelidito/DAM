@@ -5,4 +5,5 @@
 /Acceso a datos/ACDB-NB/build/
 /Acceso a datos/ACDB-NB/dist/
 .DS_Store
-Acceso a datos/Primos Angel Martinez/primos.txt
+*/primos.txt
+*.class
