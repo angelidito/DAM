@@ -1,5 +1,6 @@
 package com.ammd.blackfriday
 
+import android.Manifest
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,9 @@ import com.google.android.material.snackbar.Snackbar
 import android.view.animation.CycleInterpolator
 
 import android.view.animation.TranslateAnimation
+import androidx.core.app.ActivityCompat
+import com.ammd.blackfriday.databinding.ActivityProductBinding
+import android.content.Intent as Intent
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +26,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
 
         usuarios = listOf(
             Usuario("admin", "1234"),
@@ -48,6 +54,11 @@ class MainActivity : AppCompatActivity() {
             ).show()
             binding.loginTil.error = null
             binding.passwordTil.error = null
+
+            val intent = Intent(this, ProductActivity::class.java)
+
+            startActivity(intent)
+//            binding.launch(intent)
 
         } else {
             binding.loginTil.startAnimation(shakeError())

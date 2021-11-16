@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ammd.blackfriday" >
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -14,9 +15,6 @@
             android:exported="true"
             android:label="@string/title_activity_product"
             android:theme="@style/Theme.1BlackFriday.NoActionBar" />
-        <activity
-            android:name=".ProductoActivity"
-            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" >
