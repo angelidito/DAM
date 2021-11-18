@@ -1,3 +1,3 @@
-public enum TAG {
-	LIBRO, TITULO, AUTOR;
+enum Tag {
+	LIBRO, TITULO, AUTOR, UNKNOWN;
 }

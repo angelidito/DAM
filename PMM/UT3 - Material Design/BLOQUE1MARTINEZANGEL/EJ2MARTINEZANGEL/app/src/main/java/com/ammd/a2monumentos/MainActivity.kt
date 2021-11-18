@@ -2,11 +2,21 @@ package com.ammd.a2monumentos
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.ammd.a2monumentos.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var monumentoAdaptador: MonumentoAdapter
+    private lateinit var linearLayoutManager: RecyclerView.LayoutManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
         val monumentos = listOf(
@@ -45,5 +55,9 @@ class MainActivity : AppCompatActivity() {
         )
 
 
+        monumentoAdaptador = MonumentoAdapter(monumentos)
+        linearLayoutManager = LinearLayoutManager(this)
+        binding.recyclerview.adapter = monumentoAdaptador
+        binding.recyclerview.layoutManager = linearLayoutManager
     }
 }
