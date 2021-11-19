@@ -1,12 +1,21 @@
 package com.ammd.a2monumentos
 
+import android.Manifest
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ammd.a2monumentos.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), EventosListener {
 
 
     private lateinit var binding: ActivityMainBinding
@@ -18,8 +27,16 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        monumentoAdaptador = MonumentoAdapter(getMonumentos(), this)
+        linearLayoutManager = LinearLayoutManager(this)
+        binding.recyclerview.adapter = monumentoAdaptador
+        binding.recyclerview.layoutManager = linearLayoutManager
 
-        val monumentos = listOf(
+    }
+
+
+    private fun getMonumentos(): List<Monumento> {
+        return listOf(
             Monumento(
                 "Cathedral",
                 "Plaza de Santa María",
@@ -53,11 +70,103 @@ class MainActivity : AppCompatActivity() {
                 "Hay monjes que dan miedo y asustan a los niños. En halloween se escuchan gritos que salen de su interior."
             )
         )
+    }
 
+    override fun onClickListenerCall(monumento: Monumento, posicion: Int) {
+        if (ContextCompat.checkSelfPermission(
+                this, Manifest.permission.CALL_PHONE
+            )
+            != PackageManager.PERMISSION_GRANTED
+        ) {
+            Snackbar.make(
+                binding.root,
+                "Permiso no concedido",
+                Snackbar.LENGTH_LONG
+            ).show()
+            if (
+                ActivityCompat.shouldShowRequestPermissionRationale(
+                    this,
+                    Manifest.permission.CALL_PHONE
+                )
+            ) {
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("¿Desea permitir a la aplicación realizar llamadas?")
+                builder.setMessage("Pulse aceptar para poder llamar")
+                builder.setPositiveButton("Aceptar")
+                { _, _ ->
+                    ActivityCompat.requestPermissions(
+                        this,
+                        arrayOf(Manifest.permission.CALL_PHONE),
+                        123
+                    )
+                }
+                builder.setPositiveButton("Denegar", null)
+                builder.show()
+            } else {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(Manifest.permission.CALL_PHONE),
+                    123
+                )
+            }
+        } else {
+            Snackbar.make(
+                binding.root,
+                "Permiso concedido",
+                Snackbar.LENGTH_LONG
+            ).show()
+            llamada(monumento.telefono)
+        }
+    }
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
-        monumentoAdaptador = MonumentoAdapter(monumentos)
-        linearLayoutManager = LinearLayoutManager(this)
-        binding.recyclerview.adapter = monumentoAdaptador
-        binding.recyclerview.layoutManager = linearLayoutManager
+        when (requestCode) {
+            123 -> {
+                if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Snackbar.make(
+                        binding.root,
+                        "Acabas de conceder el permiso",
+                        Snackbar.LENGTH_LONG
+                    ).show()
+                } else
+                    Snackbar.make(
+                        binding.root,
+                        "No has concido el permiso",
+                        Snackbar.LENGTH_LONG
+                    ).show()
+            }
+            else ->
+                Snackbar.make(
+                    binding.root,
+                    "NADA",
+                    Snackbar.LENGTH_LONG
+                ).show()
+        }
+    }
+
+    private fun llamada(telefono: String) {
+        val intent = Intent(Intent.ACTION_CALL, Uri.parse("tel:"+ telefono))
+        startActivity(intent)
+    }
+
+    override fun onClickListenerEmail(monumento: Monumento, posicion: Int) {
+        val intent = Intent(
+            Intent.ACTION_VIEW,
+            Uri.parse("mailto:" + monumento.email)
+        )
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        } else {
+            Snackbar.make(
+                binding.root,
+                "No se encuentra navegador",
+                Snackbar.LENGTH_LONG
+            ).show()
+        }
     }
 }

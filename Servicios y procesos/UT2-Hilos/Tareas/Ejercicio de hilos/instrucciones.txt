@@ -1,0 +1,5 @@
+Abre el archivo de apoyo "Multitarea e hilos en Java..." introduce y ejecuta el ejercicio de las cajeras.
+Abre el archivo "último hilos" y realiza uno de los ejercicios, el que tú quieras.
+
+
+En ambos casos, introduce el código y haz volcados de los resultados obtenidos. Sube el código y el archivo de Word con los pantallazos
