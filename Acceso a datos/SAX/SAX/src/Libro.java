@@ -38,6 +38,15 @@ public class Libro {
 	}
 
 
+	@Override
+	public String toString() {
+		return "{" +
+			" publicacdoEn='" + getPublicacdoEn() + "'" +
+			", titulo='" + getTitulo() + "'" +
+			", Autor='" + getAutor() + "'" +
+			"}";
+	}
+
 
 	
 }

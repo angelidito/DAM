@@ -22,6 +22,10 @@ public class App {
 		}
 
 		recorrerSAX(new File("LibrosXML.xml"), sh, parser);
+
+		for (Libro libro : sh.libros) {
+			System.out.println(libro);
+		}
 	}
 
 	public static int openXML(SAXHandler sh, SAXParser parser) {

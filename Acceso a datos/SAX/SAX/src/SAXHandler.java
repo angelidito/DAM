@@ -20,7 +20,7 @@ public class SAXHandler extends DefaultHandler {
 				// System.out.println("<Libro>");
 
 				libros.add(new Libro());
-				libros.get(libros.size() - 1).setPublicacdoEn(atts.getQName(0));
+				libros.get(libros.size() - 1).setPublicacdoEn(atts.getValue(0));
 				break;
 			// case TITULO:
 			// // System.out.println("<Titulo>");
@@ -68,7 +68,7 @@ public class SAXHandler extends DefaultHandler {
 			str += ch[i];
 		if (str.matches("^[\\t\\n\\f\\r]+$"))
 			return;
-		System.out.println(str);
+		// System.out.println(str);
 		if (libros.get(libros.size() - 1).getTitulo() == null)
 			libros.get(libros.size() - 1).setTitulo(str);
 		else if (libros.get(libros.size() - 1).getAutor() == null)
