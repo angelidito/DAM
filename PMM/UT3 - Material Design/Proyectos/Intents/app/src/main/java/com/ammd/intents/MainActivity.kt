@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra(EXTRA_NOMBRE, binding.textToSend2.text)
         val usuario = Usuario(binding.textToSend2.text.toString(), "Martínez")
         intent.putExtra(EXTRA_OBJETO, usuario)
-        resultadoActividad.launch(intent)
+            resultadoActividad.launch(intent)
     }
 
     val resultadoActividad =

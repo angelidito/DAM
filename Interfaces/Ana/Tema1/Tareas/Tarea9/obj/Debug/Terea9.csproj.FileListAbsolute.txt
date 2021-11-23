@@ -1,0 +1,7 @@
+C:\Users\dam\source\repos\Terea9\bin\Debug\Terea9.exe.config
+C:\Users\dam\source\repos\Terea9\bin\Debug\Terea9.exe
+C:\Users\dam\source\repos\Terea9\bin\Debug\Terea9.pdb
+C:\Users\dam\source\repos\Terea9\obj\Debug\Terea9.csproj.AssemblyReference.cache
+C:\Users\dam\source\repos\Terea9\obj\Debug\Terea9.csproj.CoreCompileInputs.cache
+C:\Users\dam\source\repos\Terea9\obj\Debug\Terea9.exe
+C:\Users\dam\source\repos\Terea9\obj\Debug\Terea9.pdb

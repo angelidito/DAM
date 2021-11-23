@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "afce8349-b7af-4f05-a12b-2bf7110e6ece": {
+      "ProjectGuid": "afce8349-b7af-4f05-a12b-2bf7110e6ece",
+      "DisplayName": "WForms",
+      "ColorIndex": 0
+    },
+    "570d78e7-7f7a-442a-8906-b85adcfa4e69": {
+      "ProjectGuid": "570d78e7-7f7a-442a-8906-b85adcfa4e69",
+      "DisplayName": "Prog_01",
+      "ColorIndex": 1
+    },
+    "34e87e03-44ef-437a-a47d-cc890e507db2": {
+      "ProjectGuid": "34e87e03-44ef-437a-a47d-cc890e507db2",
+      "DisplayName": "Prog_01_02",
+      "ColorIndex": 2
+    },
+    "bed4dfa8-e42f-432f-8e19-be93605a2343": {
+      "ProjectGuid": "bed4dfa8-e42f-432f-8e19-be93605a2343",
+      "DisplayName": "Prog_01_03",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
