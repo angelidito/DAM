@@ -1,0 +1,5 @@
+package SAX.dos;
+
+public enum Tag {
+	JUGADORES, JUGADOR, ID_JUGADOR, NOMBRE, EQUIPO, SALARIO, UNKNOWN
+}

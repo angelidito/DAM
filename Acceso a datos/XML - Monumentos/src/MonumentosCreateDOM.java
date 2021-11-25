@@ -7,10 +7,27 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+
+// import com.sun.org.apache.xml.internal.serialize.OutputFormat;
+// import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
+
+
+
 public class MonumentosCreateDOM {
 
 	private static Document doc;
 
+	// public static int saveDOMAt(File file) {
+	// 	try {
+	// 		OutputStream format = new OutputFormat(doc);
+	// 		format.setIndenting(true);
+	// 		XMLSerializer serializer = new XMLSerializer(new FileOutputStream(file), format);
+	// 		serializer.serialize(doc);
+	// 		return 0;
+	// 	} catch (Exception e) {
+	// 		return -1;
+	// 	}
+	// }
 	public static void main(String[] args) throws Exception {
 		File monumentosFile = new File("monumentos_soria.xml");
 		openXML(monumentosFile);

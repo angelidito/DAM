@@ -20,7 +20,7 @@ class RegisterActivity : AppCompatActivity() {
 
         binding.btnCode.setOnClickListener {
             val intent = Intent(this, InformacionActivity::class.java)
-            startActivity(intent)
+            resultActivity.launch(intent)
         }
 
         binding.btnExit.setOnClickListener { System.exit(0) }
@@ -38,6 +38,11 @@ class RegisterActivity : AppCompatActivity() {
         }
 
     }
+    private var resultado: Especialidad? = null
+    private val resultActivity=
+        registerForActivityResult(Acti){
+
+        }
 
 
     private fun registerMedico() {

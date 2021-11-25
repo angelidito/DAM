@@ -1,0 +1,20 @@
+SI
+Saul Ayala
+San Pablo Burgos
+45000
+NO
+Victor Barrios
+San Pablo Burgos
+59000
+NO
+Marcos Palacios
+San Pablo Burgos
+80000
+SI
+Alvaro Herrero
+Celtics
+70000
+NO
+Javier Alonso
+Celtics
+48000
