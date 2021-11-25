@@ -1,0 +1,5 @@
+package dos;
+
+public enum Tag {
+	NOMBRES, NOMBRE, IDENTIFICADOR, NAME, ORIGEN, SIGNIFICADO, UNKNOWN
+}
