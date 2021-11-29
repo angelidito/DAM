@@ -32,10 +32,10 @@
 			this.btnSolicitarPrestamo = new System.Windows.Forms.Button();
 			this.lblTitulo = new System.Windows.Forms.Label();
 			this.lblNombre = new System.Windows.Forms.Label();
-			this.nombre = new System.Windows.Forms.TextBox();
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+			this.nombre = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
 			this.SuspendLayout();
@@ -52,7 +52,6 @@
 			this.btnSolicitarPrestamo.TabIndex = 0;
 			this.btnSolicitarPrestamo.Text = "Solicitar prestamo";
 			this.btnSolicitarPrestamo.UseVisualStyleBackColor = false;
-			this.btnSolicitarPrestamo.Click += new System.EventHandler(this.btnSolicitarPrestamo_Click);
 			// 
 			// lblTitulo
 			// 
@@ -64,7 +63,6 @@
 			this.lblTitulo.Size = new System.Drawing.Size(503, 44);
 			this.lblTitulo.TabIndex = 1;
 			this.lblTitulo.Text = "BANCO DE LA MEDIA TIERRA";
-			this.lblTitulo.Click += new System.EventHandler(this.LblTitulo_Click);
 			// 
 			// lblNombre
 			// 
@@ -76,16 +74,6 @@
 			this.lblNombre.TabIndex = 2;
 			this.lblNombre.Text = "Su nombre:";
 			// 
-			// nombre
-			// 
-			this.nombre.BackColor = System.Drawing.SystemColors.Window;
-			this.nombre.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.nombre.Location = new System.Drawing.Point(350, 238);
-			this.nombre.Name = "nombre";
-			this.nombre.Size = new System.Drawing.Size(225, 20);
-			this.nombre.TabIndex = 3;
-			this.nombre.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
-			// 
 			// btnSalir
 			// 
 			this.btnSalir.Location = new System.Drawing.Point(717, 397);
@@ -94,6 +82,7 @@
 			this.btnSalir.TabIndex = 4;
 			this.btnSalir.Text = "Salir";
 			this.btnSalir.UseVisualStyleBackColor = true;
+			this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 			// 
 			// pictureBox1
 			// 
@@ -109,25 +98,35 @@
 			// 
 			this.errorProvider1.ContainerControl = this;
 			// 
-			// BancoForm
+			// nombre
+			// 
+			this.nombre.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.errorProvider1.SetIconAlignment(this.nombre, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+			this.nombre.Location = new System.Drawing.Point(350, 238);
+			this.nombre.Name = "nombre";
+			this.nombre.Size = new System.Drawing.Size(329, 20);
+			this.nombre.TabIndex = 6;
+			this.nombre.TextChanged += new System.EventHandler(this.nombre_TextChanged);
+			// 
+			// Banco
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.SaddleBrown;
-			this.ClientSize = new System.Drawing.Size(804, 461);
-			this.Controls.Add(this.btnSalir);
+			this.ClientSize = new System.Drawing.Size(804, 461); 
 			this.Controls.Add(this.nombre);
+			this.Controls.Add(this.btnSalir);
 			this.Controls.Add(this.lblNombre);
 			this.Controls.Add(this.lblTitulo);
 			this.Controls.Add(this.btnSolicitarPrestamo);
 			this.Controls.Add(this.pictureBox1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 			this.MaximizeBox = false;
-			this.Name = "BancoForm";
+			this.Name = "Banco";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Banco de la Media Tierra";
 			this.TransparencyKey = System.Drawing.Color.Transparent;
-			this.Load += new System.EventHandler(this.BancoForm_Load);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
 			this.ResumeLayout(false);
@@ -140,10 +139,10 @@
 		private System.Windows.Forms.Button btnSolicitarPrestamo;
 		private System.Windows.Forms.Label lblTitulo;
 		private System.Windows.Forms.Label lblNombre;
-		private System.Windows.Forms.TextBox nombre;
 		private System.Windows.Forms.Button btnSalir;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.ErrorProvider errorProvider1;
+		private System.Windows.Forms.TextBox nombre;
 	}
 }
 
