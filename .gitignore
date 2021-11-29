@@ -7,3 +7,5 @@
 .DS_Store
 */primos.txt
 *.class
+/Acceso a datos/AngelMartinezDiezNB/nbproject/private/
+/Acceso a datos/AngelMartinezDiezNB/build/

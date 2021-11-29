@@ -42,7 +42,7 @@ public class Main {
 		buildDocument();
 		createDOMTree();
 
-		saveDOMAt(outputFile);
+		// saveDOMAt(outputFile);
 
 		leerTextoDOM();
 	}
@@ -75,7 +75,7 @@ public class Main {
 			DOMResult result = new DOMResult(doc);
 			transformer.transform(source, result);
 			
-
+			
 			// OutputStream format = new OutputFormat(doc);
 			// format.setIndenting(true);
 			// XMLSerializer serializer = new XMLSerializer(new FileOutputStream(file), format);
