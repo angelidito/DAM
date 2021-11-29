@@ -3,6 +3,7 @@ package com.ammd.martinezangel
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.result.ActivityResultRegistry
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ammd.martinezangel.databinding.ActivityRegisterBinding
@@ -40,7 +41,7 @@ class RegisterActivity : AppCompatActivity() {
     }
     private var resultado: Especialidad? = null
     private val resultActivity=
-        registerForActivityResult(Acti){
+        registerForActivityResult(ActivityResultRegis){
 
         }
 

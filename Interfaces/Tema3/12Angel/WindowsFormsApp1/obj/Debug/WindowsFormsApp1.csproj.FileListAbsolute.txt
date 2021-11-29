@@ -1,0 +1,10 @@
+C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.AssemblyReference.cache
+C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.cache
+C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Banco.resources
+C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
