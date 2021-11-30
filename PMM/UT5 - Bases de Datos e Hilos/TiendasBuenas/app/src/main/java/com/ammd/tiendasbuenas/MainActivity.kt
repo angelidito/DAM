@@ -11,24 +11,32 @@ class MainActivity : AppCompatActivity(), EventosListener {
     private lateinit var binding: ActivityMainBinding
     private lateinit var adaptador: AdaptadorTienda
     private lateinit var gridLayout: GridLayoutManager
-
+    private lateinit var bd: TiendaDAO
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        bd = TiendaDAO(this)
+
         confufurarRecycler()
+
+        binding.btnSave.setOnClickListener { grabar() }
+
+    }
+
+    private fun grabar() {
+        val tienda = Tienda(1, binding.etName.text.toString())
+        bd.addTienda(tienda)
+
 
     }
 
     private fun confufurarRecycler() {
         adaptador =
             AdaptadorTienda(
-                mutableListOf(
-                    Tienda(1, "Uno", false),
-                    Tienda(1, "Dos", false)
-                ),
+                mutableListOf(),
                 this
             )
         gridLayout = GridLayoutManager(this, 2)
