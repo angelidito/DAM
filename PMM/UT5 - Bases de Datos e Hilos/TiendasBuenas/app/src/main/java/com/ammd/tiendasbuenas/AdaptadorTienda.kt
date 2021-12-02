@@ -36,9 +36,23 @@ class AdaptadorTienda(
         with(holder) {
             setListener(tienda)
             binding.tvName.text = tienda.nombre
-            binding.cbFavorite.isChecked = tienda.esFavorito
+            if (tienda.esFavorito == 0)
+                binding.cbFavorite.isChecked = false
+            else
+                binding.cbFavorite.isChecked = true
+
         }
     }
 
     override fun getItemCount(): Int = tiendas.size
+
+    fun add(tienda: Tienda) {
+        tiendas.add(tienda)
+        notifyDataSetChanged()
+    }
+
+    fun setTiendas(tiendas: MutableList<Tienda>) {
+        this.tiendas = tiendas
+        notifyDataSetChanged()
+    }
 }

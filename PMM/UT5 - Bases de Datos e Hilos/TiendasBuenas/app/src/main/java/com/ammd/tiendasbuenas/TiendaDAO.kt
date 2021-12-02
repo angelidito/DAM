@@ -2,10 +2,11 @@ package com.ammd.tiendasbuenas
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 
 class TiendaDAO(context: Context) {
-    private val mBD: SQLiteDatabase
+    private val database: SQLiteDatabase
 
     companion object {
         val DATABASE_NAME = "tiendasbd"
@@ -16,14 +17,38 @@ class TiendaDAO(context: Context) {
     init {
         val estructura = TiendaBD(context, DATABASE_NAME, factory = null, DATABASE_VERSION)
 
-        mBD = estructura.writableDatabase
+        database = estructura.writableDatabase
     }
 
-     fun addTienda(tienda: Tienda) {
+    fun addTienda(tienda: Tienda) {
         val values = ContentValues()
         values.put("nombre", tienda.nombre)
         values.put("favorito", tienda.esFavorito)
-        mBD.insert(TABLA_TIENDA, null, values)
+        database.insert(TABLA_TIENDA, null, values)
+    }
+
+    fun getAllTiendas(): MutableList<Tienda> {
+        val lista: MutableList<Tienda> = ArrayList()
+        val cursor: Cursor = database.query(
+            TABLA_TIENDA, null, null, null, null, null, null, null
+        )
+
+        if (cursor.moveToFirst()) {
+            do {
+                lista.add(
+                    Tienda(
+                        cursor.getInt(cursor.getColumnIndexOrThrow("id")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("favorito"))
+                    )
+                )
+            } while (cursor.moveToNext())
+        }
+
+        if (!cursor.isClosed)
+            cursor.close()
+
+        return lista
     }
 
 }
