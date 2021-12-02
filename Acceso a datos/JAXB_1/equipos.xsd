@@ -1,0 +1,20 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="equipos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="equipo" maxOccurs="unbounded" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element type="xs:string" name="nombre"/>
+							<xs:element type="xs:string" name="presidente"/>
+							<xs:element type="xs:string" name="capitan"/>
+							<xs:element type="xs:byte" name="posicion"/>
+						</xs:sequence>
+						<xs:attribute type="xs:short" name="fundacion" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
