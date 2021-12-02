@@ -52,6 +52,7 @@
 			this.btnSolicitarPrestamo.TabIndex = 0;
 			this.btnSolicitarPrestamo.Text = "Solicitar prestamo";
 			this.btnSolicitarPrestamo.UseVisualStyleBackColor = false;
+			this.btnSolicitarPrestamo.Click += new System.EventHandler(this.btnSolicitarPrestamo_Click);
 			// 
 			// lblTitulo
 			// 
@@ -114,7 +115,7 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.SaddleBrown;
-			this.ClientSize = new System.Drawing.Size(804, 461); 
+			this.ClientSize = new System.Drawing.Size(804, 461);
 			this.Controls.Add(this.nombre);
 			this.Controls.Add(this.btnSalir);
 			this.Controls.Add(this.lblNombre);

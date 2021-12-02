@@ -43,5 +43,10 @@ namespace WindowsFormsApp1
 		{
 			ControlBotones();
 		}
+
+		private void btnSolicitarPrestamo_Click(object sender, EventArgs e)
+		{
+			new Solicitud(nombre.Text.Trim()).Show();
+		}
 	}
 }

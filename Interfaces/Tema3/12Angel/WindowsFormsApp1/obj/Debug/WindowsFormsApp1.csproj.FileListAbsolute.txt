@@ -8,3 +8,4 @@ C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\bin\Debug\WindowsFormsApp1
 C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
 C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Mori\DAM\Interfaces\Tema3\12Angel\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Solicitud.resources
