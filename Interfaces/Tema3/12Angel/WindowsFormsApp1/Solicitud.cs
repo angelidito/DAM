@@ -7,6 +7,7 @@ namespace WindowsFormsApp1
 	{
 		public Solicitud(String nombre)
 		{
+		
 			lblTitulo.Text = nombre;
 			InitializeComponent();
 		}

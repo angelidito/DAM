@@ -51,4 +51,18 @@ class TiendaDAO(context: Context) {
         return lista
     }
 
+    fun updateTienda(tienda: Tienda) {
+        val values = ContentValues()
+        val args = arrayOf(tienda.id.toString())
+
+        values.put("nombre", tienda.nombre)
+        values.put("favorito", tienda.esFavorito)
+        database.update(TABLA_TIENDA, values, "id=?", args)
+    }
+
+    fun deleteTienda(id: Int) {
+        val args = arrayOf(id.toString())
+
+        database.delete(TABLA_TIENDA, "id=?", args)
+    }
 }

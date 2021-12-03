@@ -68,6 +68,8 @@ namespace WindowsFormsApp1
 			// cb_origen
 			// 
 			this.cb_origen.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.cb_origen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cb_origen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.cb_origen.FormattingEnabled = true;
 			this.cb_origen.Location = new System.Drawing.Point(140, 98);
 			this.cb_origen.Name = "cb_origen";
@@ -98,6 +100,8 @@ namespace WindowsFormsApp1
 			// cb_razas
 			// 
 			this.cb_razas.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.cb_razas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cb_razas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.cb_razas.FormattingEnabled = true;
 			this.cb_razas.Location = new System.Drawing.Point(140, 50);
 			this.cb_razas.Name = "cb_razas";
@@ -162,6 +166,8 @@ namespace WindowsFormsApp1
 			// cb_cuotas
 			// 
 			this.cb_cuotas.BackColor = System.Drawing.Color.WhiteSmoke;
+			this.cb_cuotas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cb_cuotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.cb_cuotas.FormattingEnabled = true;
 			this.cb_cuotas.Location = new System.Drawing.Point(140, 98);
 			this.cb_cuotas.Name = "cb_cuotas";

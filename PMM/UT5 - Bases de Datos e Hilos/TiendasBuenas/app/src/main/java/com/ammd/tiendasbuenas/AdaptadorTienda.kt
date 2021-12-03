@@ -20,7 +20,13 @@ class AdaptadorTienda(
         fun setListener(tienda: Tienda) {
             with(binding.root) {
                 setOnClickListener() { listener.editar(tienda.id) }
-
+                setOnLongClickListener {
+                    listener.borrarTienda(tienda.id)
+                    true
+                }
+            }
+            binding.cbFavorite.setOnClickListener{
+                listener.onFavorito(tienda)
             }
         }
     }
@@ -40,7 +46,6 @@ class AdaptadorTienda(
                 binding.cbFavorite.isChecked = false
             else
                 binding.cbFavorite.isChecked = true
-
         }
     }
 
@@ -54,5 +59,23 @@ class AdaptadorTienda(
     fun setTiendas(tiendas: MutableList<Tienda>) {
         this.tiendas = tiendas
         notifyDataSetChanged()
+    }
+
+    fun update(tienda: Tienda) {
+
+        val index = tiendas.indexOf(tienda)
+        if (index != -1) {
+            tiendas.set(index, tienda)
+            notifyItemChanged(index)
+        }
+    }
+
+    fun borrar(id: Int) {
+        val tienda= Tienda (id, "",0)
+        val index = tiendas.indexOf(tienda)
+        if (index != -1) {
+            tiendas.removeAt(index)
+            notifyItemChanged(index)
+        }
     }
 }

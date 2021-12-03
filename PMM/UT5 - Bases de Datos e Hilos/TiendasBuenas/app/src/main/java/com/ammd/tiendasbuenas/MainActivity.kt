@@ -1,5 +1,6 @@
 package com.ammd.tiendasbuenas
 
+import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
@@ -10,14 +11,14 @@ class MainActivity : AppCompatActivity(), EventosListener {
     private lateinit var binding: ActivityMainBinding
     private lateinit var adaptador: AdaptadorTienda
     private lateinit var gridLayout: GridLayoutManager
-    private lateinit var db: TiendaDAO
+    private lateinit var database: TiendaDAO
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        db = TiendaDAO(this)
+        database = TiendaDAO(this)
 
         configurarRecycler()
 
@@ -46,17 +47,59 @@ class MainActivity : AppCompatActivity(), EventosListener {
 
     private fun grabar() {
         val tienda = Tienda(1, binding.etName.text.toString())
-        db.addTienda(tienda)
-        adaptador.add(tienda)
+        Thread {
+            database.addTienda(tienda)
+            runOnUiThread {
+                adaptador.add(tienda)
+            }
+        }.start()
 
     }
 
     private fun getAllTiendas() {
-        val tiendas = db.getAllTiendas()
-        adaptador.setTiendas(tiendas)
+//        val tiendas = database.getAllTiendas()
+//        adaptador.setTiendas(tiendas)
+
+        var myAsyncTask = MyAsyncTask().execute()
     }
 
     override fun editar(id: Int) {
         TODO()
+    }
+
+    override fun onFavorito(tienda: Tienda) {
+        if (tienda.esFavorito == 0)
+            tienda.esFavorito = 1
+        else
+
+
+            tienda.esFavorito = 0
+        database.updateTienda(tienda)
+        adaptador.update(tienda)
+    }
+
+    override fun borrarTienda(id: Int) {
+        Thread {
+            database.deleteTienda(id)
+            runOnUiThread {
+                adaptador.borrar(id)
+            }
+        }
+    }
+
+    private inner class MyAsyncTask() : AsyncTask<Void, Void, MutableList<Tienda>>() {
+        override fun doInBackground(vararg p0: Void?): MutableList<Tienda> {
+            val tiendas = database.getAllTiendas()
+            return tiendas
+        }
+
+        override fun onPostExecute(result: MutableList<Tienda>?) {
+            super.onPostExecute(result)
+            if (result != null) {
+                adaptador.setTiendas(result)
+            }
+        }
+
+
     }
 }
