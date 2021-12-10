@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Práctica_2_2
@@ -6,6 +7,7 @@ namespace Práctica_2_2
 	public partial class Menu : Form
 	{
 		private Boolean vegan;
+		Dictionary<string, Double> bebidas;
 		public Menu(Boolean vegan)
 		{
 			InitializeComponent();
@@ -51,6 +53,21 @@ namespace Práctica_2_2
 					"Fascias secretas"}
 					);
 			}
+
+			bebidas = new Dictionary<string, Double>(){
+					{ "Café", 2 },
+					{ "Cocacola", 3 },
+					{ "Cubata", 4.50 },
+					{ "Zumo de bebé koala", 8.2 },
+					{ "Virgulillas", 3.50 }};
+
+			this.cbBebida.Items.AddRange(new object[] {
+			"",
+			"Café",
+			"Cocacola",
+			"Cubata",
+			"Zumo de bebé koala",
+			"Virgulillas"});
 		}
 
 		private void btnExit_Click(object sender, EventArgs e)
@@ -77,12 +94,19 @@ namespace Práctica_2_2
 				precio += 3;
 
 			if (cbBebida.SelectedIndex != -1 && cbBebida.SelectedItem.ToString() != "")
-				precio += Double.Parse(cbBebida.SelectedItem.ToString().Split("- ")[1].Split("€")[0]);
+				foreach (KeyValuePair<string, Double> bebida in bebidas)
+					if (bebida.Key.CompareTo(cbBebida.SelectedItem.ToString()) == 0)
+					{
+						precio += bebida.Value;
+						break;
+					}
+			// precio += Double.Parse(cbBebida.SelectedItem.ToString().Split("- ")[1].Split("€")[0]);
 
 			if (breadOpt.Checked)
 				precio += 0.8;
 
 			btnViewOrder.Text = "Visualizar pedido\nTotal: " + Math.Round(precio, 2) + "€";
 		}
+
 	}
 }

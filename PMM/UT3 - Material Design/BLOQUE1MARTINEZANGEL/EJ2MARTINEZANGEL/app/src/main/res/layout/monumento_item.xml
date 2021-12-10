@@ -24,7 +24,6 @@
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
 		android:layout_margin="8dp"
-		android:textAppearance="?attr/textAppearanceHeadline5"
 		app:layout_constraintBottom_toBottomOf="@id/ubicacion_monumento"
 		app:layout_constraintStart_toEndOf="@id/imagen_monumento"
 		app:layout_constraintTop_toTopOf="parent"

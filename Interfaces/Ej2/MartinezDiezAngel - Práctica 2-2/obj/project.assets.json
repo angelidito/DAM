@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Mori\\DAM\\Interfaces\\Ej2\\Práctica 2-2\\Práctica 2-2.csproj",
+      "projectUniqueName": "C:\\Mori\\DAM\\Interfaces\\Ej2\\MartinezDiezAngel - Práctica 2-2\\Práctica 2-2.csproj",
       "projectName": "Práctica 2-2",
-      "projectPath": "C:\\Mori\\DAM\\Interfaces\\Ej2\\Práctica 2-2\\Práctica 2-2.csproj",
+      "projectPath": "C:\\Mori\\DAM\\Interfaces\\Ej2\\MartinezDiezAngel - Práctica 2-2\\Práctica 2-2.csproj",
       "packagesPath": "C:\\Users\\dam\\.nuget\\packages\\",
-      "outputPath": "C:\\Mori\\DAM\\Interfaces\\Ej2\\Práctica 2-2\\obj\\",
+      "outputPath": "C:\\Mori\\DAM\\Interfaces\\Ej2\\MartinezDiezAngel - Práctica 2-2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
