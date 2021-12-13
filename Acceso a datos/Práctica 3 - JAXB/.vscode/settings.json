@@ -1,0 +1,10 @@
+{
+	"java.project.sourcePaths": [
+		"src"
+	],
+	"java.project.outputPath": "bin",
+	"java.project.referencedLibraries": [
+		"lib/**/*.jar",
+		"/Users/angel/Documents/GitHub/DAM/Acceso a datos/Práctica 3 - JAXB/lib/jaxb-ri/**/*.jar"
+	],
+}
