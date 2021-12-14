@@ -20,7 +20,7 @@ class AlojamientosDAO(context: Context) {
         database = estructura.writableDatabase
     }
 
-    fun addAlojamiento(alojamiento: Alojamiento) {
+    fun addAlojamiento(alojamiento: Alojamientos) {
         val values = ContentValues()
         values.put("denominacion", alojamiento.denominacion)
         values.put("localidad", alojamiento.localidad)
@@ -34,8 +34,8 @@ class AlojamientosDAO(context: Context) {
         database.insert(TABLA_ALOJAMIENTOS, null, values)
     }
 
-    fun getAllAlojamiento(): MutableList<Alojamiento> {
-        val lista: MutableList<Alojamiento> = ArrayList()
+    fun getAllAlojamiento(): MutableList<Alojamientos> {
+        val lista: MutableList<Alojamientos> = ArrayList()
         val cursor: Cursor = database.query(
             TABLA_ALOJAMIENTOS, null, null, null,
             null, null, null, null
@@ -44,7 +44,7 @@ class AlojamientosDAO(context: Context) {
         if (cursor.moveToFirst()) {
             do {
                 lista.add(
-                    Alojamiento(
+                    Alojamientos(
                         cursor.getInt(cursor.getColumnIndexOrThrow("id")),
                         cursor.getString(cursor.getColumnIndexOrThrow("denominacion")),
                         cursor.getString(cursor.getColumnIndexOrThrow("localidad")),
@@ -66,7 +66,7 @@ class AlojamientosDAO(context: Context) {
         return lista
     }
 
-    fun updateAlojamiento(alojamiento: Alojamiento) {
+    fun updateAlojamiento(alojamiento: Alojamientos) {
         val values = ContentValues()
         val args = arrayOf(alojamiento.codigo_alojamiento.toString())
 

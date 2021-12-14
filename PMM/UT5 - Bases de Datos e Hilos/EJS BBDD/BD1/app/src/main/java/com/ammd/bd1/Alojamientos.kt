@@ -1,6 +1,6 @@
 package com.ammd.bd1
 
-data class Alojamiento(
+data class Alojamientos(
     var codigo_alojamiento: Int,
     var denominacion: String,
     var localidad: String,
@@ -17,7 +17,7 @@ data class Alojamiento(
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as Alojamiento
+        other as Alojamientos
 
         if (codigo_alojamiento != other.codigo_alojamiento) return false
 
