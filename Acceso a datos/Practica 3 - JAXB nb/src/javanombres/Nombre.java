@@ -1,22 +1,22 @@
 
 package javanombres;
 
-public class Name {
-	private String nombre = null;
+public class Nombre {
+	private String name = null;
 	private String origen = null;
 	private String nacional = null;
 	private String significado = null;
 	private String abstracto = null;
 
-	public Name() {
+	public Nombre() {
 	}
 
-	public String getNombre() {
-		return this.nombre;
+	public String getName() {
+		return this.name;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getOrigen() {
@@ -53,7 +53,7 @@ public class Name {
 
 	@Override
 	public String toString() {
-		return "{" + " nombre='" + getNombre() + "'" + ", origen='" + getOrigen() + "'" + ", nacional='" + getNacional()
+		return "{" + " nombre='" + getName() + "'" + ", origen='" + getOrigen() + "'" + ", nacional='" + getNacional()
 				+ "'" + ", significado='" + getSignificado() + "'" + ", abstracto='" + getAbstracto() + "'" + "}";
 	}
 

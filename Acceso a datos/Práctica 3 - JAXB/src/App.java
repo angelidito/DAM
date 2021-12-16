@@ -2,7 +2,7 @@ import java.io.File;
 
 import javax.xml.bind.*;
 
-import javanombres.Name;
+import javanombres.Nombre;
 
 public class App {
 
@@ -10,11 +10,11 @@ public class App {
 		System.out.println("Hello, World!");
 	}
 
-	public int abrir_XML_JAXB(File fichero, Name misLibros) {
+	public int abrir_XML_JAXB(File fichero, Nombre misLibros) {
 		JAXBContext contexto;
 		try {
 			// Crea una instancia JAXB
-			contexto = JAXBContext.newInstance(Name.class); // Crea un objeto Unmarsheller.
+			contexto = JAXBContext.newInstance(Nombre.class); // Crea un objeto Unmarsheller.
 			Unmarshaller u = contexto.createUnmarshaller(); // Deserializa (unmarshal) el fichero misLibros=(Libros)
 															// u.unmarshal(fichero);
 			return 0;

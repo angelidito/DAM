@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/Mori/DAM/Acceso%20a%20datos/Practica%203%20-%20JAXB%20nb/src/data/nombres.xsd" uri="xml-resources/jaxb/NombresB/nombres.xsd"/>
+</catalog>

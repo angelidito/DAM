@@ -59,6 +59,34 @@ class AlojamientosDAO(context: Context) {
                 )
             } while (cursor.moveToNext())
         }
+        return lista
+    }
+
+    fun getAlojamientos(localidad: String): MutableList<Alojamientos> {
+        val lista: MutableList<Alojamientos> = ArrayList()
+        val cursor: Cursor = database.query(
+            TABLA_ALOJAMIENTOS, null, "localidad LIKE %?%", arrayOf(localidad),
+            null, null, null, null
+        )
+
+        if (cursor.moveToFirst()) {
+            do {
+                lista.add(
+                    Alojamientos(
+                        cursor.getInt(cursor.getColumnIndexOrThrow("id")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("denominacion")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("localidad")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("precio")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("imagen_alojamiento")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("telefono")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("email")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("detalles")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("actividades")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("favorito"))
+                    )
+                )
+            } while (cursor.moveToNext())
+        }
 
         if (!cursor.isClosed)
             cursor.close()
@@ -81,3 +109,4 @@ class AlojamientosDAO(context: Context) {
         database.delete(TABLA_ALOJAMIENTOS, "id=?", args)
     }
 }
+

@@ -11,6 +11,7 @@ class AlojamientosAdapter(
     private val listaAlojamientos: List<Alojamientos>,
     private val listener: Eventoslistener
 ) : RecyclerView.Adapter<AlojamientosAdapter.ViewHolder>() {
+    private lateinit var alojamientos: MutableList<Alojamientos>
     private lateinit var context: Context
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -23,13 +24,18 @@ class AlojamientosAdapter(
         val esp = listaAlojamientos.get(position)
         with(holder) {
             setListener(esp, (position + 1))
-            binding.denominacion.text = esp.denominacion
-            binding.precio.text = esp.precio.toString()
-            binding.localidad.text = esp.localidad
+            binding.cardDenominacion.text = esp.denominacion
+            binding.cardPrecio.text = esp.precio.toString()
+            binding.cardLocalidad.text = esp.localidad
         }
     }
 
     override fun getItemCount(): Int = listaAlojamientos.size
+    
+    fun setTiendas(alojamientos: MutableList<Alojamientos>) {
+        this.alojamientos = alojamientos
+        notifyDataSetChanged()
+    }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var binding = AlojamientoItemBinding.bind(view)

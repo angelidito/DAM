@@ -2,6 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/card"
 	android:layout_width="match_parent"
 	android:layout_height="@dimen/item_card_height"
 	android:layout_marginHorizontal="@dimen/common_padding_min"
@@ -12,7 +13,7 @@
 		android:layout_height="match_parent">
 
 		<ImageView
-			android:id="@+id/image"
+			android:id="@+id/card_image"
 			android:layout_width="0dp"
 			android:layout_height="0dp"
 			android:background="@android:color/darker_gray"
@@ -23,7 +24,7 @@
 			app:layout_constraintTop_toTopOf="parent" />
 
 		<TextView
-			android:id="@+id/denominacion"
+			android:id="@+id/card_denominacion"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:background="@color/white"
@@ -31,13 +32,13 @@
 			android:maxLines="1"
 			android:padding="@dimen/common_padding_min"
 			android:textAppearance="?attr/textAppearanceBody2"
-			app:layout_constraintBottom_toTopOf="@id/localidad"
+			app:layout_constraintBottom_toTopOf="@id/card_localidad"
 			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintStart_toStartOf="parent"
 			tools:text="denominación" />
 
 		<TextView
-			android:id="@+id/localidad"
+			android:id="@+id/card_localidad"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:background="@color/white"
@@ -45,13 +46,13 @@
 			android:maxLines="1"
 			android:padding="@dimen/common_padding_min"
 			android:textAppearance="?attr/textAppearanceBody2"
-			app:layout_constraintBottom_toBottomOf="@id/precio"
-			app:layout_constraintEnd_toStartOf="@id/precio"
+			app:layout_constraintBottom_toBottomOf="@id/card_precio"
+			app:layout_constraintEnd_toStartOf="@id/card_precio"
 			app:layout_constraintStart_toStartOf="parent"
 			tools:text="localizacion" />
 
 		<TextView
-			android:id="@+id/precio"
+			android:id="@+id/card_precio"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:background="@color/white"
@@ -61,12 +62,12 @@
 			android:textAppearance="?attr/textAppearanceBody2"
 			app:layout_constraintBottom_toBottomOf="parent"
 			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintStart_toEndOf="@id/localidad"
+			app:layout_constraintStart_toEndOf="@id/card_localidad"
 			tools:text="precio
 " />
 
 		<com.google.android.material.checkbox.MaterialCheckBox
-			android:id="@+id/cbFavorite"
+			android:id="@+id/card_cbFavorite"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:button="@drawable/estados"

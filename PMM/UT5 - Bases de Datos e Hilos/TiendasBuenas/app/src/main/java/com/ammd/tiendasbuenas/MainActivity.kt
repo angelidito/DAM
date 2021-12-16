@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity(), EventosListener {
     private lateinit var database: TiendaDAO
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
