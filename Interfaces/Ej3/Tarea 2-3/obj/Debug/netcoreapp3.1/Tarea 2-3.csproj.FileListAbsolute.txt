@@ -1,0 +1,18 @@
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\bin\Debug\netcoreapp3.1\Tarea 2-3.exe
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\bin\Debug\netcoreapp3.1\Tarea 2-3.deps.json
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\bin\Debug\netcoreapp3.1\Tarea 2-3.runtimeconfig.json
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\bin\Debug\netcoreapp3.1\Tarea 2-3.runtimeconfig.dev.json
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\bin\Debug\netcoreapp3.1\Tarea 2-3.dll
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\bin\Debug\netcoreapp3.1\Tarea 2-3.pdb
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\obj\Debug\netcoreapp3.1\Tarea 2-3.csproj.AssemblyReference.cache
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\obj\Debug\netcoreapp3.1\Tarea_2_3.Login.resources
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\obj\Debug\netcoreapp3.1\Tarea_2_3.Properties.Resources.resources
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\obj\Debug\netcoreapp3.1\Tarea 2-3.csproj.GenerateResource.cache
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\obj\Debug\netcoreapp3.1\Tarea 2-3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\obj\Debug\netcoreapp3.1\Tarea 2-3.AssemblyInfoInputs.cache
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\obj\Debug\netcoreapp3.1\Tarea 2-3.AssemblyInfo.cs
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\obj\Debug\netcoreapp3.1\Tarea 2-3.csproj.CoreCompileInputs.cache
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\obj\Debug\netcoreapp3.1\Tarea 2-3.dll
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\obj\Debug\netcoreapp3.1\Tarea 2-3.pdb
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\obj\Debug\netcoreapp3.1\Tarea 2-3.genruntimeconfig.cache
+C:\Mori\DAM\Interfaces\Ej3\Tarea 2-3\obj\Debug\netcoreapp3.1\Tarea_2_3.Ticket.resources

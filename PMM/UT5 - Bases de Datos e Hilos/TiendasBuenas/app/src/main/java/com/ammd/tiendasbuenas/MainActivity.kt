@@ -8,10 +8,11 @@ import com.ammd.tiendasbuenas.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), EventosListener {
 
-    private lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     private lateinit var adaptador: AdaptadorTienda
     private lateinit var gridLayout: GridLayoutManager
     private lateinit var database: TiendaDAO
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -70,8 +71,6 @@ class MainActivity : AppCompatActivity(), EventosListener {
         if (tienda.esFavorito == 0)
             tienda.esFavorito = 1
         else
-
-
             tienda.esFavorito = 0
         database.updateTienda(tienda)
         adaptador.update(tienda)
@@ -98,7 +97,5 @@ class MainActivity : AppCompatActivity(), EventosListener {
                 adaptador.setTiendas(result)
             }
         }
-
-
     }
 }

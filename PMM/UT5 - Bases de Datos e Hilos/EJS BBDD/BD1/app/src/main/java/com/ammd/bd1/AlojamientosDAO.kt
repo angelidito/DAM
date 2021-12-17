@@ -45,16 +45,16 @@ class AlojamientosDAO(context: Context) {
             do {
                 lista.add(
                     Alojamientos(
-                        cursor.getInt(cursor.getColumnIndexOrThrow("id")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("denominacion")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("localidad")),
-                        cursor.getInt(cursor.getColumnIndexOrThrow("precio")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("imagen_alojamiento")),
-                        cursor.getInt(cursor.getColumnIndexOrThrow("telefono")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("email")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("detalles")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("actividades")),
-                        cursor.getInt(cursor.getColumnIndexOrThrow("favorito"))
+                        cursor.getInt(cursor.getColumnIndexOrThrow("CODIGO_ALOJAMIENTO")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("DENOMINACION")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("LOCALIDAD")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("PRECIO")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("IMAGEN_ALOJAMIENTO")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("TELEFONO")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("EMAIL")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("DETALLES")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("ACTIVIDADES")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("FAVORITO"))
                     )
                 )
             } while (cursor.moveToNext())
@@ -73,16 +73,16 @@ class AlojamientosDAO(context: Context) {
             do {
                 lista.add(
                     Alojamientos(
-                        cursor.getInt(cursor.getColumnIndexOrThrow("id")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("denominacion")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("localidad")),
-                        cursor.getInt(cursor.getColumnIndexOrThrow("precio")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("imagen_alojamiento")),
-                        cursor.getInt(cursor.getColumnIndexOrThrow("telefono")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("email")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("detalles")),
-                        cursor.getString(cursor.getColumnIndexOrThrow("actividades")),
-                        cursor.getInt(cursor.getColumnIndexOrThrow("favorito"))
+                        cursor.getInt(cursor.getColumnIndexOrThrow("CODIGO_ALOJAMIENTO")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("DENOMINACION")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("LOCALIDAD")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("PRECIO")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("IMAGEN_ALOJAMIENTO")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("TELEFONO")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("EMAIL")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("DETALLES")),
+                        cursor.getString(cursor.getColumnIndexOrThrow("ACTIVIDADES")),
+                        cursor.getInt(cursor.getColumnIndexOrThrow("FAVORITO"))
                     )
                 )
             } while (cursor.moveToNext())
@@ -98,15 +98,15 @@ class AlojamientosDAO(context: Context) {
         val values = ContentValues()
         val args = arrayOf(alojamiento.codigo_alojamiento.toString())
 
-        values.put("denominacion", alojamiento.denominacion)
-        values.put("favorito", alojamiento.favorito)
-        database.update(TABLA_ALOJAMIENTOS, values, "id=?", args)
+        values.put("DENOMINACION", alojamiento.denominacion)
+        values.put("FAVORITO", alojamiento.favorito)
+        database.update(TABLA_ALOJAMIENTOS, values, "CODIGO_ALOJAMIENTO = ?", args)
     }
 
     fun deleteAlojamiento(id: Int) {
         val args = arrayOf(id.toString())
 
-        database.delete(TABLA_ALOJAMIENTOS, "id=?", args)
+        database.delete(TABLA_ALOJAMIENTOS, "CODIGO_ALOJAMIENTO = ?", args)
     }
 }
 
