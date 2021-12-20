@@ -10,7 +10,7 @@ namespace Tarea_2_3
 {
 	public partial class Ticket : Form
 	{
-		public Ticket(String nombre, String pista, String hora, String precio, String padron)
+		public Ticket(String nombre, String pista, String hora, int precio, String padron)
 		{
 			InitializeComponent();
 
@@ -23,9 +23,14 @@ namespace Tarea_2_3
 			texto[i++]= "Padrón: " + (padron== null? "NO": padron);
 			texto[i++]= "Fecha: " + DateTime.Today.ToString("d");
 			texto[i++]= "Hora: " + hora;
-			texto[i++]= "Precio: " + precio;
+			texto[i++]= "Precio: " + precio + "€";
 
 			ticketText.Lines = texto;
+		}
+
+		private void btnAceptar_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 	}
 }

@@ -35,8 +35,8 @@ namespace Tarea_2_3
 			this.label4 = new System.Windows.Forms.Label();
 			this.esPadron = new System.Windows.Forms.CheckBox();
 			this.padron = new System.Windows.Forms.TextBox();
-			this.pista = new System.Windows.Forms.ComboBox();
-			this.hora = new System.Windows.Forms.ComboBox();
+			this.pistas = new System.Windows.Forms.ComboBox();
+			this.horas = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
@@ -53,8 +53,8 @@ namespace Tarea_2_3
 			this.panel1.Controls.Add(this.label4);
 			this.panel1.Controls.Add(this.esPadron);
 			this.panel1.Controls.Add(this.padron);
-			this.panel1.Controls.Add(this.pista);
-			this.panel1.Controls.Add(this.hora);
+			this.panel1.Controls.Add(this.pistas);
+			this.panel1.Controls.Add(this.horas);
 			this.panel1.Controls.Add(this.label3);
 			this.panel1.Controls.Add(this.label2);
 			this.panel1.Controls.Add(this.label1);
@@ -95,6 +95,7 @@ namespace Tarea_2_3
 			this.esPadron.TabIndex = 8;
 			this.esPadron.Text = "Soy empadronado";
 			this.esPadron.UseVisualStyleBackColor = false;
+			this.esPadron.CheckedChanged += new System.EventHandler(this.checkEmpadronado);
 			// 
 			// padron
 			// 
@@ -104,24 +105,31 @@ namespace Tarea_2_3
 			this.padron.Name = "padron";
 			this.padron.Size = new System.Drawing.Size(57, 23);
 			this.padron.TabIndex = 7;
+			this.padron.TextChanged += new System.EventHandler(this.checkEmpadronado);
 			// 
-			// pista
+			// pistas
 			// 
-			this.pista.BackColor = System.Drawing.Color.White;
-			this.pista.FormattingEnabled = true;
-			this.pista.Location = new System.Drawing.Point(125, 104);
-			this.pista.Name = "pista";
-			this.pista.Size = new System.Drawing.Size(282, 23);
-			this.pista.TabIndex = 6;
+			this.pistas.BackColor = System.Drawing.Color.White;
+			this.pistas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.pistas.FormattingEnabled = true;
+			this.pistas.Location = new System.Drawing.Point(125, 104);
+			this.pistas.Name = "pistas";
+			this.pistas.Size = new System.Drawing.Size(282, 23);
+			this.pistas.TabIndex = 6;
+			this.pistas.SelectedIndexChanged += new System.EventHandler(this.checkCombo1);
 			// 
-			// hora
+			// horas
 			// 
-			this.hora.BackColor = System.Drawing.Color.White;
-			this.hora.FormattingEnabled = true;
-			this.hora.Location = new System.Drawing.Point(125, 133);
-			this.hora.Name = "hora";
-			this.hora.Size = new System.Drawing.Size(282, 23);
-			this.hora.TabIndex = 6;
+			this.horas.BackColor = System.Drawing.Color.White;
+			this.horas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.horas.FormattingEnabled = true;
+			this.horas.Location = new System.Drawing.Point(125, 133);
+			this.horas.MaximumSize = new System.Drawing.Size(282, 0);
+			this.horas.MinimumSize = new System.Drawing.Size(282, 0);
+			this.horas.Name = "horas";
+			this.horas.Size = new System.Drawing.Size(282, 23);
+			this.horas.TabIndex = 6;
+			this.horas.SelectedIndexChanged += new System.EventHandler(this.checkCombo2);
 			// 
 			// label3
 			// 
@@ -159,8 +167,9 @@ namespace Tarea_2_3
 			this.btnReservar.Name = "btnReservar";
 			this.btnReservar.Size = new System.Drawing.Size(75, 23);
 			this.btnReservar.TabIndex = 0;
-			this.btnReservar.Text = "button1";
+			this.btnReservar.Text = "Reservar";
 			this.btnReservar.UseVisualStyleBackColor = true;
+			this.btnReservar.Click += new System.EventHandler(this.btnReservar_Click);
 			// 
 			// errorProvider
 			// 
@@ -189,12 +198,12 @@ namespace Tarea_2_3
 		#endregion
 
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.ComboBox hora;
+		private System.Windows.Forms.ComboBox horas;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Button button1;
-		private System.Windows.Forms.ComboBox pista;
+		private System.Windows.Forms.ComboBox pistas;
 		private System.Windows.Forms.TextBox padron;
 		private System.Windows.Forms.CheckBox esPadron;
 		private System.Windows.Forms.NumericUpDown numericUpDown1;

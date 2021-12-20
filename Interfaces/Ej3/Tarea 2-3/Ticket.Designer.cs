@@ -30,6 +30,7 @@ namespace Tarea_2_3
 		private void InitializeComponent()
 		{
 			this.ticketText = new System.Windows.Forms.RichTextBox();
+			this.btnAceptar = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// ticketText
@@ -47,16 +48,29 @@ namespace Tarea_2_3
 			this.ticketText.TabIndex = 0;
 			this.ticketText.Text = "";
 			// 
+			// btnAceptar
+			// 
+			this.btnAceptar.Location = new System.Drawing.Point(12, 152);
+			this.btnAceptar.Name = "btnAceptar";
+			this.btnAceptar.Size = new System.Drawing.Size(77, 26);
+			this.btnAceptar.TabIndex = 1;
+			this.btnAceptar.Text = "Aceptar";
+			this.btnAceptar.UseVisualStyleBackColor = true;
+			this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+			// 
 			// Ticket
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(249, 299);
+			this.ClientSize = new System.Drawing.Size(234, 211);
+			this.Controls.Add(this.btnAceptar);
 			this.Controls.Add(this.ticketText);
 			this.MaximizeBox = false;
-			this.MaximumSize = new System.Drawing.Size(265, 338);
+			this.MaximumSize = new System.Drawing.Size(250, 250);
 			this.MinimizeBox = false;
+			this.MinimumSize = new System.Drawing.Size(250, 250);
 			this.Name = "Ticket";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Town Place - Ticket de reserva";
 			this.ResumeLayout(false);
 
@@ -65,5 +79,6 @@ namespace Tarea_2_3
 		#endregion
 
 		private System.Windows.Forms.RichTextBox ticketText;
+		private System.Windows.Forms.Button btnAceptar;
 	}
 }

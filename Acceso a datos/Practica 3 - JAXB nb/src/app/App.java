@@ -45,9 +45,9 @@ public class App {
             cadena_resultado = cadena_resultado + "\n "
                     + "El id es: " + listaNombres.get(i).getIDENTIFICADOR();
             cadena_resultado = cadena_resultado + "\n "
-                    + "El origen es: " + listaNombres.get(i).getORIGEN();
+                    + "El origen es: " + listaNombres.get(i).getORIGEN().getValue();
             cadena_resultado = cadena_resultado + "\n "
-                    + "El significado es: " + listaNombres.get(i).getSIGNIFICADO();
+                    + "El significado es: " + listaNombres.get(i).getSIGNIFICADO().getValue();
             cadena_resultado = cadena_resultado
                     + "\n----------------------------";
         }
