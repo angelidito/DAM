@@ -1,0 +1,11 @@
+C:\Mori\DAM\Interfaces\Examen\ANGEL_MARTINEZDIEZ_1EVA\bin\Debug\ANGEL_MARTINEZDIEZ_1EVA.exe.config
+C:\Mori\DAM\Interfaces\Examen\ANGEL_MARTINEZDIEZ_1EVA\bin\Debug\ANGEL_MARTINEZDIEZ_1EVA.exe
+C:\Mori\DAM\Interfaces\Examen\ANGEL_MARTINEZDIEZ_1EVA\bin\Debug\ANGEL_MARTINEZDIEZ_1EVA.pdb
+C:\Mori\DAM\Interfaces\Examen\ANGEL_MARTINEZDIEZ_1EVA\obj\Debug\ANGEL_MARTINEZDIEZ_1EVA.csproj.AssemblyReference.cache
+C:\Mori\DAM\Interfaces\Examen\ANGEL_MARTINEZDIEZ_1EVA\obj\Debug\ANGEL_MARTINEZDIEZ_1EVA.Form1.resources
+C:\Mori\DAM\Interfaces\Examen\ANGEL_MARTINEZDIEZ_1EVA\obj\Debug\ANGEL_MARTINEZDIEZ_1EVA.Properties.Resources.resources
+C:\Mori\DAM\Interfaces\Examen\ANGEL_MARTINEZDIEZ_1EVA\obj\Debug\ANGEL_MARTINEZDIEZ_1EVA.csproj.GenerateResource.cache
+C:\Mori\DAM\Interfaces\Examen\ANGEL_MARTINEZDIEZ_1EVA\obj\Debug\ANGEL_MARTINEZDIEZ_1EVA.csproj.CoreCompileInputs.cache
+C:\Mori\DAM\Interfaces\Examen\ANGEL_MARTINEZDIEZ_1EVA\obj\Debug\ANGEL_MARTINEZDIEZ_1EVA.exe
+C:\Mori\DAM\Interfaces\Examen\ANGEL_MARTINEZDIEZ_1EVA\obj\Debug\ANGEL_MARTINEZDIEZ_1EVA.pdb
+C:\Mori\DAM\Interfaces\Examen\ANGEL_MARTINEZDIEZ_1EVA\obj\Debug\ANGEL_MARTINEZDIEZ_1EVA.Reserva.resources
