@@ -12,7 +12,6 @@
 		android:layout_width="200dp"
 		android:layout_height="200dp"
 		android:layout_margin="16dp"
-		android:src=""
 		app:layout_constraintBottom_toTopOf="@id/name"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
