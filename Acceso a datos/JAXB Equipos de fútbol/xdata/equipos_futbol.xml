@@ -1,0 +1,20 @@
+﻿<equipos>
+	<equipo fundacion="1982">
+		<nombre>F.C. Barcelona</nombre>
+		<presidente>Tontazo</presidente>
+		<capitan>Leo Messi</capitan>
+		<posicion>9</posicion>
+	</equipo>
+	<equipo fundacion="1905">
+		<nombre>R.Madrid</nombre>
+		<presidente>Mafioso</presidente>
+		<capitan>Cristiano Ronaldo</capitan>
+		<posicion>5</posicion>
+	</equipo>
+	<equipo fundacion="1907">
+		<nombre>Paris Saint Germain</nombre>
+		<presidente>Jekazo</presidente>
+		<capitan>Mbappe</capitan>
+		<posicion>1</posicion>
+	</equipo>
+</equipos>
