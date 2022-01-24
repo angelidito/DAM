@@ -2,6 +2,7 @@ package com.example.bd1v2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ammd.bd1.AlojamientosDAO
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.bd1v2.databinding.ActivityMainBinding
@@ -12,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        bd = AlojamientosDAO(this)
+        var bd = AlojamientosDAO(this)
 
         Glide.with(this)
             .load("")

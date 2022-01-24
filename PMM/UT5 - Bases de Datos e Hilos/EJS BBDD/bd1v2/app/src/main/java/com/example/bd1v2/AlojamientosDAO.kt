@@ -59,7 +59,7 @@ class AlojamientosDAO(context: Context) {
 //						cursor.getString(cursor.getColumnIndexOrThrow("EMAIL")),
 //						cursor.getString(cursor.getColumnIndexOrThrow("DETALLES")),
 //						cursor.getString(cursor.getColumnIndexOrThrow("ACTIVIDADES")),
-//						cursor.getInt(cursor.getColumnIndexOrThrow("FAVORITO"))
+						cursor.getInt(cursor.getColumnIndexOrThrow("FAVORITO"))
 					)
 				)
 			} while (cursor.moveToNext())
@@ -87,7 +87,7 @@ class AlojamientosDAO(context: Context) {
 //						cursor.getString(cursor.getColumnIndexOrThrow("EMAIL")),
 //						cursor.getString(cursor.getColumnIndexOrThrow("DETALLES")),
 //						cursor.getString(cursor.getColumnIndexOrThrow("ACTIVIDADES")),
-//						cursor.getInt(cursor.getColumnIndexOrThrow("FAVORITO"))
+						cursor.getInt(cursor.getColumnIndexOrThrow("FAVORITO"))
 					)
 				)
 			} while (cursor.moveToNext())
@@ -101,10 +101,10 @@ class AlojamientosDAO(context: Context) {
 
 	fun updateAlojamiento(alojamiento: Alojamiento) {
 		val values = ContentValues()
-		val args = arrayOf(alojamiento.codigo_alojamiento.toString())
+		val args = arrayOf(alojamiento.id.toString())
 
 		values.put("DENOMINACION", alojamiento.denominacion)
-		values.put("FAVORITO", alojamiento.favorito)
+		values.put("FAVORITO", alojamiento.esFavorito)
 		database.update(TABLA_ALOJAMIENTOS, values, "CODIGO_ALOJAMIENTO = ?", args)
 	}
 

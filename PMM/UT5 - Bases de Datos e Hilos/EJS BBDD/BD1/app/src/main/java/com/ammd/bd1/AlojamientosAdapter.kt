@@ -42,7 +42,6 @@ class AlojamientosAdapter(
 //			setListener(esp, (position + 1))
 			setListener(esp)
 			with(binding){
-				cardImage.
 				cardDenominacion.text = esp.denominacion
 				cardPrecio.text = esp.precio.toString() + "€/noche"
 				cardLocalidad.text = esp.localidad

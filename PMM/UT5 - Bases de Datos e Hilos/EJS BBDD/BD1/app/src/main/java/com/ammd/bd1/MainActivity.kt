@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity(), Eventoslistener {
 
 	private fun buscar() {
 //        TODO("Not yet implemented")
-		;
+
 	}
 
 	override fun onLongClickListener(alojamiento: Alojamientos, posicion: Int) {

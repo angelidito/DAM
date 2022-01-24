@@ -15,7 +15,12 @@ class AlojamientosDAO(context: Context) {
     }
 
     init {
-        val estructura = AlojamientosBD(context, DATABASE_NAME, factory = null, DATABASE_VERSION)
+        val estructura = AlojamientosBD(
+            context,
+            DATABASE_NAME,
+            factory = null,
+            DATABASE_VERSION
+        )
 
         database = estructura.writableDatabase
     }
