@@ -34,7 +34,7 @@ class AbogadosDB(
 					"numeroCaso INT FOREIGN KEY," +
 					"fecha VARCHAR," +
 					"descripcion VARCHAR," +
-					"realizado varchar" +
+					"realizado char(2)" +
 					")"
 		)
 		for (sql in sqls) {
