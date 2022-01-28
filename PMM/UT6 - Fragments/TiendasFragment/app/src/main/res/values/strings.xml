@@ -15,4 +15,7 @@
     <string name="edit_store_title_add">Crear Tienda</string>
     <string name="menu_save">Save</string>
     <string name="edit_store_message_save_sucess">Tienda Agregada Correctamente</string>
+    <string name="editar">Editar</string>
+    <string name="guardar">Guardar</string>
+    <string name="requeridos">Error en los campos requeridos</string>
 </resources>
