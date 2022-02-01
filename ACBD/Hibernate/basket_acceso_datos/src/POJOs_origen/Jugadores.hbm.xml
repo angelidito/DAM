@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 31-ene-2022 10:13:35 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="basket_acceso_datos" name="POJOs_origen.Jugadores" optimistic-lock="version" table="jugadores">
+    <id name="idJugador" type="java.lang.Integer">
+      <column name="id_jugador"/>
+      <generator class="identity"/>
+    </id>
+    <many-to-one class="POJOs_origen.Equipos" fetch="select" name="equipos">
+      <column name="num_equipo"/>
+    </many-to-one>
+    <property name="nombre" type="string">
+      <column length="30" name="nombre" not-null="true"/>
+    </property>
+    <property name="apellido" type="string">
+      <column length="30" name="apellido" not-null="true"/>
+    </property>
+    <property name="puesto" type="string">
+      <column length="30" name="puesto"/>
+    </property>
+    <property name="fechaAlta" type="date">
+      <column length="10" name="fecha_alta"/>
+    </property>
+    <property name="salario" type="java.lang.Integer">
+      <column name="salario"/>
+    </property>
+    <property name="altura" type="java.lang.Integer">
+      <column name="altura"/>
+    </property>
+  </class>
+</hibernate-mapping>

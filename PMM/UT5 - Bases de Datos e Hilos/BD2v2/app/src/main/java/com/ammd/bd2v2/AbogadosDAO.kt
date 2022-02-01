@@ -1,6 +1,5 @@
 package com.ammd.bd2v2
 
-import Caso
 import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
@@ -81,10 +80,9 @@ class AbogadosDAO(context: Context) {
 
 	fun updateGestion(gestion: Gestion) {
 		val values = ContentValues()
-		val args = arrayOf(gestion.codigo_alojamiento.toString())
+		val args = arrayOf(gestion.numeroGestion.toString())
 
-		values.put("DENOMINACION", gestion.denominacion)
-		values.put("FAVORITO", gestion.favorito)
-		database.update(TABLE_GESTIONES, values, "CODIGO_ALOJAMIENTO = ?", args)
+		values.put("realizado", "Sí")
+		database.update(TABLE_GESTIONES, values, "numeroGestion = ?", args)
 	}
 }

@@ -1,0 +1,18 @@
+C:\Users\dam\source\repos\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\dam\source\repos\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\dam\source\repos\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\dam\source\repos\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\dam\source\repos\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\dam\source\repos\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Users\dam\Desktop\steel\2\repos\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\dam\Desktop\steel\2\repos\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\dam\Desktop\steel\2\repos\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\dam\Desktop\steel\2\repos\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\dam\Desktop\steel\2\repos\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\dam\Desktop\steel\2\repos\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\Nueva carpeta\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\Nueva carpeta\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\Nueva carpeta\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\Nueva carpeta\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\Nueva carpeta\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\Nueva carpeta\CapaEntidad\obj\Debug\CapaEntidad.pdb

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 31-ene-2022 10:13:35 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+  <class catalog="basket_acceso_datos" name="POJOs_origen.Partidos" optimistic-lock="version" table="partidos">
+    <composite-id class="POJOs_origen.PartidosId" name="id">
+      <key-property name="elocal" type="int">
+        <column name="elocal"/>
+      </key-property>
+      <key-property name="evisitante" type="int">
+        <column name="evisitante"/>
+      </key-property>
+      <key-property name="fecha" type="date">
+        <column length="10" name="fecha"/>
+      </key-property>
+    </composite-id>
+    <many-to-one class="POJOs_origen.Equipos" fetch="select" insert="false" name="equiposByElocal" update="false">
+      <column name="elocal" not-null="true"/>
+    </many-to-one>
+    <many-to-one class="POJOs_origen.Equipos" fetch="select" insert="false" name="equiposByEvisitante" update="false">
+      <column name="evisitante" not-null="true"/>
+    </many-to-one>
+    <property name="resultado" type="string">
+      <column length="7" name="resultado"/>
+    </property>
+    <property name="resultadolocal" type="java.lang.Integer">
+      <column name="resultadolocal"/>
+    </property>
+    <property name="resultadovisitante" type="java.lang.Integer">
+      <column name="resultadovisitante"/>
+    </property>
+    <property name="arbitro" type="java.lang.Integer">
+      <column name="arbitro"/>
+    </property>
+  </class>
+</hibernate-mapping>
