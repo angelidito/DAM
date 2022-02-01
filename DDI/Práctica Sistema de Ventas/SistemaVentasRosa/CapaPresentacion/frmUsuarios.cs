@@ -99,5 +99,10 @@ namespace CapaPresentacion
 				e.Graphics.DrawImage(Properties.Resources.ok, new Rectangle(x, y, w, h));
 			}
 		}
+
+		private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+		}
 	}
 }
