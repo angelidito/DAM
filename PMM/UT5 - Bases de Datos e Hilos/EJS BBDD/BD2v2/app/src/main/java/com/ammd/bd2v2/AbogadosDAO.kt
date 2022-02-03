@@ -9,11 +9,11 @@ class AbogadosDAO(context: Context) {
 	private val database: SQLiteDatabase
 
 	companion object {
-		val DB_NAME = "abogados"
-		val DB_VERSION = 1
-		val TABLE_USUARIOS = "usuarios"
-		val TABLE_CASOS = "casos"
-		val TABLE_GESTIONES = "gestiones"
+		const val DB_NAME = "abogados"
+		const val DB_VERSION = 1
+		const val TABLE_USUARIOS = "usuarios"
+		const val TABLE_CASOS = "casos"
+		const val TABLE_GESTIONES = "gestiones"
 	}
 
 	init {
@@ -25,6 +25,22 @@ class AbogadosDAO(context: Context) {
 		)
 		database = estructura.writableDatabase
 	}
+
+	fun logIn(login: String, contrasena: String): Usuario? {
+		var sql =
+			"select * from $TABLE_USUARIOS where login = $login and contrasena = $contrasena"
+		val cursor: Cursor = database.rawQuery(sql, null)
+		if (cursor.moveToFirst())
+			return Usuario(
+				cursor.getString(cursor.getColumnIndexOrThrow("numeroColegiado")),
+				cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+				cursor.getString(cursor.getColumnIndexOrThrow("login")),
+				cursor.getString(cursor.getColumnIndexOrThrow("contrasena")),
+				cursor.getString(cursor.getColumnIndexOrThrow("tipoPerfil"))
+			)
+		return null
+	}
+
 
 	fun getAllCasos(): MutableList<com.ammd.bd2v2.Caso> {
 		val casos: MutableList<com.ammd.bd2v2.Caso> = ArrayList()
@@ -46,9 +62,9 @@ class AbogadosDAO(context: Context) {
 		return casos
 	}
 
-	fun getCasosFrom(abogado: String): MutableList<com.ammd.bd2v2.Caso> {
+	fun getCasosFrom(usuario: Usuario): MutableList<com.ammd.bd2v2.Caso> {
 		val casos: MutableList<com.ammd.bd2v2.Caso> = ArrayList()
-		var sql = "select * from $TABLE_CASOS where abogado = $abogado"
+		var sql = "select * from $TABLE_CASOS where numeroColegiado = ${usuario.numeroColegiado}"
 		val cursor: Cursor = database.rawQuery(sql, null)
 
 		if (cursor.moveToFirst())
@@ -66,7 +82,6 @@ class AbogadosDAO(context: Context) {
 		return casos
 	}
 
-
 	fun addGestion(gestion: Gestion): Long {
 		val values = ContentValues();
 
@@ -78,11 +93,13 @@ class AbogadosDAO(context: Context) {
 		return database.insert(TABLE_GESTIONES, null, values)
 	}
 
-	fun updateGestion(gestion: Gestion) {
+	fun realizarGestion(gestion: Gestion) {
 		val values = ContentValues()
 		val args = arrayOf(gestion.numeroGestion.toString())
 
-		values.put("realizado", "Sí")
+		values.put("realizado", "SI")
 		database.update(TABLE_GESTIONES, values, "numeroGestion = ?", args)
 	}
+
+
 }

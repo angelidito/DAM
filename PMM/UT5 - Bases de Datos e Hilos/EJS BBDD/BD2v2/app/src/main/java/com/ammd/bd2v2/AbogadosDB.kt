@@ -27,11 +27,11 @@ class AbogadosDB(
 					"denominacion VARCHAR," +
 					"fechaApertura VARCHAR," +
 					"caracteristicas VARCHAR," +
-					"abogado VARCHAR FOREIGN KEY" +
+					"abogado VARCHAR FOREIGN KEY REFERENCES ${AbogadosDAO.TABLE_USUARIOS}(numeroColegiado)" +
 					")",
 			"CREATE TABLE ${AbogadosDAO.TABLE_GESTIONES} (" +
 					"numeroGestion INT PRIMARY KEY AUTO_INCREMENT," +
-					"numeroCaso INT FOREIGN KEY," +
+					"numeroCaso INT FOREIGN KEY REFERENCES ${AbogadosDAO.TABLE_CASOS}(numeroCaso)," +
 					"fecha VARCHAR," +
 					"descripcion VARCHAR," +
 					"realizado char(2)" +
@@ -41,7 +41,7 @@ class AbogadosDB(
 			try {
 				database?.execSQL(sql)
 			} catch (e: SQLiteException) {
-				println("\nError al ejecutar la sentencia:\n" + sql)
+				println("\nError al ejecutar la sentencia \"$sql\"")
 				e.printStackTrace()
 			}
 		}
