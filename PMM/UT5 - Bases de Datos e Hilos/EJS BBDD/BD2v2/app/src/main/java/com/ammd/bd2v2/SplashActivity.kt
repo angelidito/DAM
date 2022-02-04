@@ -10,7 +10,7 @@ import android.content.Intent
 class SplashActivity : AppCompatActivity() {
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		val intent = Intent(this, MainActivity::class.java)
+		val intent = Intent(this, LoginActivity::class.java)
 		startActivity(intent)
 		finish() // evitar regresar a éste activity
 	}

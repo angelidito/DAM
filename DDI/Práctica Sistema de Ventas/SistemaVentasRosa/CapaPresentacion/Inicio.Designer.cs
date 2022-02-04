@@ -347,7 +347,7 @@ namespace CapaPresentacion
         private FontAwesome.Sharp.IconMenuItem menuproveedores;
         private FontAwesome.Sharp.IconMenuItem menuinformes;
         private FontAwesome.Sharp.IconMenuItem menuacercade;
-        private System.Windows.Forms.MenuStrip Menu;
+        private  System.Windows.Forms.MenuStrip Menu;
         private FontAwesome.Sharp.IconMenuItem menuMantenedor;
         private FontAwesome.Sharp.IconMenuItem submenucategora;
         private FontAwesome.Sharp.IconMenuItem submenuproducto;

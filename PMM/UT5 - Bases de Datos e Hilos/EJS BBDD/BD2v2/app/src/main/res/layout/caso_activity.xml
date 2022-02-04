@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_marginTop="@dimen/common_padding_min"
+	android:layout_marginHorizontal="@dimen/common_padding_min">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<TextView
+			android:id="@+id/numeroCaso"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@color/color_white_t"
+			android:textAppearance="?attr/textAppearanceBody2"
+			android:maxLines="1"
+			android:text="nº caso"
+			android:ellipsize="end"
+			android:padding="@dimen/common_padding_min"
+			android:textColor="@color/black"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/denominacion"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@color/color_white_t"
+			android:textAppearance="?attr/textAppearanceBody2"
+			android:maxLines="1"
+			android:ellipsize="end"
+			android:text="denominacion"
+			android:padding="@dimen/common_padding_min"
+			android:textColor="@color/black"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/numeroCaso" />
+
+		<TextView
+			android:id="@+id/fechaApertura"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@color/color_white_t"
+			android:textAppearance="?attr/textAppearanceBody2"
+			android:maxLines="1"
+			android:ellipsize="end"
+			android:text="fechaApertura"
+			android:padding="@dimen/common_padding_min"
+			android:textColor="@color/black"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/caracteristicas"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@color/color_white_t"
+			android:textAppearance="?attr/textAppearanceBody2"
+			android:maxLines="1"
+			android:ellipsize="end"
+			android:text="caracteristicas"
+			android:padding="@dimen/common_padding_min"
+			android:textColor="@color/black"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/denominacion" />
+
+		<TextView
+			android:id="@+id/abogado"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:background="@color/color_white_t"
+			android:textAppearance="?attr/textAppearanceBody2"
+			android:maxLines="1"
+			android:ellipsize="end"
+			android:text="abogado"
+			android:padding="@dimen/common_padding_min"
+			android:textColor="@color/black"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/caracteristicas" />
+
+
+
+
+
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

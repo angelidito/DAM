@@ -2,17 +2,17 @@ package com.ammd.bd2v2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ammd.bd2v2.databinding.ActivityMainBinding
+import com.ammd.bd2v2.databinding.ActivityLoginBinding
 
-class MainActivity : AppCompatActivity() {
-	lateinit var binding: ActivityMainBinding
+class LoginActivity : AppCompatActivity() {
+	lateinit var binding: ActivityLoginBinding
 	private lateinit var database: AbogadosDAO
 	private lateinit var adapter: AbogadosAdapter
 
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		binding = ActivityMainBinding.inflate(layoutInflater)
+		binding = ActivityLoginBinding.inflate(layoutInflater)
 		setContentView(binding.root)
 
 		// TODO: lanzar hilo pantalla de carga

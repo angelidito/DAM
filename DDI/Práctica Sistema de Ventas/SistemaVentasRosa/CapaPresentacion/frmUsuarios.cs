@@ -49,8 +49,14 @@ namespace CapaPresentacion
 			foreach (Usuario item in listausuario)
 			{
 				dgvdata.Rows.Add(new object[] {
-					"", item.IdUsuario, item.Documento, item.NombreCompleto, item.Correo, item.Clave,
-					item.oRol.IdRol, item.oRol.Descripcion,
+					"",
+					item.IdUsuario,
+					item.Documento, 
+					item.NombreCompleto,
+					item.Correo, 
+					item.Clave,
+					item.oRol.IdRol, 
+					item.oRol.Descripcion,
 					item.Estado == true ? 1 : 0,
 					item.Estado == true ? "Activo" : "No activo" });
 			}
@@ -102,7 +108,38 @@ namespace CapaPresentacion
 
 		private void dgvdata_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
+			int indice = e.RowIndex;
+			if (dgvdata.Columns[e.ColumnIndex].Name == "btnseleccionar")
+			{
+				txtId.Text = dgvdata.Rows[indice].Cells["Idusuario"].Value.ToString();
+				txtdocumento.Text = dgvdata.Rows[indice].Cells["Documento"].Value.ToString();
+				txtnombrecompleto.Text = dgvdata.Rows[indice].Cells["NombreCompleto"].Value.ToString();
+				txtcorreo.Text = dgvdata.Rows[indice].Cells["Correo"].Value.ToString();
+				txtclave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
+				txtconfirmarclave.Text = dgvdata.Rows[indice].Cells["Clave"].Value.ToString();
 
+				foreach (OpcionCombo oc in cborol.Items)
+				{
+					if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["IdRol"].Value))
+					{
+						int indice_combo = cborol.Items.IndexOf(oc);
+						cborol.SelectedIndex = indice_combo;
+						break; //para que continúe la ejecución por si se pierde el foco
+					}
+				}
+
+				foreach (OpcionCombo oc in cboestado.Items)
+				{
+					if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dgvdata.Rows[indice].Cells["EstadoValor"].Value))
+					{
+						int indice_combo = cboestado.Items.IndexOf(oc);
+						cboestado.SelectedIndex = indice_combo;
+						break; //para que continúe la ejecución por si se pierde el foco
+					}
+				}
+
+			}
 		}
+
 	}
 }

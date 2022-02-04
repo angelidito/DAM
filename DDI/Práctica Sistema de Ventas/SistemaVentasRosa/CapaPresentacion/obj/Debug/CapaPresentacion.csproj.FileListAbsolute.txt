@@ -55,3 +55,4 @@ C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaPresentacion\o
 C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
 C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.exe
 C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete

@@ -18,7 +18,8 @@ namespace CapaDatos
             using (SqlConnection oconexion = new SqlConnection(Conexion.cadena)) {
                 try
                 {
-                    string query = "select IdUsuario, Documento, NombreCompleto, Correo, Clave, Estado from usuario";
+                    // string query = "select IdUsuario, Documento, NombreCompleto, Correo, Clave, Estado from usuario";
+                    string query = "select * from usuario";
                     SqlCommand cmd = new SqlCommand(query, oconexion);
                     cmd.CommandType = CommandType.Text;
 
@@ -34,8 +35,8 @@ namespace CapaDatos
                                 Correo = dr["Correo"].ToString(),
                                 Clave = dr["Clave"].ToString(),
                                 Estado = Convert.ToBoolean(dr["Estado"]),
-								oRol = new Rol() { IdRol = Convert.ToInt32(dr["IdRol"] },
-                                Descripcion = dr["Descripcion"]
+								oRol = new Rol() { IdRol = Convert.ToInt32(dr["IdRol"]) },
+                                // Descripcion = dr["Descripcion"]
                             });
 
                         }
