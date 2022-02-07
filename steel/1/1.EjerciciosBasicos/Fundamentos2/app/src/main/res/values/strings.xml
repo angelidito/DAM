@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Fundamentos2</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Frame</string>
+    <string name="title_notifications">Constraints</string>
+    <string name="prg_mov">Programación en móviles</string>
+    <string name="segundo">2º DAM</string>
+    <string name="btn">Boton</string>
+    <string name="escribe_algo">escribe_algo</string>
+    <string name="mensaje">mensaje</string>
+    <string name="texto">texto</string>
+</resources>

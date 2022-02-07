@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BD1DelgadoSergio</string>
+    <string name="localidad">Localidad:</string>
+    <string name="foto_alojamiento">foto_alojamiento</string>
+    <string name="nombre_portal_de_turismo">Portal de turismo Delgado</string>
+    <string name="cif">CIF: A36873891</string>
+    <string name="foto_portal">foto_portal</string>
+    <string name="url">https://deviajeconmigo.com/wp-content/uploads/2021/01/logo-tonto-jose-copy-300x215.png</string>
+    <string name="lblUbicacion">Ubicación:</string>
+    <string name="precio">Precio:</string>
+    <string name="detalles">Detalles:</string>
+    <string name="actividades">Actividades:</string>
+    <string name="llamar">llamar</string>
+    <string name="email">email</string>
+</resources>

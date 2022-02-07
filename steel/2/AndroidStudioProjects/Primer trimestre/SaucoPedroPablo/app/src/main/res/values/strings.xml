@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SaucoPedroPablo</string>
+    <string name="imagen">Imagen</string>
+    <string name="pedro_pablo">Pedro Pablo</string>
+    <string name="registro">REGISTRO</string>
+    <string name="dni">DNI:</string>
+    <string name="nombre">Nombre</string>
+    <string name="codigo">Codigo</string>
+    <string name="a_o_titulo">Año titulo</string>
+</resources>

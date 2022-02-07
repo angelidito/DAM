@@ -1,0 +1,7 @@
+<resources>
+    <string name="imagen_comunidad">imagen_comunidad</string>
+    <string name="url">"https://cdn.shopify.com/s/files/1/2267/1961/collections/programador_pickit_2_pickit_3_pickit_pic_microcontrolador_ferretronica.png?v=1528148672"</string>
+    <string name="descripcion">Gestione los eventos de su Comunidad de una forma eficiente y simple!</string>
+    <string name="creador">Sergio Delgado</string>
+    <string name="anoCreacion">2022</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ej2DelgadoSergio</string>
+    <string name="monumentos_burgos">Monumentos de Burgos</string>
+    <string name="volver">Volver</string>
+    <string name="foto_monumento">Foto Monumento</string>
+    <string name="ubicacion">Ubicación:</string>
+    <string name="telefono">Teléfono:</string>
+    <string name="email">Email:</string>
+</resources>

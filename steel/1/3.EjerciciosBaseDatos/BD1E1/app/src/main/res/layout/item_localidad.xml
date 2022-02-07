@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="394dp"
+        android:layout_height="345dp">
+
+        <ImageView
+            android:id="@+id/imgAlojamiento"
+            android:layout_width="380dp"
+            android:layout_height="200dp"
+            android:contentDescription="@string/foto_alojamiento"
+            android:layout_marginStart="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <!-- Texto para el nombre del alojamiento -->
+        <TextView
+            android:id="@+id/nombreAlojamiento"
+            android:layout_width="370dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/imgAlojamiento"
+            app:layout_constraintTop_toBottomOf="@+id/imgAlojamiento" />
+
+        <!-- Texto para la localidad del alojamiento -->
+        <TextView
+            android:id="@+id/localidadAlojamiento"
+            android:layout_width="370dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/nombreAlojamiento"
+            app:layout_constraintTop_toBottomOf="@+id/nombreAlojamiento" />
+
+        <!-- Texto para el precio del alojamiento -->
+        <TextView
+            android:id="@+id/precioAlojamiento"
+            android:layout_width="370dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/localidadAlojamiento"
+            app:layout_constraintTop_toBottomOf="@+id/localidadAlojamiento" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/crznFavorito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="7dp"
+            android:button="@drawable/estados"
+            android:buttonTint="@android:color/white"
+            android:checked="true"
+            app:layout_constraintEnd_toEndOf="@id/constraint"
+            app:layout_constraintTop_toTopOf="@id/imgAlojamiento" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

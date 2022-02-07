@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Ej1DelgadoSergio</string>
+    <string name="usuario">Usuario:</string>
+    <string name="password">Contraseña:</string>
+    <string name="acceso_de_usuarios">ACCESO DE USUARIOS</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="codigo_producto">Código del producto</string>
+    <string name="consulta_productos">Consulta de Productos</string>
+</resources>

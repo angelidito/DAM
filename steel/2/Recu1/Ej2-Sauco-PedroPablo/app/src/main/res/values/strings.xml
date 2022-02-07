@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Ej2-Sauco-PedroPablo</string>
+    <string name="content_description_media">foto_monumento</string>
+    <string name="title">nombre_monumento</string>
+    <string name="action_1">Llamar</string>
+    <string name="action_2">Mensaje</string>
+    <string name="titulo_permiso">Llamada </string>
+    <string name="explicacion_permiso">Sirve para poder realizar una llamda telefónica </string>
+    <string name="aceptar"> ACEPTAR </string>
+    <string name="cancelar"> CANCELAR </string>
+</resources>

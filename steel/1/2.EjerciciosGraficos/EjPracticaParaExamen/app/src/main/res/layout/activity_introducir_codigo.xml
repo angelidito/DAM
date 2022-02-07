@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- TextView para el título del layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/consulta_de_monumentos"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.098" />
+
+    <!-- TextView con el texto de "Código de producto" -->
+    <TextView
+        android:id="@+id/lblCodMon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/codigo_del_monumento"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.238"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.206" />
+
+    <!-- Campo de texto para el código de producto -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/monumento"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        app:endIconMode="clear_text"
+        app:layout_constraintStart_toStartOf="@id/lblCodMon"
+        app:layout_constraintTop_toBottomOf="@id/lblCodMon" >
+        <!-- El endIconMode es el botón de la X que permite borrar el texto introducido -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtMonumento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Botón de search -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAceptar"
+        android:layout_width="58dp"
+        android:layout_height="60dp"
+        app:icon="@drawable/ic_search"
+        app:layout_constraintStart_toEndOf="@+id/monumento"
+        app:layout_constraintTop_toTopOf="@+id/monumento" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

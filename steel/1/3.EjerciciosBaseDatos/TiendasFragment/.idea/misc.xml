@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/dam/Documents/AndroidStudio/3.EjerciciosBaseDatos/TiendasFragment/app/src/main/res/layout/consulta.xml" value="0.20102564102564102" />
+        <entry key="..\:/Users/dam/Documents/AndroidStudio/3.EjerciciosBaseDatos/TiendasFragment/app/src/main/res/layout/editar.xml" value="0.20102564102564102" />
+        <entry key="..\:/Users/dam/Documents/AndroidStudio/3.EjerciciosBaseDatos/TiendasFragment/app/src/main/res/layout/item_store.xml" value="0.20102564102564102" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+</project>

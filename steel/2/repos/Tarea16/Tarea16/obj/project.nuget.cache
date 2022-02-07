@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Vv9vCPQu9xgd0AwdyxHHNb8DIHSvNe/bHoQ4wZyuvjyxCcc4qSANU02aVYqWREJtPqBPPyK7NL1takistxXvzg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\dam\\source\\repos\\Tarea16\\Tarea16\\Tarea16.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\dam\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.18\\microsoft.netcore.app.host.win-x64.3.1.18.nupkg.sha512"
+  ],
+  "logs": []
+}

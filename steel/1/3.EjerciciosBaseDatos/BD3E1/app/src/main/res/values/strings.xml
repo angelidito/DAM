@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="nombre">Nombre</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="volver">Volver</string>
+    <string name="fotoproducto">fotoProducto</string>
+    <string name="crear_lista">Crear lista</string>
+    <string name="productos">Productos</string>
+    <string name="nombre_producto">Nombre del producto</string>
+</resources>

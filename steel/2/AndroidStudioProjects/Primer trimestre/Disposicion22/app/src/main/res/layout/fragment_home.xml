@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.home.HomeFragment"
+    ><!--El ScrollView permite tener la barra lateral que permite bajar y subir en la app-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    android:orientation="vertical"
+    android:gravity="center|top"
+    ><!--eliges en que sentido poner lo agregado-->
+
+    <TextView
+        android:text="@string/movil"
+        android:id="@+id/text_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:background="@color/purple_500"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        />
+    <!-- textColor -> pones el colo del texto
+         textAligment -> decides donde poner el texto, centro, derecha, izquierda, dentro del cuadrado
+          Los layout sirven para saber donde colocar los textos, botones...
+          -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/segundodam"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@color/purple_500"
+        />
+    <!--textSize -> eliges el tamaño de la fuente
+        gravity -> eliges donde cololarlo en la pantalla-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botonn"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botonn"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/botonn"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@color/white">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/botonn"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/botonn"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/botonn"
+            />
+    </LinearLayout>
+    <include layout="@layout/fragment_dashboard"/>
+    <include layout="@layout/fragment_notifications"/>
+    <!--con estas líneas haces que se incluyan los diseños mencionados-->
+</LinearLayout>
+</ScrollView>

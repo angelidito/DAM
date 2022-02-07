@@ -1,6 +1,6 @@
 use BDSISTEMAVENTAS
 go
-create proc SP_REGISTRARUSUARIO (
+create proc SP_ACTUALIZARUSUARIO (
 	@IdUsuario int,
 	@Documento varchar(50),
 	@NombreCompleto varchar(50),

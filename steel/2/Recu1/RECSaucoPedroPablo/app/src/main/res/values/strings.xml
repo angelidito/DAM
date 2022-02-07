@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">RECSaucoPedroPablo</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">cancelar</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="dni">DNI</string>
+    <string name="matricula">Matricula</string>
+    <string name="modelo">Modelo</string>
+    <string name="nombre">Nombre</string>
+    <string name="fecha">Fecha</string>
+    <string name="estado">Estado</string>
+    <string name="a_adir_coche">AÑADIR COCHE</string>
+    <string name="observaciones">Observaciones</string>
+</resources>

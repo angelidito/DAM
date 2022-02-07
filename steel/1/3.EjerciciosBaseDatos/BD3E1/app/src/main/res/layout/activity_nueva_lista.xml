@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activitys.NuevaListaActivity">
+
+    <TextView
+        android:id="@+id/tituloNuevaLista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/aclonica"
+        android:gravity="center"
+        android:text="Nueva Lista  🛒"
+        android:textColor="@android:color/holo_orange_light"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nombre"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="250dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="70dp"
+        android:hint="@string/nombre"
+        app:endIconMode="clear_text"
+        app:layout_constraintStart_toStartOf="@id/tituloNuevaLista"
+        app:layout_constraintTop_toBottomOf="@id/tituloNuevaLista">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aclonica" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Botón de aceptar -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAceptar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="60dp"
+        android:text="@string/aceptar"
+        app:layout_constraintStart_toStartOf="@+id/nombre"
+        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+
+    <!-- Botón de volver -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVolver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="430dp"
+        android:text="@string/volver"
+        app:icon="@drawable/ic_back"
+        app:layout_constraintEnd_toEndOf="@+id/tituloNuevaLista"
+        app:layout_constraintTop_toBottomOf="@+id/tituloNuevaLista" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

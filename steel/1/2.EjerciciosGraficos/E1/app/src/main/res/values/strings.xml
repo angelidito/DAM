@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">DelgadoSergio</string>
+    <string name="foto_hospital">Foto hospital</string>
+    <string name="sergio_delgado_esteban">Sergio Delgado Esteban</string>
+    <string name="registro">Registro</string>
+    <string name="llamar">Llamar</string>
+    <string name="dni">DNI</string>
+    <string name="nombre_y_apellidos">Nombre y apellidos</string>
+    <string name="anno_titulacion">Año de titulación</string>
+    <string name="codigo_especialidad">Código de especialidad</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="registro_medicos">Registro de médicos</string>
+</resources>

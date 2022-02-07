@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BD2DelgadoSergio</string>
+    <string name="url">"https://www.spaabogados.es/wp-content/uploads/2021/04/logo-spa-abogados-1.png"</string>
+    <string name="foto_logo_bufete">foto_logo_bufete</string>
+    <string name="acceso_de_usuarios">Acceso de Usuarios</string>
+    <string name="bufete_delgado">Bufete Delgado</string>
+    <string name="usuario">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="casos">Casos</string>
+    <string name="caso_n">Caso nº</string>
+    <string name="btn_nueva_gestion">btn_nueva_gestion</string>
+    <string name="gestiones">Gestiones</string>
+    <string name="anadir_gestion">Añadir gestión</string>
+    <string name="descripcion">Descripción:</string>
+    <string name="volver">Volver</string>
+    <string name="anadir_caso">Añadir caso</string>
+    <string name="caracteristicas">Características</string>
+    <string name="fecha_de_apertura">Fecha de apertura:</string>
+</resources>

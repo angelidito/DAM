@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">bd1SaucoPedroPablo</string>
+    <string name="content_description_media">content_description_media</string>
+    <string name="buscar">Buscar</string>
+    <string name="titulo_alojamientos">Titulo Alojamientos</string>
+    <string name="imagen">imagen</string>
+    <string name="tripedropa">TriPedroPa</string>
+    <string name="_70715475p">70715475P</string>
+    <string name="imagen_alojamiento">imagen alojamiento</string>
+</resources>

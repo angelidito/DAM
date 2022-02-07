@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">bd2SaucoPedroPablo</string>
+    <string name="imagen">imagen</string>
+    <string name="usuario">Usuario</string>
+    <string name="iniciar_sesi_n">INICIAR SESIÓN</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="lista_de_casos">LISTA DE CASOS</string>
+    <string name="caso">CASO</string>
+    <string name="anadir_gestion">Añadir gestión</string>
+    <string name="informacion">INFORMACIÓN</string>
+</resources>

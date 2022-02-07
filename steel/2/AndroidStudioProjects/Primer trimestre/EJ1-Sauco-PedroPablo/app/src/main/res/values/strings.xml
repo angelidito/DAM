@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">BLOQUE1-Sauco-PedroPablo</string>
+    <string name="nombre_usuario">Nombre usuario</string>
+    <string name="contrasena">Contraseña</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="consultar_productos">CONSULTAR PRODUCTOS</string>
+    <string name="buscar">buscar</string>
+    <string name="iniciar_sesion">INICIAR SESIÓN</string>
+    <string name="lbl_codigo">Código</string>
+    <string name="usuario">Usuario</string>
+</resources>

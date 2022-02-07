@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PedroPaExamenPrueba</string>
+    <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="usuario">Pedro Pablo</string>
+    <string name="contrasena">Sauco Gonzalez</string>
+    <string name="registro_de_enfermeros">Registro de enfermeros</string>
+    <string name="dni">DNI</string>
+    <string name="nombre">Nombre</string>
+    <string name="anno_de_titulacion">Año de titulación</string>
+    <string name="codigo_especial">Código especial</string>
+</resources>

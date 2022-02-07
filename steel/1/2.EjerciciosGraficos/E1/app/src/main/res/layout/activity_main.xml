@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/miNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="40dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/sergio_delgado_esteban"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgHospital"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/foto_hospital"
+        app:layout_constraintTop_toBottomOf="@+id/miNombre" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLlamar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="70dp"
+        android:text="@string/llamar"
+        app:icon="@drawable/ic_call"
+        app:layout_constraintTop_toBottomOf="@id/imgHospital"
+        app:layout_constraintStart_toStartOf="@id/imgHospital" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnRegistro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/registro"
+        app:layout_constraintStart_toEndOf="@id/btnLlamar"
+        app:layout_constraintTop_toTopOf="@id/btnLlamar" />
+</androidx.constraintlayout.widget.ConstraintLayout>

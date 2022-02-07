@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">EjPracticaParaExamen</string>
+    <string name="acceso_de_usuarios">Acceso de Usuarios</string>
+    <string name="usuario">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="codigo_del_monumento">Codigo del monumento</string>
+    <string name="consulta_de_monumentos">Consulta de monumentos</string>
+    <string name="volver">Volver</string>
+</resources>

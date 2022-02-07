@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Disposicion2</string>
+    <string name="title_home">Linear</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="prg_movil">Programación en moviles</string>
+    <string name="segundo_dam">2ºDAM</string>
+    <string name="boton">Boton</string>
+</resources>
