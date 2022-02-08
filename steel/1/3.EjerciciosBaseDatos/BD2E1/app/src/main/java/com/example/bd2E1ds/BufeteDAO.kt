@@ -1,4 +1,4 @@
-package com.example.bd2delgadosergio
+package com.example.bd2E1ds
 
 import android.content.Context
 import android.database.Cursor
@@ -40,12 +40,14 @@ class BufeteDAO (context: Context) {
         val cursor: Cursor = mBD.query(TABLA_CASOS,null,null,null,null,null,null,)
         if(cursor.moveToFirst()){
             do{
-                listaCasos.add(Caso(
+                listaCasos.add(
+                    Caso(
                     cursor.getInt(cursor.getColumnIndexOrThrow("numCaso")),
                     cursor.getString(cursor.getColumnIndexOrThrow("denominacion")),
                     cursor.getString(cursor.getColumnIndexOrThrow("fechaApertura")),
                     cursor.getString(cursor.getColumnIndexOrThrow("caracteristicas")),
-                    cursor.getInt(cursor.getColumnIndexOrThrow("numAbogado"))))
+                    cursor.getInt(cursor.getColumnIndexOrThrow("numAbogado")))
+                )
             }while (cursor.moveToNext())
         }
         if(!cursor.isClosed){
@@ -59,12 +61,14 @@ class BufeteDAO (context: Context) {
         val cursor: Cursor = mBD.rawQuery("SELECT * FROM $TABLA_CASOS WHERE numAbogado = '$codAbogado'",null)
         if(cursor.moveToFirst()){
             do{
-                listaCasos.add(Caso(
+                listaCasos.add(
+                    Caso(
                     cursor.getInt(cursor.getColumnIndexOrThrow("numCaso")),
                     cursor.getString(cursor.getColumnIndexOrThrow("denominacion")),
                     cursor.getString(cursor.getColumnIndexOrThrow("fechaApertura")),
                     cursor.getString(cursor.getColumnIndexOrThrow("caracteristicas")),
-                    cursor.getInt(cursor.getColumnIndexOrThrow("numAbogado"))))
+                    cursor.getInt(cursor.getColumnIndexOrThrow("numAbogado")))
+                )
             }while (cursor.moveToNext())
         }
         if(!cursor.isClosed){
@@ -91,12 +95,14 @@ class BufeteDAO (context: Context) {
         val cursor: Cursor = mBD.rawQuery("SELECT * FROM $TABLA_GESTIONES WHERE numCaso = '$numCaso'",null)
         if(cursor.moveToFirst()){
             do{
-                listaGestiones.add(Gestion(
+                listaGestiones.add(
+                    Gestion(
                     cursor.getInt(cursor.getColumnIndexOrThrow("numGestion")),
                     cursor.getInt(cursor.getColumnIndexOrThrow("numCaso")),
                     cursor.getString(cursor.getColumnIndexOrThrow("fecha")),
                     cursor.getString(cursor.getColumnIndexOrThrow("descripcion")),
-                    cursor.getString(cursor.getColumnIndexOrThrow("realizado"))))
+                    cursor.getString(cursor.getColumnIndexOrThrow("realizado")))
+                )
             }while (cursor.moveToNext())
         }
         if(!cursor.isClosed){

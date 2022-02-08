@@ -1,4 +1,4 @@
-package com.example.bd2delgadosergio
+package com.example.bd2E1ds
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

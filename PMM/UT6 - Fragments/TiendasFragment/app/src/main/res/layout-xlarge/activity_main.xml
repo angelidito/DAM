@@ -5,14 +5,14 @@
     android:id="@+id/containerMain"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".vista.MainActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentLista"
-            android:name="com.mjpg.tiendasfragment.ConsultaFragment"
+            android:name="com.mjpg.tiendasfragment.vista.ConsultaFragment"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"

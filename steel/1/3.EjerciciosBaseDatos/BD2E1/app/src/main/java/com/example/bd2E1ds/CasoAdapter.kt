@@ -1,11 +1,12 @@
-package com.example.bd2delgadosergio
+package com.example.bd2E1ds
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bd2delgadosergio.databinding.ItemCasoBinding
+import com.example.bd2E1ds.R
+import com.example.bd2E1ds.databinding.ItemCasoBinding
 
 class CasoAdapter (private var casos: MutableList<Caso>, private var listener: EventosListener)
     : RecyclerView.Adapter<CasoAdapter.ViewHolder>() {
@@ -21,13 +22,13 @@ class CasoAdapter (private var casos: MutableList<Caso>, private var listener: E
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CasoAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         contexto = parent.context
         val view = LayoutInflater.from(contexto).inflate(R.layout.item_caso, parent, false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: CasoAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val caso = casos.get(position)
         with(holder) {
             setListener(caso)

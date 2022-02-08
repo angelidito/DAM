@@ -60,13 +60,14 @@ namespace CapaPresentacion
 			this.txtId = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.cbobusqueda = new System.Windows.Forms.ComboBox();
-			this.txtbusqueda = new System.Windows.Forms.Label();
 			this.label12 = new System.Windows.Forms.Label();
 			this.btnbuscar = new FontAwesome.Sharp.IconButton();
 			this.btnlimpiarbuscador = new FontAwesome.Sharp.IconButton();
 			this.btneliminar = new FontAwesome.Sharp.IconButton();
 			this.btnlimpiar = new FontAwesome.Sharp.IconButton();
 			this.btnguardar = new FontAwesome.Sharp.IconButton();
+			this.txtIndice = new System.Windows.Forms.Label();
+			this.txtbusqueda = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvdata)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -340,12 +341,12 @@ namespace CapaPresentacion
 			// txtId
 			// 
 			this.txtId.AutoSize = true;
-			this.txtId.Location = new System.Drawing.Point(107, 41);
+			this.txtId.Location = new System.Drawing.Point(107, 40);
 			this.txtId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.txtId.Name = "txtId";
-			this.txtId.Size = new System.Drawing.Size(50, 13);
+			this.txtId.Size = new System.Drawing.Size(13, 13);
 			this.txtId.TabIndex = 8;
-			this.txtId.Text = "id control";
+			this.txtId.Text = "0";
 			// 
 			// label11
 			// 
@@ -367,16 +368,6 @@ namespace CapaPresentacion
 			this.cbobusqueda.Name = "cbobusqueda";
 			this.cbobusqueda.Size = new System.Drawing.Size(161, 21);
 			this.cbobusqueda.TabIndex = 4;
-			// 
-			// txtbusqueda
-			// 
-			this.txtbusqueda.BackColor = System.Drawing.Color.White;
-			this.txtbusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.txtbusqueda.Location = new System.Drawing.Point(620, 20);
-			this.txtbusqueda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.txtbusqueda.Name = "txtbusqueda";
-			this.txtbusqueda.Size = new System.Drawing.Size(124, 21);
-			this.txtbusqueda.TabIndex = 12;
 			// 
 			// label12
 			// 
@@ -405,6 +396,7 @@ namespace CapaPresentacion
 			this.btnbuscar.Size = new System.Drawing.Size(19, 20);
 			this.btnbuscar.TabIndex = 11;
 			this.btnbuscar.UseVisualStyleBackColor = false;
+			this.btnbuscar.Click += new System.EventHandler(this.btnbuscar_Click);
 			// 
 			// btnlimpiarbuscador
 			// 
@@ -441,6 +433,7 @@ namespace CapaPresentacion
 			this.btneliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			this.btneliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btneliminar.UseVisualStyleBackColor = false;
+			this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
 			// 
 			// btnlimpiar
 			// 
@@ -485,12 +478,29 @@ namespace CapaPresentacion
 			this.btnguardar.UseVisualStyleBackColor = false;
 			this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
 			// 
+			// txtIndice
+			// 
+			this.txtIndice.AutoSize = true;
+			this.txtIndice.Location = new System.Drawing.Point(133, 40);
+			this.txtIndice.Name = "txtIndice";
+			this.txtIndice.Size = new System.Drawing.Size(16, 13);
+			this.txtIndice.TabIndex = 13;
+			this.txtIndice.Text = "-1";
+			// 
+			// txtbusqueda
+			// 
+			this.txtbusqueda.Location = new System.Drawing.Point(622, 20);
+			this.txtbusqueda.Name = "txtbusqueda";
+			this.txtbusqueda.Size = new System.Drawing.Size(121, 20);
+			this.txtbusqueda.TabIndex = 14;
+			// 
 			// frmUsuarios
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(849, 424);
 			this.Controls.Add(this.txtbusqueda);
+			this.Controls.Add(this.txtIndice);
 			this.Controls.Add(this.btnbuscar);
 			this.Controls.Add(this.btnlimpiarbuscador);
 			this.Controls.Add(this.label11);
@@ -557,7 +567,6 @@ namespace CapaPresentacion
         private System.Windows.Forms.ComboBox cbobusqueda;
         private FontAwesome.Sharp.IconButton btnlimpiarbuscador;
         private FontAwesome.Sharp.IconButton btnbuscar;
-        private System.Windows.Forms.Label txtbusqueda;
         private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Id;
@@ -569,5 +578,7 @@ namespace CapaPresentacion
 		private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
 		private System.Windows.Forms.DataGridViewTextBoxColumn EstadoValor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+		private System.Windows.Forms.Label txtIndice;
+		private System.Windows.Forms.TextBox txtbusqueda;
 	}
 }

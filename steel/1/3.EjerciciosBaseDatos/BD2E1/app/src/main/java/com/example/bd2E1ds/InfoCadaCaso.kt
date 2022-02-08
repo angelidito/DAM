@@ -1,4 +1,4 @@
-package com.example.bd2delgadosergio
+package com.example.bd2E1ds
 
 import android.content.Intent
 import android.os.AsyncTask
@@ -8,14 +8,14 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.get
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.bd2delgadosergio.databinding.ActivityInfoCadaCasoBinding
+import com.example.bd2E1ds.databinding.ActivityInfoCadaCasoBinding
 
 class InfoCadaCaso : AppCompatActivity(), EventosListener2 {
     private lateinit var caso: Caso
     private lateinit var binding:ActivityInfoCadaCasoBinding
-    private lateinit var adaptador:GestionAdapter
+    private lateinit var adaptador: GestionAdapter
     private lateinit var gridLayout:GridLayoutManager
-    private lateinit var bd:BufeteDAO
+    private lateinit var bd: BufeteDAO
 
     companion object{
         const val NUM_CASO = "numCaso"

@@ -1,4 +1,4 @@
-package com.example.bd2delgadosergio
+package com.example.bd2E1ds
 
 import android.content.Intent
 import android.os.AsyncTask
@@ -8,13 +8,13 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.bd2delgadosergio.databinding.ActivityCasosBinding
+import com.example.bd2E1ds.databinding.ActivityCasosBinding
 
 class CasosActivity : AppCompatActivity(), EventosListener {
     private lateinit var binding: ActivityCasosBinding
-    private lateinit var adaptador:CasoAdapter
+    private lateinit var adaptador: CasoAdapter
     private lateinit var gridLayout:GridLayoutManager
-    private lateinit var bd:BufeteDAO
+    private lateinit var bd: BufeteDAO
     private lateinit var numAbogado:String
     private lateinit var tipoUsu:String
 

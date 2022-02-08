@@ -1,11 +1,12 @@
-package com.example.bd2delgadosergio
+package com.example.bd2E1ds
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.bd2delgadosergio.databinding.ItemGestionBinding
+import com.example.bd2E1ds.R
+import com.example.bd2E1ds.databinding.ItemGestionBinding
 
 class GestionAdapter (private var gestiones: MutableList<Gestion>, private var listener: EventosListener2)
     : RecyclerView.Adapter<GestionAdapter.ViewHolder>() {

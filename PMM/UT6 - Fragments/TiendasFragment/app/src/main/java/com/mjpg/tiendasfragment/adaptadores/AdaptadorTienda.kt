@@ -1,16 +1,19 @@
-package com.mjpg.tiendasfragment
+package com.mjpg.tiendasfragment.adaptadores
 
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.mjpg.tiendasfragment.modelo.EventosListener
+import com.mjpg.tiendasfragment.R
 import com.mjpg.tiendasfragment.databinding.ItemStoreBinding
+import com.mjpg.tiendasfragment.modelo.Tienda
 
 
 class AdaptadorTienda(
-    private var tiendas: MutableList<Tienda>,
-    private var listener: EventosListener
+	private var tiendas: MutableList<Tienda>,
+	private var listener: EventosListener
 ) : RecyclerView.Adapter<AdaptadorTienda.ViewHolder>() {
 
     private lateinit var contexto: Context

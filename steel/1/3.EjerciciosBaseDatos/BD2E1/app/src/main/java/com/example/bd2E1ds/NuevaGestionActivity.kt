@@ -1,9 +1,9 @@
-package com.example.bd2delgadosergio
+package com.example.bd2E1ds
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.bd2delgadosergio.databinding.ActivityNuevaGestionBinding
+import com.example.bd2E1ds.databinding.ActivityNuevaGestionBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
