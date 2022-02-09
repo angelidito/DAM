@@ -5,6 +5,9 @@
  */
 package matise1;
 
+import RAMABD.Obra;
+import com.matisse.*;
+
 /**
  *
  * @author dam
@@ -19,10 +22,40 @@ public class Main {
     }
 
     public static void creaObjetos(String hostname, String dbname) {
+        MtDatabase db;
+        // Conectar
         try {
-            MtDatabase db = new MtDatabase();
+            db = conectarBD();
+            db.open();
         } catch (Exception e) {
-
+            e.printStackTrace();
+            return;
         }
+        // abrimos transaccion
+        db.startTransaction();
+
+        // inserta
+        db.a        //Muestra cantidad de obras
+        System.out.println("\n"
+            + Obra.getInstanceNumber(db)
+            + "Obras en la base de datos");
+
+        //Commit par aplicar los cambios de la transacción
+        db.commit();
+
+        // cerrar conexion
+        db.close();
+    }
+
+    private static MtDatabase conectarBD() {
+        MtDatabase db;
+
+        db = new MtDatabase(
+            "localhost",
+            "RAMA",
+            new MtPackageObjectFactory("", "biblioteca")
+        );
+
+        return db;
     }
 }
