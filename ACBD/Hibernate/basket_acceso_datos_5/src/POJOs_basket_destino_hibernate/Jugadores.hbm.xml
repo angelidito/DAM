@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 31-ene-2022 11:23:42 by Hibernate Tools 4.3.1 -->
+<!-- Generated 10-feb-2022 13:48:03 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="POJOS_origen.Jugadores" table="jugadores" catalog="basket_acceso_datos" optimistic-lock="version">
+    <class name="POJOs_basket_destino_hibernate.Jugadores" table="jugadores" catalog="basket_destino" optimistic-lock="version">
         <id name="idJugador" type="java.lang.Integer">
             <column name="id_jugador" />
             <generator class="identity" />
         </id>
-        <many-to-one name="equipos" class="POJOS_origen.Equipos" fetch="select">
+        <many-to-one name="equipos" class="POJOs_basket_destino_hibernate.Equipos" fetch="select">
             <column name="num_equipo" />
         </many-to-one>
         <property name="nombre" type="string">

@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package basket_acceso_datos_5;
+package cosas;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import POJOS_origen.*;
+import POJOs_basket_angel.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -19,9 +19,6 @@ import java.util.ArrayList;
  */
 public class OrigenDAO {
 
-    private static ArrayList<Jugadores> jugadores = new ArrayList<Jugadores>();
-    private static ArrayList<Equipos> equipos = new ArrayList<Equipos>();
-    private static ArrayList<Partidos> partidos = new ArrayList<Partidos>();
     private static Transaction tx = null;
     private static Session session;
 
@@ -42,18 +39,6 @@ public class OrigenDAO {
 
     public void closeSession() {
         session.close();
-    }
-
-    public static ArrayList<Jugadores> getJugadores() {
-        return jugadores;
-    }
-
-    public static ArrayList<Equipos> getEquipos() {
-        return equipos;
-    }
-
-    public static ArrayList<Partidos> getPartidos() {
-        return partidos;
     }
 
 }

@@ -35,7 +35,7 @@ public class Main {
         db.startTransaction();
 
         // inserta
-        db.a        //Muestra cantidad de obras
+        db.a //Muestra cantidad de obras
         System.out.println("\n"
             + Obra.getInstanceNumber(db)
             + "Obras en la base de datos");

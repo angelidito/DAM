@@ -1,5 +1,5 @@
-package POJOS_origen;
-// Generated 31-ene-2022 11:23:42 by Hibernate Tools 4.3.1
+package POJOs_basket_destino_hibernate;
+// Generated 10-feb-2022 13:48:03 by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;

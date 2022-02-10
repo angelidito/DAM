@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 31-ene-2022 11:23:42 by Hibernate Tools 4.3.1 -->
+<!-- Generated 10-feb-2022 13:48:03 by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
-    <class name="POJOS_origen.Partidos" table="partidos" catalog="basket_acceso_datos" optimistic-lock="version">
-        <composite-id name="id" class="POJOS_origen.PartidosId">
+    <class name="POJOs_basket_destino_hibernate.Partidos" table="partidos" catalog="basket_destino" optimistic-lock="version">
+        <composite-id name="id" class="POJOs_basket_destino_hibernate.PartidosId">
             <key-property name="elocal" type="int">
                 <column name="elocal" />
             </key-property>
@@ -15,10 +15,10 @@
                 <column name="fecha" length="10" />
             </key-property>
         </composite-id>
-        <many-to-one name="equiposByElocal" class="POJOS_origen.Equipos" update="false" insert="false" fetch="select">
+        <many-to-one name="equiposByElocal" class="POJOs_basket_destino_hibernate.Equipos" update="false" insert="false" fetch="select">
             <column name="elocal" not-null="true" />
         </many-to-one>
-        <many-to-one name="equiposByEvisitante" class="POJOS_origen.Equipos" update="false" insert="false" fetch="select">
+        <many-to-one name="equiposByEvisitante" class="POJOs_basket_destino_hibernate.Equipos" update="false" insert="false" fetch="select">
             <column name="evisitante" not-null="true" />
         </many-to-one>
         <property name="resultado" type="string">

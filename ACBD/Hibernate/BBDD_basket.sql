@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `basket_angel` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `basket_angel`;
+CREATE DATABASE  IF NOT EXISTS `basket_origen` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `basket_origen`;
 -- MySQL dump 10.13  Distrib 5.5.16, for Win32 (x86)
 --
--- Host: localhost    Database: basket_angel
+-- Host: localhost    Database: basket_origen
 -- ------------------------------------------------------
 -- Server version	5.5.28
 
@@ -18,13 +18,13 @@ USE `basket_angel`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `equipos_angel`
+-- Table structure for table `equipos`
 --
 
-DROP TABLE IF EXISTS `equipos_angel`;
+DROP TABLE IF EXISTS `equipos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `equipos_angel` (
+CREATE TABLE `equipos` (
   `id_equipo` int(9) NOT NULL AUTO_INCREMENT,
   `nombre_equipo` varchar(30) NOT NULL,
   `ciudad` varchar(30) NOT NULL,
@@ -35,23 +35,23 @@ CREATE TABLE `equipos_angel` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `equipos_angel`
+-- Dumping data for table `equipos`
 --
 
-LOCK TABLES `equipos_angel` WRITE;
-/*!40000 ALTER TABLE `equipos_angel` DISABLE KEYS */;
-INSERT INTO `equipos_angel` VALUES (1,'Regal Barcelona','Barcelona','http://www.fcbarcelona.com',10),(2,'Real Madrid','Madrid','http://www.realmadrid.com',9),(3,'P.E. Valencia','Valencia','http://www.valenciabasket.com',11),(4,'Caja Laboral','Vitoria','http://www.baskonia.com',22),(5,'Gran Canaria','Las Palmas','http://www.acb.com',14),(6,'CAI Zaragoza','Zaragoza','http://basketzaragoza.net',23);
-/*!40000 ALTER TABLE `equipos_angel` ENABLE KEYS */;
+LOCK TABLES `equipos` WRITE;
+/*!40000 ALTER TABLE `equipos` DISABLE KEYS */;
+INSERT INTO `equipos` VALUES (1,'Regal Barcelona','Barcelona','http://www.fcbarcelona.com',10),(2,'Real Madrid','Madrid','http://www.realmadrid.com',9),(3,'P.E. Valencia','Valencia','http://www.valenciabasket.com',11),(4,'Caja Laboral','Vitoria','http://www.baskonia.com',22),(5,'Gran Canaria','Las Palmas','http://www.acb.com',14),(6,'CAI Zaragoza','Zaragoza','http://basketzaragoza.net',23);
+/*!40000 ALTER TABLE `equipos` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `jugadores_angel`
+-- Table structure for table `jugadores`
 --
 
-DROP TABLE IF EXISTS `jugadores_angel`;
+DROP TABLE IF EXISTS `jugadores`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `jugadores_angel` (
+CREATE TABLE `jugadores` (
   `id_jugador` int(9) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(30) NOT NULL,
   `apellido` varchar(30) NOT NULL,
@@ -62,28 +62,28 @@ CREATE TABLE `jugadores_angel` (
   `altura` int(3) unsigned DEFAULT NULL,
   PRIMARY KEY (`id_jugador`),
   KEY `equipo_fk_idx` (`num_equipo`),
-  CONSTRAINT `equipo_fk` FOREIGN KEY (`num_equipo`) REFERENCES `equipos_angel` (`id_equipo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `equipo_fk` FOREIGN KEY (`num_equipo`) REFERENCES `equipos` (`id_equipo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `jugadores_angel`
+-- Dumping data for table `jugadores`
 --
 
-LOCK TABLES `jugadores_angel` WRITE;
-/*!40000 ALTER TABLE `jugadores_angel` DISABLE KEYS */;
-INSERT INTO `jugadores_angel` VALUES (1,'Juan Carlos','Navarro','escolta','2010-01-10',130000,1,202),(2,'Felipe','Reyes','pivot','2009-02-20',120000,2,204),(3,'Victor','Claver','alero','2009-03-08',90000,3,208),(4,'Rafa','Martinez','escolta','2010-11-11',51000,3,191),(5,'Fernando','San Emeterio','alero','2008-09-22',60000,4,199),(6,'Mirza','Teletovic','pivot','2010-05-13',70000,4,206),(7,'Sergio','Llull','escolta','2011-10-29',100000,2,190),(8,'Victor','Sada','base','2012-01-01',80000,1,192),(9,'Carlos','Suarez','alero','2011-02-19',60000,2,203),(10,'Xavi','Rey','pivot','2008-10-12',95000,5,209),(11,'Carlos','Cabezas','base','2012-01-21',105000,6,186),(12,'Pablo','Aguilar','alero','2011-06-14',47000,6,203),(13,'Rafa','Hettsheimeir','pivot','2008-04-15',53000,6,208),(14,'Sitapha','Savané','pivot','2011-07-27',60000,5,201);
-/*!40000 ALTER TABLE `jugadores_angel` ENABLE KEYS */;
+LOCK TABLES `jugadores` WRITE;
+/*!40000 ALTER TABLE `jugadores` DISABLE KEYS */;
+INSERT INTO `jugadores` VALUES (1,'Juan Carlos','Navarro','escolta','2010-01-10',130000,1,202),(2,'Felipe','Reyes','pivot','2009-02-20',120000,2,204),(3,'Victor','Claver','alero','2009-03-08',90000,3,208),(4,'Rafa','Martinez','escolta','2010-11-11',51000,3,191),(5,'Fernando','San Emeterio','alero','2008-09-22',60000,4,199),(6,'Mirza','Teletovic','pivot','2010-05-13',70000,4,206),(7,'Sergio','Llull','escolta','2011-10-29',100000,2,190),(8,'Victor','Sada','base','2012-01-01',80000,1,192),(9,'Carlos','Suarez','alero','2011-02-19',60000,2,203),(10,'Xavi','Rey','pivot','2008-10-12',95000,5,209),(11,'Carlos','Cabezas','base','2012-01-21',105000,6,186),(12,'Pablo','Aguilar','alero','2011-06-14',47000,6,203),(13,'Rafa','Hettsheimeir','pivot','2008-04-15',53000,6,208),(14,'Sitapha','Savané','pivot','2011-07-27',60000,5,201);
+/*!40000 ALTER TABLE `jugadores` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `partidos_angel`
+-- Table structure for table `partidos`
 --
 
-DROP TABLE IF EXISTS `partidos_angel`;
+DROP TABLE IF EXISTS `partidos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `partidos_angel` (
+CREATE TABLE `partidos` (
   `elocal` int(9) NOT NULL DEFAULT '0',
   `evisitante` int(9) NOT NULL DEFAULT '0',
   `resultado` varchar(7) DEFAULT NULL,
@@ -94,19 +94,19 @@ CREATE TABLE `partidos_angel` (
   PRIMARY KEY (`elocal`,`evisitante`,`fecha`),
   KEY `elocal_fk_idx` (`elocal`),
   KEY `evisitante_fk_idx` (`evisitante`),
-  CONSTRAINT `elocal_fk` FOREIGN KEY (`elocal`) REFERENCES `equipos_angel` (`id_equipo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `evisitante_fk` FOREIGN KEY (`evisitante`) REFERENCES `equipos_angel` (`id_equipo`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `elocal_fk` FOREIGN KEY (`elocal`) REFERENCES `equipos` (`id_equipo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `evisitante_fk` FOREIGN KEY (`evisitante`) REFERENCES `equipos` (`id_equipo`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `partidos_angel`
+-- Dumping data for table `partidos`
 --
 
-LOCK TABLES `partidos_angel` WRITE;
-/*!40000 ALTER TABLE `partidos_angel` DISABLE KEYS */;
-INSERT INTO `partidos_angel` VALUES (1,2,'100-100',100,100,'2011-10-10',4),(1,6,'66-78',66,78,'2011-11-30',6),(2,3,'90-91',90,91,'2011-11-17',5),(2,4,'90-90',90,90,'2012-01-12',7),(3,4,'88-77',88,77,'2011-11-23',6),(3,6,'91-88',91,88,'2012-02-22',3),(4,5,'79-83',79,83,'2012-01-19',3),(5,4,'90-66',90,66,'2012-04-27',2),(6,5,'110-70',110,70,'2012-05-30',1);
-/*!40000 ALTER TABLE `partidos_angel` ENABLE KEYS */;
+LOCK TABLES `partidos` WRITE;
+/*!40000 ALTER TABLE `partidos` DISABLE KEYS */;
+INSERT INTO `partidos` VALUES (1,2,'100-100',100,100,'2011-10-10',4),(1,6,'66-78',66,78,'2011-11-30',6),(2,3,'90-91',90,91,'2011-11-17',5),(2,4,'90-90',90,90,'2012-01-12',7),(3,4,'88-77',88,77,'2011-11-23',6),(3,6,'91-88',91,88,'2012-02-22',3),(4,5,'79-83',79,83,'2012-01-19',3),(5,4,'90-66',90,66,'2012-04-27',2),(6,5,'110-70',110,70,'2012-05-30',1);
+/*!40000 ALTER TABLE `partidos` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -153,7 +153,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vista_1_al_3` AS select `jugadores_angel`.`id_jugador` AS `id_jugador`,`jugadores_angel`.`nombre` AS `nombre`,`jugadores_angel`.`apellido` AS `apellido` from `jugadores_angel` */;
+/*!50001 VIEW `vista_1_al_3` AS select `jugadores`.`id_jugador` AS `id_jugador`,`jugadores`.`nombre` AS `nombre`,`jugadores`.`apellido` AS `apellido` from `jugadores` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -172,7 +172,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `vista_4_al_6` AS select `jugadores_angel`.`altura` AS `altura`,`jugadores_angel`.`salario` AS `salario`,`jugadores_angel`.`num_equipo` AS `num_equipo` from `jugadores_angel` */;
+/*!50001 VIEW `vista_4_al_6` AS select `jugadores`.`altura` AS `altura`,`jugadores`.`salario` AS `salario`,`jugadores`.`num_equipo` AS `num_equipo` from `jugadores` */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
