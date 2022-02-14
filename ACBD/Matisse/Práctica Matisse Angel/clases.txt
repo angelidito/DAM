@@ -1,0 +1,31 @@
+
+
+create class zona(
+	idZona,
+ 	nombreZona,
+ 	valorMetroZona,
+ 	indiceRevalorizacion
+ )
+
+create class vivienda(
+	idVivienda,
+ 	nombre,
+ 	calle,
+ 	piso,
+ 	letra
+ )
+ 
+create class cliente(
+	idCliente,
+ 	DNI,
+ 	nombre,
+ 	apellidos
+ )
+
+create class ventana(
+	idModelo,
+ 	nombreModeloVentana,
+ 	dimensión,
+ 	orientación,
+ 	aislamientoClimalite
+ )

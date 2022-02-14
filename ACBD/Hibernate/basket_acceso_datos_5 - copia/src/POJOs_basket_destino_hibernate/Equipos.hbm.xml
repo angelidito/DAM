@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 14-feb-2022 9:56:50 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJOs_basket_destino_hibernate.Equipos" table="equipos" catalog="basket_destino" optimistic-lock="version">
+        <id name="idEquipo" type="java.lang.Integer">
+            <column name="id_equipo" />
+            <generator class="identity" />
+        </id>
+        <property name="nombreEquipo" type="string">
+            <column name="nombre_equipo" length="30" not-null="true" />
+        </property>
+        <property name="ciudad" type="string">
+            <column name="ciudad" length="30" not-null="true" />
+        </property>
+        <property name="web" type="string">
+            <column name="web" length="50" />
+        </property>
+        <property name="puntos" type="java.lang.Integer">
+            <column name="puntos" />
+        </property>
+        <set name="partidosesForElocal" table="partidos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="elocal" not-null="true" />
+            </key>
+            <one-to-many class="POJOs_basket_destino_hibernate.Partidos" />
+        </set>
+        <set name="partidosesForEvisitante" table="partidos" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="evisitante" not-null="true" />
+            </key>
+            <one-to-many class="POJOs_basket_destino_hibernate.Partidos" />
+        </set>
+        <set name="jugadoreses" table="jugadores" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="num_equipo" />
+            </key>
+            <one-to-many class="POJOs_basket_destino_hibernate.Jugadores" />
+        </set>
+    </class>
+</hibernate-mapping>
