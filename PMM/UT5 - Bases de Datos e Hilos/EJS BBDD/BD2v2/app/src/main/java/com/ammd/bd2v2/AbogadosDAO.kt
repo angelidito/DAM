@@ -50,7 +50,7 @@ class AbogadosDAO(context: Context) {
 		if (cursor.moveToFirst())
 			do {
 				var caso = com.ammd.bd2v2.Caso(
-					cursor.getInt(cursor.getColumnIndexOrThrow("numeroCaso")),
+					cursor.getString(cursor.getColumnIndexOrThrow("numeroCaso")),
 					cursor.getString(cursor.getColumnIndexOrThrow("denominacion")),
 					cursor.getString(cursor.getColumnIndexOrThrow("fechaApertura")),
 					cursor.getString(cursor.getColumnIndexOrThrow("caracteristicas")),
@@ -70,7 +70,7 @@ class AbogadosDAO(context: Context) {
 		if (cursor.moveToFirst())
 			do {
 				var caso = Caso(
-					cursor.getInt(cursor.getColumnIndexOrThrow("numeroCaso")),
+					cursor.getString(cursor.getColumnIndexOrThrow("numeroCaso")),
 					cursor.getString(cursor.getColumnIndexOrThrow("denominacion")),
 					cursor.getString(cursor.getColumnIndexOrThrow("fechaApertura")),
 					cursor.getString(cursor.getColumnIndexOrThrow("caracteristicas")),

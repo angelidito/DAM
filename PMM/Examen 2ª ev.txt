@@ -1,0 +1,11 @@
+Una empres dedicada a la venta de ropa y complementos desea que les realicemos una app para poder consultar sos productos on-line, asñi como gesionar la lista de deseos. 
+Cada vez que se ejecuta la aplicación se mostrará la vbienvenida a nuestra app, que contendrña la imagen corporativa de la empresa, así como  su denominación y cif. Esta información desaparecerá pasados unos segundos. La información de la empresa se encuentra almacenada en un archivo xml que está ubicado e la carpeta de recursos. los datos d este archivo con el CIF y el nombre de la empresa.
+La app tendrá la siguiente funcionalidad:
+	- Validación: se puede utilizar la app validándose o bien se puede acceder como invitado. La opción de valitar/desconectar estaña en cualquier opción de la app.
+	- Consulta de los productos:
+		1. Tablet:
+			- En la parte izquerda aparecerá la lista de las categorías de los productos. 
+			- En la parte derecha se mostrarán los prouctos que existen de la categoría selecionada.
+		2. Smartphone:
+			- Se mostrará las categorías de los productos y cuando el usuario selecione una categoría se mostrará los productos existentes en esa categoría.
+Para ambos casos cuando el usuario realice una pulsación corta sobre un profucto se mostrará toda la información que se tiene disponible de él. En el caso de que el usuario esté validado y el producto esrá en su lista de deseos, aparecerá con su corazón marcado. Tambi´´en existe la posibilidad de añadirlo a su lista, en el caso de qu eno estuviera o bien eliminarlo, previa confirmación.
