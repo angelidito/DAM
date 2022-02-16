@@ -1,0 +1,103 @@
+//                         -*-c++-*-
+//
+// Application Schema Description
+// Generated with Matisse Schema Definition Language 9.1.12 
+//
+// Generation date: Mon Feb 17 14:28:26 2020
+// Generated from database 'inmobiliaria@205dam04'
+//
+
+
+
+module inmobiliaria
+{
+
+
+  // Interface Definitions
+  //----------------------
+
+  interface Vivienda : persistent {
+    attribute Integer Nullable piso;
+    attribute String Nullable letra;
+    attribute Integer Nullable metros;
+    attribute String Nullable direccion;
+    relationship Set<Zona> situadaen
+      inverse Zona::estaen;
+    relationship Set<Ventana> tieneVentana
+      inverse Ventana::perteneceA;
+    relationship Set<Cliente> propiedadDe
+      inverse Cliente::tieneVivienda;
+    mt_method "CREATE METHOD calcularPrecio()
+RETURNS Float
+FOR Vivienda
+--
+-- Describe your method here
+--
+BEGIN
+  return 0;
+END;";
+
+    mt_method "CREATE METHOD calcularLuminosidad()
+RETURNS Float
+FOR Vivienda
+BEGIN
+   return 0;
+END;";
+
+    mt_method "CREATE METHOD calcularAislamiento()
+RETURNS Float
+FOR Vivienda
+BEGIN
+   return 0;
+END;";
+
+    mt_method "CREATE METHOD calcularPrecioEspecial()
+RETURNS Float
+FOR Vivienda
+BEGIN
+   return 0;
+END;";
+
+  };
+
+  interface Zona : persistent {
+    attribute String Nullable nombre;
+    attribute Integer Nullable valorxmetro;
+    attribute Integer Nullable indicerevalorizacion;
+    relationship Set<Vivienda> estaen
+      inverse Vivienda::situadaen;
+    mt_method "CREATE METHOD calcularMediaPorZona()
+RETURNS Float
+FOR Zona
+BEGIN
+return 0;
+END;";
+
+  };
+
+  interface Ventana : persistent {
+    attribute Integer Nullable dimensiones;
+    attribute String Nullable orientacion;
+    attribute Boolean Nullable climalite;
+    relationship Set<Vivienda> perteneceA
+      inverse Vivienda::tieneVentana;
+  };
+
+  interface Cliente : persistent {
+    attribute String Nullable dni;
+    attribute String Nullable nombre;
+    attribute String Nullable apellidos;
+    relationship Set<Vivienda> tieneVivienda
+      inverse Vivienda::propiedadDe;
+    mt_method "CREATE METHOD calcularDescuento()
+RETURNS FLoat
+FOR \"inmobiliaria\".\"Cliente\"
+--
+-- Describe your method here
+--
+BEGIN
+  return 0;
+END;";
+
+  };
+};

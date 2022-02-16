@@ -1,6 +1,5 @@
 CREATE NAMESPACE IF NOT EXISTS MoriNameSpace;
 
-SET CURRENT_NAMESPACE MatisseMori;
 
 create class Zona(
 	idZona INTEGER,
@@ -28,7 +27,7 @@ create class Cliente(
 create class Ventana(
 	idModelo INTEGER,
  	nombreModeloVentana STRING,
- 	dimensión INTEGER,
+ 	dimension INTEGER,
  	orientacion STRING,
  	aislamientoClimalite STRING
  );

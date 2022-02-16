@@ -1,0 +1,47 @@
+//                         -*-c++-*-
+//
+// Application Schema Description
+// Generated with Matisse Schema Definition Language 9.1.12 
+//
+// Generation date: Mon Feb 10 12:49:10 2020
+// Generated from database 'inmobiliaria@205dam04'
+//
+
+
+
+module inmobiliaria
+{
+
+
+  // Interface Definitions
+  //----------------------
+
+  interface Vivienda : persistent {
+    attribute Integer Nullable piso;
+    attribute String Nullable letra;
+    attribute Integer Nullable metros;
+    attribute String Nullable direccion;
+    relationship Set<Zona> situadaen
+      inverse Zona::estaen;
+  };
+
+  interface Zona : persistent {
+    attribute String Nullable nombre;
+    attribute Integer Nullable valorxmetro;
+    attribute Integer Nullable indicerevalorizacion;
+    relationship Set<Vivienda> estaen
+      inverse Vivienda::situadaen;
+  };
+
+  interface Ventana : persistent {
+    attribute Integer Nullable dimensiones;
+    attribute String Nullable orientacion;
+    attribute Boolean Nullable climalite;
+  };
+
+  interface Cliente : persistent {
+    attribute String Nullable dni;
+    attribute String Nullable nombre;
+    attribute String Nullable apellidos;
+  };
+};
