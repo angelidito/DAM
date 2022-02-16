@@ -1,0 +1,37 @@
+//                         -*-c++-*-
+//
+// Application Schema Description
+// Generated with Matisse Schema Definition Language 9.1.12 
+//
+// Generation date: Wed Feb 16 13:28:19 2022
+// Generated from database 'RAMA@AULA205-EQUIPO7'
+//
+
+
+
+module biblioteca
+{
+
+
+  // Interface Definitions
+  //----------------------
+
+  interface Autor : persistent {
+    attribute String Nullable nombre;
+    attribute String Nullable apellidos;
+    attribute Integer Nullable edad;
+    relationship Set<Obra> escribe
+      inverse Obra::escrito_por;
+  };
+
+  interface Obra : persistent {
+    attribute String Nullable titulo;
+    attribute Integer Nullable paginas;
+    relationship Set<Autor> escrito_por
+      inverse Autor::escribe;
+  };
+
+  interface Articulo : Obra : persistent {
+    attribute String Nullable revista;
+  };
+};

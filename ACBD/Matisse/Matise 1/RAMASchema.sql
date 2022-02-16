@@ -2,7 +2,7 @@
 -- Application Schema SQL DDL Script
 -- Generated with Matisse Schema Definition Language 9.1.12 
 --
--- Generation date: Wed Feb 09 13:19:46 2022
+-- Generation date: Wed Feb 16 13:20:22 2022
 -- Generated from database 'RAMA@AULA205-EQUIPO7'
 --
 
