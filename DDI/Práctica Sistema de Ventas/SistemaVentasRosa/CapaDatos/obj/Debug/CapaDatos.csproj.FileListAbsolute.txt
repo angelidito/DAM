@@ -15,3 +15,4 @@ C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\bin\Debu
 C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\bin\Debug\CapaDatos.pdb
 C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\bin\Debug\CapaEntidad.dll
 C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete

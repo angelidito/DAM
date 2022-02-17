@@ -1,0 +1,37 @@
+//                         -*-c++-*-
+//
+// Application Schema Description
+// Generated with Matisse Schema Definition Language 9.1.12 
+//
+// Generation date: Thu Feb 17 11:38:09 2022
+// Generated from database 'PAREJAS@AULA205-EQUIPO7'
+//
+
+
+
+module PAREJAS
+{
+
+
+  // Interface Definitions
+  //----------------------
+
+  interface Hombre : persistent {
+    attribute Integer Nullable id_hombre;
+    attribute String Nullable nombre_hombre;
+    attribute Integer Nullable edad_hombre;
+    attribute Integer Nullable salario;
+    attribute Integer Nullable num_pagas;
+    attribute Integer Nullable retencion;
+    relationship Set<Mujer> tieneMujer
+      inverse Mujer::tieneMarido;
+  };
+
+  interface Mujer : persistent {
+    attribute Integer Nullable id_mujer;
+    attribute String Nullable nombre_mujer;
+    attribute Integer Nullable edad_mujer;
+    relationship Hombre tieneMarido[0, 1]
+      inverse Hombre::tieneMujer;
+  };
+};

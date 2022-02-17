@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<NOMBRES>
+    <NOMBRE>
+        <IDENTIFICADOR>1</IDENTIFICADOR>
+        <NAME>pepe</NAME>
+        <ORIGEN>gallego</ORIGEN>
+        <SIGNIFICADO>listo</SIGNIFICADO>
+    </NOMBRE>
+    <NOMBRE>
+        <IDENTIFICADOR>2</IDENTIFICADOR>
+        <NAME>luis</NAME>
+        <ORIGEN>nordico</ORIGEN>
+        <SIGNIFICADO>sabio</SIGNIFICADO>
+    </NOMBRE>
+    <NOMBRE>
+        <IDENTIFICADOR>3</IDENTIFICADOR>
+        <NAME>angel</NAME>
+        <ORIGEN>castellano</ORIGEN>
+        <SIGNIFICADO>magia</SIGNIFICADO>
+    </NOMBRE>
+    <NOMBRE>
+        <IDENTIFICADOR>4</IDENTIFICADOR>
+        <NAME>Guillermo</NAME>
+        <ORIGEN nacional="N">Castellano</ORIGEN>
+        <SIGNIFICADO abstracto="N">Willi</SIGNIFICADO>
+    </NOMBRE>
+    <NOMBRE>
+        <IDENTIFICADOR>5</IDENTIFICADOR>
+        <NAME>Jose Angel</NAME>
+        <ORIGEN nacional="S">Andalucia</ORIGEN>
+        <SIGNIFICADO abstracto="N">Jose magia</SIGNIFICADO>
+    </NOMBRE>
+    <NOMBRE>
+        <IDENTIFICADOR>6</IDENTIFICADOR>
+        <NAME>Gonzalo</NAME>
+        <ORIGEN nacional="N">Riojano</ORIGEN>
+        <SIGNIFICADO abstracto="S">gonada</SIGNIFICADO>
+    </NOMBRE>
+</NOMBRES>

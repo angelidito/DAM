@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 17-feb-2022 9:22:01 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="POJOs_mujeres_hombres_hibernate.Mujer" table="mujer" catalog="mujeres_hombres_hibernate" optimistic-lock="version">
+        <id name="idMujer" type="int">
+            <column name="id_mujer" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="hombre" class="POJOs_mujeres_hombres_hibernate.Hombre" fetch="select">
+            <column name="id_marido_fk" />
+        </many-to-one>
+        <property name="nombreMujer" type="string">
+            <column name="nombre_mujer" />
+        </property>
+        <property name="edadMujer" type="java.lang.Integer">
+            <column name="edad_mujer" />
+        </property>
+    </class>
+</hibernate-mapping>
