@@ -1,0 +1,23 @@
+﻿<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="PAREJAS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="PAREJA" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="id_hombre"/>
+              <xs:element type="xs:string" name="nombre_hombre"/>
+              <xs:element type="xs:byte" name="edad_hombre"/>
+              <xs:element type="xs:short" name="salario"/>
+              <xs:element type="xs:byte" name="num_pagas"/>
+              <xs:element type="xs:byte" name="retencion"/>
+              <xs:element type="xs:byte" name="id_mujer"/>
+              <xs:element type="xs:string" name="nombre_mujer"/>
+              <xs:element type="xs:byte" name="edad_mujer"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

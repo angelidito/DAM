@@ -1,0 +1,8 @@
+#
+# Generated with Matisse Schema Definition Language 9.1.12
+# Generation date: Thu Feb 17 10:03:50 2022
+#
+# Mapping of Java classes and indexes to the corresponding database schema objects
+#
+parejitas.Hombre = parejitas.Hombre
+parejitas.Mujer = parejitas.Mujer

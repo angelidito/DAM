@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="file:/C:/Mori/DAM/ACBD/Angel%20Martinez%20examen%20ev%202/AngelMartinezEjercicio1/src/data/PAREJAS.xsd" uri="xml-resources/jaxb/parejasBinding/PAREJAS.xsd"/>
+</catalog>
