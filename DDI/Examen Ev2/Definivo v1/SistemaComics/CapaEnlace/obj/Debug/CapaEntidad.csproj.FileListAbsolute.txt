@@ -1,0 +1,6 @@
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaEnlace\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaEnlace\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaEnlace\bin\Debug\CapaEntidad.dll
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaEnlace\bin\Debug\CapaEntidad.pdb
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaEnlace\obj\Debug\CapaEntidad.dll
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaEnlace\obj\Debug\CapaEntidad.pdb

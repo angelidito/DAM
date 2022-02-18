@@ -16,3 +16,9 @@ C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaEntidad\obj\Debug\CapaEntidad.cspro
 C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
 C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaEntidad\obj\Debug\CapaEntidad.dll
 C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaEntidad\obj\Debug\CapaEntidad.pdb
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaEntidad\obj\Debug\CapaEntidad.pdb

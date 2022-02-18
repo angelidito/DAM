@@ -1,0 +1,27 @@
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Mori\DAM\DDI\Práctica Sistema de Ventas\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Mori\DAM\DDI\Examen Ev2\SistemaVentasRosa\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Mori\DAM\DDI\Examen Ev2\SistemaVentasRosa\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Mori\DAM\DDI\Examen Ev2\SistemaVentasRosa\CapaDatos\bin\Debug\CapaEntidad.dll
+C:\Mori\DAM\DDI\Examen Ev2\SistemaVentasRosa\CapaDatos\bin\Debug\CapaEntidad.pdb
+C:\Mori\DAM\DDI\Examen Ev2\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.csproj.AssemblyReference.cache
+C:\Mori\DAM\DDI\Examen Ev2\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.csproj.CoreCompileInputs.cache
+C:\Mori\DAM\DDI\Examen Ev2\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.csproj.CopyComplete
+C:\Mori\DAM\DDI\Examen Ev2\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Mori\DAM\DDI\Examen Ev2\SistemaVentasRosa\CapaDatos\obj\Debug\CapaDatos.pdb

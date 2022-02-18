@@ -31,3 +31,14 @@ C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaNegocio\obj\Debug\CapaNegocio.cspro
 C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaNegocio\bin\Debug\CapaEntidad.dll
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaNegocio\bin\Debug\CapaEntidad.pdb
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Mori\DAM\DDI\SistemaVentasAdrianFuente\CapaNegocio\obj\Debug\CapaNegocio.pdb

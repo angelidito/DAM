@@ -1,0 +1,97 @@
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.AssemblyReference.cache
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.Inicio.resources
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.Login.resources
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaNegocio.dll
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaEntidad.dll
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaEntidad.pdb
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\Users\ROSA P\source\repos\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaEntidad.dll
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaNegocio.dll
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\bin\Debug\FontAwesome.Sharp.dll
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaEntidad.pdb
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.AssemblyReference.cache
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.Inicio.resources
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.Login.resources
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.frmCategoria.resources
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.frmClientes.resources
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.frmCompras.resources
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.frmDetalleVenta.resources
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.frmInformes.resources
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.frmProveedores.resources
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.frmUsuarios.resources
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.frmVentas.resources
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.frmDetalleCompra.resources
+C:\DDI\UNIDAD4\SistemaVentasRosa\CapaPresentacion\obj\Debug\CapaPresentacion.frmProductos.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.AssemblyReference.cache
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.frmCategoria.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.frmClientes.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.frmCompras.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.frmDetalleCompra.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.frmDetalleVenta.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.frmInformes.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.frmProductos.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.frmProveedores.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.frmUsuarios.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.frmVentas.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.Inicio.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.Login.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\bin\Debug\CapaEntidad.dll
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\bin\Debug\CapaNegocio.dll
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\bin\Debug\FontAwesome.Sharp.dll
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\bin\Debug\CapaEntidad.pdb
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+C:\DDI\UNIDAD4\SistemaVentasAdrianFuente\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\bin\Debug\CapaPresentacion.exe.config
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\bin\Debug\CapaPresentacion.exe
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\bin\Debug\CapaPresentacion.pdb
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\bin\Debug\CapaDatos.dll
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\bin\Debug\CapaEntidad.dll
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\bin\Debug\CapaNegocio.dll
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\bin\Debug\FontAwesome.Sharp.dll
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\bin\Debug\CapaDatos.pdb
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\bin\Debug\CapaEntidad.pdb
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\bin\Debug\CapaNegocio.pdb
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.AssemblyReference.cache
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\obj\Debug\CapaPresentacion.frmProductos.resources
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\obj\Debug\CapaPresentacion.Inicio.resources
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\obj\Debug\CapaPresentacion.Login.resources
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.GenerateResource.cache
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CoreCompileInputs.cache
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\obj\Debug\CapaPresentacion.exe
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\obj\Debug\CapaPresentacion.pdb
+C:\Mori\DAM\DDI\Examen Ev2\SistemaComics\CapaPresentacion\obj\Debug\CapaPresentacion.AcercaDe.resources
