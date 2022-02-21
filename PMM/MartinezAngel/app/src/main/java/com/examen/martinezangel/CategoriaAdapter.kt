@@ -5,11 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.examen.martinezangel.Categoria
 import com.examen.martinezangel.R
 import com.examen.martinezangel.databinding.CategoriaItemBinding
 
 class CategoriaAdapter(
-    private val categorias: List<Categoria>,
+    private var categorias: MutableList<Categoria>,
     private val listener: EventosListener
 ) :
     RecyclerView.Adapter<CategoriaAdapter.ViewHolder>() {
@@ -27,12 +28,18 @@ class CategoriaAdapter(
         val categoria = categorias[position]
         with(holder) {
             setListener(categoria.codigoCategoria)
-            binding.textoCategoria.text = "" + categoria.codigoCategoria + " - " + categoria.denominacion
+            binding.textoCategoria.text =
+                "" + categoria.codigoCategoria + " - " + categoria.denominacion
         }
     }
 
 
     override fun getItemCount(): Int = categorias.size
+
+    fun setCategorias(listaCategorias: MutableList<Categoria>) {
+        this.categorias = listaCategorias
+        notifyDataSetChanged()
+    }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val binding = CategoriaItemBinding.bind(view)

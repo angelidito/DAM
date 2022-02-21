@@ -3,7 +3,6 @@ package com.examen.martinezangel
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ammd.martinezangel.Categoria
 import com.examen.martinezangel.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
 		Thread {
 			Thread.sleep(2500)
-			intent = Intent(this, Categoria::class.java)
+			intent = Intent(this, LoginActivity::class.java)
 			startActivity(intent)
 		}.start()
 	}
