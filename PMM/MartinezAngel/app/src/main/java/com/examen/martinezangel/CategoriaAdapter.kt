@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.examen.martinezangel.R
 import com.examen.martinezangel.databinding.CategoriaItemBinding
 
-class CategoríaAdapter(
+class CategoriaAdapter(
     private val categorias: List<Categoria>,
     private val listener: EventosListener
 ) :
-    RecyclerView.Adapter<CategoríaAdapter.ViewHolder>() {
+    RecyclerView.Adapter<CategoriaAdapter.ViewHolder>() {
 
     private lateinit var context: Context
 

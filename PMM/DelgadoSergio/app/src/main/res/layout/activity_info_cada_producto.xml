@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent" android:layout_height="730dp" tools:context=".InfoCadaProductoActivity">
+
+	<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="412dp" android:layout_height="wrap_content" android:layout_marginBottom="20dp">
+
+		<!-- TextView para el nombre del producto -->
+		<TextView android:id="@+id/tituloNombreProducto" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:textSize="30sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.5" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintRight_toRightOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.035" />
+
+		<ImageView android:id="@+id/imgAlojamiento" android:layout_width="match_parent" android:layout_height="400dp" android:layout_marginTop="20dp" android:contentDescription="@string/fotoProducto" app:layout_constraintTop_toBottomOf="@+id/tituloNombreProducto" />
+
+		<TextView android:id="@+id/lblPrecio" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="20dp" android:layout_marginTop="20dp" android:text="Precio:" android:textSize="18sp" android:textStyle="bold" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgAlojamiento" />
+
+		<TextView android:id="@+id/precioProducto" android:layout_width="80dp" android:layout_height="wrap_content" android:layout_marginStart="5dp" android:textSize="18sp" app:layout_constraintStart_toEndOf="@+id/lblPrecio" app:layout_constraintTop_toTopOf="@+id/lblPrecio" />
+
+		<TextView android:id="@+id/lblColor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="20dp" android:layout_marginTop="10dp" android:text="Color:" android:textSize="18sp" android:textStyle="bold" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toBottomOf="@+id/lblPrecio" />
+
+		<TextView android:id="@+id/colorProducto" android:layout_width="150dp" android:layout_height="wrap_content" android:layout_marginStart="5dp" android:textSize="18sp" app:layout_constraintStart_toEndOf="@+id/lblColor" app:layout_constraintTop_toTopOf="@+id/lblColor" />
+
+		<TextView android:id="@+id/lblTalla" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="20dp" android:layout_marginTop="10dp" android:text="Talla:" android:textSize="18sp" android:textStyle="bold" app:layout_constraintLeft_toLeftOf="parent" app:layout_constraintTop_toBottomOf="@+id/lblColor" />
+
+		<TextView android:id="@+id/tallaProducto" android:layout_width="100dp" android:layout_height="wrap_content" android:layout_marginStart="5dp" android:textSize="18sp" app:layout_constraintStart_toEndOf="@+id/lblTalla" app:layout_constraintTop_toTopOf="@+id/lblTalla" />
+
+		<com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@+id/btnFavorito" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="150dp" android:layout_marginTop="20dp" android:contentDescription="@string/favorito" android:src="@drawable/ic_no_favorito" app:layout_constraintStart_toEndOf="@id/precioProducto" app:layout_constraintTop_toTopOf="@+id/lblPrecio" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

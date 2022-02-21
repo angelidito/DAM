@@ -2,6 +2,8 @@ package com.examen.martinezangel
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
+import com.ammd.martinezangel.CategoriaAdapter
 import com.examen.martinezangel.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -17,16 +19,18 @@ class LoginActivity : AppCompatActivity() {
 
 		database = EmpresaDAO(this)
 
-		configurarRecicler()
+		binding.btnAcceder.setOnClickListener {
+			var acceso = database.logIn(
+				binding.loginTil.editText.toString(),
+				binding.passwordTil.editText.toString()
+			)
+		}
 
 	}
 
 	override fun onResume() {
 		super.onResume()
-		configurarRecicler()
 	}
 
-	private fun configurarRecicler() {
-		TODO("Not yet implemented")
-	}
+
 }

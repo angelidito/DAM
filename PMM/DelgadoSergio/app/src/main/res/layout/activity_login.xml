@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".LoginActivity">
+
+	<TextView
+		android:id="@+id/tituloLogin"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="100dp"
+		android:gravity="center"
+		android:text="@string/acceso_de_usuarios"
+		android:textSize="25sp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<!-- TextView con el texto de "Usuario" -->
+	<TextView
+		android:id="@+id/lblUsuario"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="85dp"
+		android:layout_marginTop="100dp"
+		android:text="@string/usuario"
+		android:textSize="18sp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="@+id/tituloLogin"
+		app:layout_constraintTop_toTopOf="@+id/tituloLogin" />
+
+	<!-- TextView con el texto de "Contraseña" -->
+	<TextView
+		android:id="@+id/lblContra"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="130dp"
+		android:text="@string/password"
+		android:textSize="18sp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="@+id/lblUsuario"
+		app:layout_constraintTop_toTopOf="@+id/lblUsuario" />
+
+	<!-- Campo de texto para el usuario -->
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/login"
+		style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+		android:layout_width="250dp"
+		android:layout_height="wrap_content"
+		app:endIconMode="clear_text"
+		app:layout_constraintStart_toStartOf="@id/lblUsuario"
+		app:layout_constraintTop_toBottomOf="@id/lblUsuario"
+		app:startIconDrawable="@drawable/ic_account_circle">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/txtLogin"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<!-- Campo de texto para la contraseña -->
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/contra"
+		style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+		android:layout_width="250dp"
+		android:layout_height="wrap_content"
+		app:endIconMode="password_toggle"
+		app:layout_constraintStart_toStartOf="@id/lblContra"
+		app:layout_constraintTop_toBottomOf="@id/lblContra"
+		app:startIconDrawable="@drawable/ic_login">
+		<!-- El endIconMode es el botón del ojo que permite ver el texto introducido -->
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:id="@+id/txtContra"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:inputType="textPassword" />
+		<!-- El inputType hace que el texto se vea como ***** -->
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<!-- Botón de aceptar -->
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btnAceptar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="72dp"
+		android:layout_marginTop="40dp"
+		android:text="@string/aceptar"
+		app:layout_constraintStart_toStartOf="@+id/lblContra"
+		app:layout_constraintTop_toBottomOf="@+id/contra" />
+
+	<!-- Botón de aceptar -->
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btnInvitado"
+		android:layout_width="110dp"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="430dp"
+		android:layout_marginEnd="10dp"
+		android:text="Acceder como invitado"
+		android:textSize="13sp"
+		app:layout_constraintEnd_toEndOf="@+id/tituloLogin"
+		app:layout_constraintTop_toBottomOf="@+id/tituloLogin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white"
+	tools:context=".MainActivity">
+
+	<ImageView
+		android:id="@+id/imgLogo"
+		android:layout_width="400dp"
+		android:layout_height="250dp"
+		android:layout_marginStart="5dp"
+		android:layout_marginTop="80dp"
+		android:contentDescription="@string/foto_logo_tienda"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<TextView
+		android:textColor="@color/black"
+		android:id="@+id/nombreTienda"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="50dp"
+		android:gravity="center"
+		android:textSize="25sp"
+		android:textStyle="bold"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/imgLogo"
+		tools:text="Empresa" />
+
+	<TextView
+		android:id="@+id/cifTienda"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="50dp"
+		android:gravity="center"
+		android:textSize="22sp"
+		android:textStyle="bold"
+		android:textColor="@color/black"
+
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/nombreTienda"
+		tools:text="NIF" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

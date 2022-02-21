@@ -15,8 +15,6 @@ class LoginActivity : AppCompatActivity() {
 		binding = ActivityLoginBinding.inflate(layoutInflater)
 		setContentView(binding.root)
 
-		// TODO: lanzar hilo pantalla de carga
-
 		database = AbogadosDAO(this)
 
 		configurarRecicler()
