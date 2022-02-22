@@ -23,7 +23,7 @@ class EmpresaDAO(context: Context) {
 
     fun logIn(login: String, contrasena: String): Boolean {
         var sql =
-            "select * from $TABLA_USUARIOS where login = $login and contrasena = $contrasena"
+            "select * from $TABLA_USUARIOS where login='$login' and contrasena='$contrasena'"
         val cursor: Cursor = database.rawQuery(sql, null)
         if (cursor.moveToFirst())
             if (

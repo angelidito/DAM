@@ -14,7 +14,7 @@ class EmpresaBD(
 	override fun onCreate(db: SQLiteDatabase?) {
 		val crearTablaCategorias = "CREATE TABLE ${EmpresaDAO.TABLA_CATEGORIAS}" +
 				"(" +
-				"codigoCategoría INTEGER PRIMARY KEY AUTOINCREMENT, " +
+				"codigoCategoria INTEGER PRIMARY KEY AUTOINCREMENT, " +
 				"denominacion TEXT" +
 				")"
 		db!!.execSQL(crearTablaCategorias)
@@ -22,12 +22,13 @@ class EmpresaBD(
 		val crearTablaProductos = "CREATE TABLE ${EmpresaDAO.TABLA_PRODUCTOS}" +
 				"(" +
 				"codigoProducto INTEGER PRIMARY KEY AUTOINCREMENT, " +
-				"codigoCategoría INTEGER  FOREIGN KEY REFERENCES ${EmpresaDAO.TABLA_CATEGORIAS} (codigoCategoría), " +
+				"codigoCategoria INTEGER, " +
 				"denominacion TEXT, " +
 				"pvp INTEGER, " +
 				"imagenProducto TEXT, " +
-				"color TEXT" +
+				"color TEXT," +
 				"talla INTEGER" +
+//				", FOREIGN KEY codigoCategoria REFERENCES ${EmpresaDAO.TABLA_CATEGORIAS} (codigoCategoria)" +
 				")"
 		db.execSQL(crearTablaProductos)
 
@@ -43,15 +44,24 @@ class EmpresaBD(
 		val crearTablaListaDeseos = "CREATE TABLE ${EmpresaDAO.TABLA_LISTADESEOS}" +
 				"(" +
 				"codigo INTEGER PRIMARY KEY AUTOINCREMENT, " +
-				"codigoUsuario INTEGER FOREIGN KEY REFERENCES ${EmpresaDAO.TABLA_USUARIOS} (codigoUsuario), " +
-				"codigoProducto INTEGER FOREIGN KEY REFERENCES ${EmpresaDAO.TABLA_PRODUCTOS} (codigoProducto)" +
+				"codigoUsuario INTEGER, " +
+//				"codigoUsuario INTEGER FOREIGN KEY REFERENCES ${EmpresaDAO.TABLA_USUARIOS} (codigoUsuario), " +
+				"codigoProducto INTEGER" +
+//				"codigoProducto INTEGER FOREIGN KEY REFERENCES ${EmpresaDAO.TABLA_PRODUCTOS} (codigoProducto)" +
 				")"
 		db.execSQL(crearTablaListaDeseos)
 
 		Thread {
-			db.execSQL("INSERT into USUARIOS (login, contrasena, nombre ) values ('mori', 'mori', 'Angel');")
-			db.execSQL("INSERT into USUARIOS (login, contrasena, nombre ) values ('MJ', 'MJ', 'MJ');")
-			db.execSQL("INSERT into USUARIOS (login, contrasena, nombre ) values ('invitado', 'invitado', 'invitado');")
+			db.execSQL("INSERT into ${EmpresaDAO.TABLA_CATEGORIAS} (denominacion) values ('Camisetas')")
+			db.execSQL("INSERT into ${EmpresaDAO.TABLA_CATEGORIAS} (denominacion) values ('Pantalones')")
+			db.execSQL("INSERT into ${EmpresaDAO.TABLA_CATEGORIAS} (denominacion) values ('Zapatos')")
+			db.execSQL("INSERT into ${EmpresaDAO.TABLA_USUARIOS} (login, contrasena, nombre ) values ('mori', 'mori', 'Angel');")
+			db.execSQL("INSERT into ${EmpresaDAO.TABLA_USUARIOS} (login, contrasena, nombre ) values ('MJ', 'MJ', 'MJ');")
+			db.execSQL("INSERT into ${EmpresaDAO.TABLA_USUARIOS} (login, contrasena, nombre ) values ('invitado', 'invitado', 'invitado');")
+
+			db.execSQL("INSERT into ${EmpresaDAO.TABLA_PRODUCTOS} (codigoCategoria, denominacion, pvp, imagenProducto, color, talla) values ('1', 'Camiseta', 55,'https://upload.wikimedia.org/wikipedia/commons/5/57/TShirtForgetIraq.jpg', 'blanco', 12)")
+			db.execSQL("INSERT into ${EmpresaDAO.TABLA_PRODUCTOS} (codigoCategoria, denominacion, pvp, imagenProducto, color, talla) values ('1', 'Camiseta', 43,'https://upload.wikimedia.org/wikipedia/commons/8/81/Camiseta-negra.jpg', 'negra', 12)")
+
 		}.start()
 	}
 
