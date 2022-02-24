@@ -2,8 +2,8 @@ package com.martinezangel.bd2.bd
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import android.content.ContentValues
 import android.database.Cursor
+import com.martinezangel.bd2.models.Caso
 import com.martinezangel.bd2.models.Usuario
 
 class BufeteDAO(context:Context) {
@@ -40,47 +40,59 @@ class BufeteDAO(context:Context) {
             )
         return null
     }
+    fun getUsario(numeroColegiado: String): Usuario? {
+        val sql = "select * from $TABLE_USUARIOS where numeroColegiado = '$numeroColegiado'"
+        val cursor: Cursor = database.rawQuery(sql, null)
+        if (cursor.moveToFirst())
+            return Usuario(
+                cursor.getString(cursor.getColumnIndexOrThrow("numeroColegiado")),
+                cursor.getString(cursor.getColumnIndexOrThrow("nombre")),
+                cursor.getString(cursor.getColumnIndexOrThrow("numeroColegiado")),
+                cursor.getString(cursor.getColumnIndexOrThrow("tipoPerfil"))
+            )
+        return null
+    }
 
-//
-//    fun getAllCasos(): MutableList<com.ammd.bd2v2.Caso> {
-//        val casos: MutableList<com.ammd.bd2v2.Caso> = ArrayList()
-//        var sql = "select * from $TABLE_CASOS"
-//        val cursor: Cursor = database.rawQuery(sql, null)
-//
-//        if (cursor.moveToFirst())
-//            do {
-//                var caso = com.ammd.bd2v2.Caso(
-//                    cursor.getString(cursor.getColumnIndexOrThrow("numeroCaso")),
-//                    cursor.getString(cursor.getColumnIndexOrThrow("denominacion")),
-//                    cursor.getString(cursor.getColumnIndexOrThrow("fechaApertura")),
-//                    cursor.getString(cursor.getColumnIndexOrThrow("caracteristicas")),
-//                    cursor.getString(cursor.getColumnIndexOrThrow("abogado"))
-//                )
-//                casos.add(caso)
-//            } while (cursor.moveToNext())
-//
-//        return casos
-//    }
-//
-//    fun getCasosFrom(usuario: Usuario): MutableList<com.ammd.bd2v2.Caso> {
-//        val casos: MutableList<com.ammd.bd2v2.Caso> = ArrayList()
-//        var sql = "select * from $TABLE_CASOS where numeroColegiado = ${usuario.numeroColegiado}"
-//        val cursor: Cursor = database.rawQuery(sql, null)
-//
-//        if (cursor.moveToFirst())
-//            do {
-//                var caso = Caso(
-//                    cursor.getString(cursor.getColumnIndexOrThrow("numeroCaso")),
-//                    cursor.getString(cursor.getColumnIndexOrThrow("denominacion")),
-//                    cursor.getString(cursor.getColumnIndexOrThrow("fechaApertura")),
-//                    cursor.getString(cursor.getColumnIndexOrThrow("caracteristicas")),
-//                    cursor.getString(cursor.getColumnIndexOrThrow("abogado"))
-//                )
-//                casos.add(caso)
-//            } while (cursor.moveToNext())
-//
-//        return casos
-//    }
+
+    fun getAllCasos(): MutableList<Caso> {
+        val casos: MutableList<Caso> = ArrayList()
+        var sql = "select * from $TABLE_CASOS"
+        val cursor: Cursor = database.rawQuery(sql, null)
+
+        if (cursor.moveToFirst())
+            do {
+                var caso = Caso(
+                    cursor.getString(cursor.getColumnIndexOrThrow("numeroCaso")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("denominacion")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("fechaApertura")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("caracteristicas")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("abogado"))
+                )
+                casos.add(caso)
+            } while (cursor.moveToNext())
+
+        return casos
+    }
+
+    fun getCasosFrom(usuario: Usuario): MutableList<Caso> {
+        val casos: MutableList<Caso> = ArrayList()
+        var sql = "select * from $TABLE_CASOS where numeroColegiado = ${usuario.numeroColegiado}"
+        val cursor: Cursor = database.rawQuery(sql, null)
+
+        if (cursor.moveToFirst())
+            do {
+                var caso = Caso(
+                    cursor.getString(cursor.getColumnIndexOrThrow("numeroCaso")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("denominacion")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("fechaApertura")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("caracteristicas")),
+                    cursor.getString(cursor.getColumnIndexOrThrow("abogado"))
+                )
+                casos.add(caso)
+            } while (cursor.moveToNext())
+
+        return casos
+    }
 //
 //    fun addGestion(gestion: Gestion): Long {
 //        val values = ContentValues();
