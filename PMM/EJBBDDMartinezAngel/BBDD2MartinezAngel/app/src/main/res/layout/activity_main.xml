@@ -12,14 +12,14 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_margin="16dp"
-        app:layout_constraintBottom_toTopOf="@id/name"
+        app:layout_constraintBottom_toTopOf="@id/lbl_nombre_app"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:background="@color/black" />
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/lbl_nombre_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bufete_fete"

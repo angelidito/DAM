@@ -8,56 +8,46 @@ import com.martinezangel.bd2.bd.BufeteDAO
 import com.martinezangel.bd2.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityLoginBinding
-    private lateinit var database: BufeteDAO
+	private lateinit var binding: ActivityLoginBinding
+	private lateinit var database: BufeteDAO
 
-    companion object {
-        const val TIPO_USUARIO = "tipoUsu"
-        const val NUM_ABOGADO = "numAbogado"
-    }
+	companion object {
+		const val USUARIO_ACTIVO = "numeroColegiado"
+	}
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
 
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+		binding = ActivityLoginBinding.inflate(layoutInflater)
+		setContentView(binding.root)
 
-        database = BufeteDAO(this)
+		database = BufeteDAO(this)
 
-        binding.btnAcceder.setOnClickListener {
-            intentarAcceso()
-        }
-    }
+		binding.btnAcceder.setOnClickListener {
+			intentarAcceso()
+		}
+	}
 
-    private fun intentarAcceso() {
-        val usuario = binding.txtUsuario.text.toString()
-        val contrasena = binding.txtContrasena.text.toString()
+	private fun intentarAcceso() {
+		val login = binding.txtUsuario.text.toString()
+		val contrasena = binding.txtContrasena.text.toString()
 
-        if (usuario.isEmpty() || contrasena.isEmpty())
-            Toast.makeText(this, "Rellene todos los campos, por favor.", Toast.LENGTH_SHORT).show()
-        else {
-            val tipoUsuario = database.logIn(usuario, contrasena)
-            val numAbogado = database.consultaNumAbogado(usuario)
+		if (login.isEmpty() || contrasena.isEmpty()) {
+			Toast.makeText(this, "Rellene todos los campos, por favor.", Toast.LENGTH_SHORT).show()
+			return
+		}
 
-            if (tipoUsuario == "") {
-                Toast.makeText(this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show()
-            } else {
-                // Si es administrador
-                if (tipoUsuario == "S") {
-                    intent = Intent(this, CasosActivity::class.java)
-                    intent.putExtra(TIPO_USUARIO, tipoUsuario)
-                    intent.putExtra(NUM_ABOGADO, numAbogado.toString())
-                    startActivity(intent)
-                }
-                // Si es abogado
-                else {
-                    intent = Intent(this, CasosActivity::class.java)
-                    intent.putExtra(TIPO_USUARIO, tipoUsuario)
-                    intent.putExtra(NUM_ABOGADO, numAbogado.toString())
-                    startActivity(intent)
-                }
-            }
-        }
+		val usuario = database.logIn(login, contrasena)
 
-    }
+		if (usuario == null) {
+			Toast.makeText(this, "Claves de acceso incorrectas", Toast.LENGTH_LONG).show()
+			return
+		}
+
+		intent = Intent(this, CasosActivity::class.java)
+		intent.putExtra(USUARIO_ACTIVO, usuario.numeroColegiado)
+		startActivity(intent)
+
+
+	}
 }

@@ -17,8 +17,10 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        Glide.with(binding.root).load(getString(R.string.url))
-            .diskCacheStrategy(DiskCacheStrategy.ALL).into(binding.imgCorporativa)
+        Glide.with(binding.root)
+            .load(getString(R.string.url))
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .into(binding.imgCorporativa)
 
         Thread {
             Thread.sleep(1500)
