@@ -8,7 +8,7 @@ create class Zona(
 
 create class Vivienda(
 	id INTEGER,
- 	metros int
+ 	metros INTEGER,
  	direccion STRING,
  	piso INTEGER,
  	letra STRING
