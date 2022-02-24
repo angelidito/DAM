@@ -21,11 +21,8 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		// ESTO EJECUTARLO SOLO 1 VEZ SI LA BASE DE DATOS ESTA VACIA
-		// /*
+		// Ejecutar si y sólo si la base de datos está vacía
 		crearDatosDB();
-		System.out.println("_____________________________");
-		// */
 
 		// // ESTO ES LA PRACTICA EN SI
 		// calcularPrecios();
@@ -52,6 +49,8 @@ public class Main {
 	}
 
 	private static void crearDatosDB() {
+		openAndStartTransaction();
+
 		Zona[] zonas = añadirZonas();
 		System.out.println("Zonas añadidas");
 
@@ -62,34 +61,44 @@ public class Main {
 		System.out.println("Viviendas añadidas");
 
 		setEstaEn(zonas, viviendas);
+		// setEstaEn(viviendas);
 
-		// Crear clientes
 		Cliente[] clientes = {
-				crearCliente("111111111A", "Mori", "M"),
-				crearCliente("555555555K", "Elde", "Enmedio"),
-				crearCliente("000000000Z", "Gui", "llermo")
+				crearCliente(1, "111111111A", "Mori", "M"),
+				crearCliente(2, "555555555K", "Elde", "Enmedio"),
+				crearCliente(3, "000000000Z", "Gui", "llermo")
 		};
 
 		setQuiereComprar(clientes, viviendas);
 
 		System.out.println("Clientes de ejemplo creados!");
+		
+		commitAndClose();
+	}
+
+	private static void setEstaEn(Vivienda[][] viviendas) {
+		
+
+			MtObjectIterator<Zona> it = Zona.<Zona>instanceIterator(mtDB);
+
+			for (int i = 0; i < viviendas.length; i++) {
+				Zona zona = it.next();
+				for (int j = 0; j < viviendas[i].length; j++)
+					viviendas[i][j].setEstaEn(zona);
+			}
+
+		
 	}
 
 	private static void setEstaEn(Zona[] zonas, Vivienda[][] viviendas) {
-		try {
-			mtDB = new MtDatabase("localhost", "inmobiliaria", new MtPackageObjectFactory("", "inmobiliaria"));
-			mtDB.open();
-			mtDB.startTransaction();
+		
 
-			for (int i = 0; i < viviendas.length; i++)
+			for (int i = 0; i < viviendas.length; i++) {
 				for (int j = 0; j < viviendas[i].length; j++)
 					viviendas[i][j].setEstaEn(zonas[i]);
+			}
 
-			mtDB.commit();
-			mtDB.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 	}
 
 	private static void setQuiereComprar(Cliente[] clientes, Vivienda[][] viviendas) {
@@ -114,26 +123,19 @@ public class Main {
 				}
 		};
 
-		try {
-			mtDB = new MtDatabase("localhost", "inmobiliaria", new MtPackageObjectFactory("", "inmobiliaria"));
-			mtDB.open();
-			mtDB.startTransaction();
+		
 
 			for (int i = 0; i < clientes.length; i++)
 				clientes[i].setQuiereComprar(viviendasClientes[i]);
 
-			mtDB.commit();
-			mtDB.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 	}
 
 	private static Zona[] añadirZonas() {
 		Zona[] zonas = {
-				añadirZona("Zona 1", 100, -5),
-				añadirZona("Zona 2", 50, 1),
-				añadirZona("Zona 3", 10, 4)
+				añadirZona(1, "Zona 1", 100, -5),
+				añadirZona(2, "Zona 2", 50, 1),
+				añadirZona(3, "Zona 3", 10, 4)
 		};
 		return zonas;
 	}
@@ -145,95 +147,83 @@ public class Main {
 	private static Vivienda[][] añadirViviendas() {
 		Vivienda[][] viviendas = {
 				{
-						añadirVivienda(1, "A", 250, "Calle 1", "Zona 1"),
-						añadirVivienda(1, "B", 275, "Calle 1", "Zona 1"),
-						añadirVivienda(1, "C", 225, "Calle 1", "Zona 1"),
-						añadirVivienda(2, "A", 250, "Calle 1", "Zona 1"),
-						añadirVivienda(2, "B", 275, "Calle 1", "Zona 1"),
-						añadirVivienda(2, "C", 225, "Calle 1", "Zona 1")
+						añadirVivienda(1, 1, "A", 250, "Calle 1", "Zona 1"),
+						añadirVivienda(2, 1, "B", 275, "Calle 1", "Zona 1"),
+						añadirVivienda(3, 1, "C", 225, "Calle 1", "Zona 1"),
+						añadirVivienda(4, 2, "A", 250, "Calle 1", "Zona 1"),
+						añadirVivienda(5, 2, "B", 275, "Calle 1", "Zona 1"),
+						añadirVivienda(6, 2, "C", 225, "Calle 1", "Zona 1")
 				},
 				{
-						añadirVivienda(1, "A", 150, "Calle 2", "Zona 2"),
-						añadirVivienda(1, "B", 175, "Calle 2", "Zona 2"),
-						añadirVivienda(1, "C", 125, "Calle 2", "Zona 2"),
-						añadirVivienda(2, "A", 150, "Calle 2", "Zona 2"),
-						añadirVivienda(2, "B", 175, "Calle 2", "Zona 2"),
-						añadirVivienda(2, "C", 125, "Calle 2", "Zona 2")
+						añadirVivienda(7, 1, "A", 150, "Calle 2", "Zona 2"),
+						añadirVivienda(8, 1, "B", 175, "Calle 2", "Zona 2"),
+						añadirVivienda(9, 1, "C", 125, "Calle 2", "Zona 2"),
+						añadirVivienda(10, 2, "A", 150, "Calle 2", "Zona 2"),
+						añadirVivienda(11, 2, "B", 175, "Calle 2", "Zona 2"),
+						añadirVivienda(12, 2, "C", 125, "Calle 2", "Zona 2")
 				},
 				{
-						añadirVivienda(1, "A", 220, "Calle 3", "Zona 3"),
-						añadirVivienda(1, "B", 225, "Calle 3", "Zona 3"),
-						añadirVivienda(1, "C", 250, "Calle 3", "Zona 3"),
-						añadirVivienda(2, "A", 220, "Calle 3", "Zona 3"),
-						añadirVivienda(2, "B", 225, "Calle 3", "Zona 3"),
-						añadirVivienda(2, "C", 250, "Calle 3", "Zona 3")
+						añadirVivienda(13, 1, "A", 220, "Calle 3", "Zona 3"),
+						añadirVivienda(14, 1, "B", 225, "Calle 3", "Zona 3"),
+						añadirVivienda(15, 1, "C", 250, "Calle 3", "Zona 3"),
+						añadirVivienda(16, 2, "A", 220, "Calle 3", "Zona 3"),
+						añadirVivienda(17, 2, "B", 225, "Calle 3", "Zona 3"),
+						añadirVivienda(18, 2, "C", 250, "Calle 3", "Zona 3")
 				}
 		};
 		return viviendas;
 	}
 
 	private static void añadirVentanas() {
-		añadirVentana(2, "N", true);
-		añadirVentana(3, "S", false);
-		añadirVentana(5, "E", true);
-		añadirVentana(1, "W", false);
-		añadirVentana(5, "N", true);
-		añadirVentana(3, "S", false);
-		añadirVentana(2, "E", true);
-		añadirVentana(4, "W", false);
-		añadirVentana(1, "N", true);
-		añadirVentana(2, "S", false);
-		añadirVentana(6, "E", true);
-		añadirVentana(10, "W", false);
+		añadirVentana(1, 2, "N", true);
+		añadirVentana(2, 3, "S", false);
+		añadirVentana(3, 5, "E", true);
+		añadirVentana(4, 1, "W", false);
+		añadirVentana(5, 5, "N", true);
+		añadirVentana(6, 3, "S", false);
+		añadirVentana(7, 2, "E", true);
+		añadirVentana(8, 4, "W", false);
+		añadirVentana(9, 1, "N", true);
+		añadirVentana(10, 2, "S", false);
+		añadirVentana(11, 6, "E", true);
+		añadirVentana(12, 10, "W", false);
 	}
 
-	private static Zona añadirZona(String nombre, int valorMetro, int indiceRevalorizacion) {
+	private static Zona añadirZona(int id, String nombre, int valorMetro, int indiceRevalorizacion) {
 		Zona zona = null;
 
-		try {
-			mtDB = new MtDatabase("localhost", "inmobiliaria", new MtPackageObjectFactory("", "inmobiliaria"));
-			mtDB.open();
-			mtDB.startTransaction();
+		
 
 			zona = new Zona(mtDB);
+			zona.setId(id);
 			zona.setNombre(nombre);
 			zona.setValorMetro(valorMetro);
 			zona.setIndiceRevalorizacion(indiceRevalorizacion);
 
-			mtDB.commit();
-			mtDB.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 		return zona;
 	}
 
-	private static void añadirVentana(int dimensiones, String orientacion, boolean climalite) {
-		try {
-			mtDB = new MtDatabase("localhost", "inmobiliaria", new MtPackageObjectFactory("", "inmobiliaria"));
-			mtDB.open();
-			mtDB.startTransaction();
+	private static void añadirVentana(int id, int dimensiones, String orientacion, boolean climalite) {
+		
 
 			Ventana ventana = new Ventana(mtDB);
+			ventana.setId(id);
+			ventana.setModelo("desconocido");
 			ventana.setMetros(dimensiones);
 			ventana.setOrientacion(orientacion);
 			ventana.setClimalite(climalite);
 
-			mtDB.commit();
-			mtDB.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 	}
 
-	private static Vivienda añadirVivienda(int piso, String letra, int metros, String direccion, String nombreZona) {
+	private static Vivienda añadirVivienda(int id, int piso, String letra, int metros, String direccion,
+			String nombreZona) {
 		Vivienda vivienda = null;
-		try {
-			mtDB = new MtDatabase("localhost", "inmobiliaria", new MtPackageObjectFactory("", "inmobiliaria"));
-			mtDB.open();
-			mtDB.startTransaction();
+		
 
 			vivienda = new Vivienda(mtDB);
+			vivienda.setId(id);
 			vivienda.setPiso(piso);
 			vivienda.setLetra(letra);
 			vivienda.setMetros(metros);
@@ -243,11 +233,7 @@ public class Main {
 
 			asignarVentanas(vivienda);
 
-			mtDB.commit();
-			mtDB.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 		return vivienda;
 	}
 
@@ -261,18 +247,12 @@ public class Main {
 				ventanas.add(ventana);
 		}
 
-		try {
-			mtDB = new MtDatabase("localhost", "inmobiliaria", new MtPackageObjectFactory("", "inmobiliaria"));
-			mtDB.open();
-			mtDB.startTransaction();
+		Ventana[] arrayVentanas = new Ventana[ventanas.size()];
 
-			vivienda.setTieneVentana((Ventana[]) ventanas.toArray());
+		for (int i = 0; i < arrayVentanas.length; i++)
+			arrayVentanas[i] = ventanas.get(i);
 
-			mtDB.commit();
-			mtDB.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		vivienda.setTieneVentana(arrayVentanas);
 
 	}
 
@@ -291,46 +271,42 @@ public class Main {
 	// System.out.println("Error en el método Main.asignarZona (?)");
 	// }
 
-	private static Cliente crearCliente(String dni, String nombre, String apellidos) {
+	private static Cliente crearCliente(int id, String dni, String nombre, String apellidos) {
 		Cliente cliente = null;
-		try {
-			mtDB = new MtDatabase("localhost", "inmobiliaria", new MtPackageObjectFactory("", "inmobiliaria"));
-			mtDB.open();
-			mtDB.startTransaction();
+		
 
 			cliente = new Cliente(mtDB);
+			cliente.setId(id);
 			cliente.setDNI(dni);
 			cliente.setNombre(nombre);
 			cliente.setApellidos(apellidos);
 
-			mtDB.commit();
-			mtDB.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		
 		return cliente;
 	}
 
-	private static void clienteQuiereComprar(Cliente cliente, String direccion, int piso, String letra) {
-		Vivienda[] vivs = new Vivienda[1];
-		// Buscar zona ya añadidas
-		MtObjectIterator<Vivienda> it = Vivienda.<Vivienda>instanceIterator(mtDB);
-		boolean found = false;
-		while (it.hasNext() && !found) {
-			Vivienda[] vivsTemp = it.next(1);
-			for (int i = 0; i < vivsTemp.length; i++) {
-				if (vivsTemp[i].getDireccion().equals(cliente)
-						&& vivsTemp[i].getPiso() == direccion
-						&& vivsTemp[i].getLetra().equals(piso)) {
-					vivs[0] = vivsTemp[i];
-					found = true;
-					i = vivsTemp.length;
-				}
-			}
-		}
-		// Asignar zona
-		cliente.setQuiereComprar(vivs);
-	}
+	// private static void clienteQuiereComprar(Cliente cliente, String direccion,
+	// int piso, String letra) {
+	// Vivienda[] vivs = new Vivienda[1];
+	// // Buscar zona ya añadidas
+	// MtObjectIterator<Vivienda> it = Vivienda.<Vivienda>instanceIterator(mtDB);
+	// boolean found = false;
+
+	// while (it.hasNext() && !found) {
+	// Vivienda[] vivsTemp = it.next(1);
+	// for (int i = 0; i < vivsTemp.length; i++) {
+	// if (vivsTemp[i].getDireccion().equals(cliente)
+	// && vivsTemp[i].getPiso() == direccion
+	// && vivsTemp[i].getLetra().equals(piso)) {
+	// vivs[0] = vivsTemp[i];
+	// found = true;
+	// i = vivsTemp.length;
+	// }
+	// }
+	// }
+	// // Asignar zona
+	// cliente.setQuiereComprar(vivs);
+	// }
 
 	private static void calcularPrecios() {
 		try {
