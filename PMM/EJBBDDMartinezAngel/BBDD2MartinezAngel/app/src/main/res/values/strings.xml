@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BD2</string>
+    <string name="url">https://upload.wikimedia.org/wikipedia/commons/8/8f/Coat_of_Arms_of_the_Spanish_Legal_Representatives_of_the_State.svg</string>
+    <string name="usuario">Usuario:</string>
+    <string name="contrase_a">Contraseña:</string>
+    <string name="acceder">Acceder</string>
+    <string name="buffete_fete_acceso_a_usuarios">Buffete FETE: Acceso a usuarios</string>
+    <string name="bufete_fete">nombre app</string>
+</resources>
