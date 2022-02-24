@@ -1,0 +1,94 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.examen.recmartinezangel"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="22"
+8-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:5:2-64
+11-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:5:19-61
+12
+13    <application
+13-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:7:2-32:16
+14        android:allowBackup="true"
+14-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:8:3-29
+15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+15-->[androidx.core:core:1.7.0] C:\Users\dam\.gradle\caches\transforms-3\8fb9359d15ca0544addfd90daeb4c708\transformed\core-1.7.0\AndroidManifest.xml:24:18-86
+16        android:debuggable="true"
+17        android:icon="@mipmap/ic_launcher"
+17-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:9:3-37
+18        android:label="@string/app_name"
+18-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:10:3-35
+19        android:roundIcon="@mipmap/ic_launcher_round"
+19-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:11:3-48
+20        android:supportsRtl="true"
+20-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:12:3-29
+21        android:testOnly="true"
+22        android:theme="@style/Theme.RecMartinezAngel" >
+22-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:13:3-48
+23        <activity
+23-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:14:3-16:30
+24            android:name="com.examen.recmartinezangel.activities.FaltasActivity"
+24-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:15:4-45
+25            android:exported="true" />
+25-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:16:4-27
+26        <activity
+26-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:17:3-19:30
+27            android:name="com.examen.recmartinezangel.activities.OptionsActivity"
+27-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:18:4-46
+28            android:exported="true" />
+28-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:19:4-27
+29        <activity
+29-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:20:3-22:30
+30            android:name="com.examen.recmartinezangel.activities.LoginActivity"
+30-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:21:4-44
+31            android:exported="true" />
+31-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:22:4-27
+32        <activity
+32-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:23:3-31:14
+33            android:name="com.examen.recmartinezangel.activities.MainActivity"
+33-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:24:4-43
+34            android:exported="true" >
+34-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:25:4-27
+35            <intent-filter>
+35-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:26:4-30:20
+36                <action android:name="android.intent.action.MAIN" />
+36-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:27:5-57
+36-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:27:13-54
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:29:5-65
+38-->C:\Mori\DAM\PMM\RecMartinezAngel\app\src\main\AndroidManifest.xml:29:15-62
+39            </intent-filter>
+40        </activity>
+41
+42        <provider
+42-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dam\.gradle\caches\transforms-3\0cfd2b4014f1699f02c55d8d77c2d794\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
+43            android:name="androidx.startup.InitializationProvider"
+43-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dam\.gradle\caches\transforms-3\0cfd2b4014f1699f02c55d8d77c2d794\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:27:13-67
+44            android:authorities="com.examen.recmartinezangel.androidx-startup"
+44-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dam\.gradle\caches\transforms-3\0cfd2b4014f1699f02c55d8d77c2d794\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:28:13-68
+45            android:exported="false" >
+45-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dam\.gradle\caches\transforms-3\0cfd2b4014f1699f02c55d8d77c2d794\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:29:13-37
+46            <meta-data
+46-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dam\.gradle\caches\transforms-3\0cfd2b4014f1699f02c55d8d77c2d794\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:31:13-33:52
+47                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+47-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dam\.gradle\caches\transforms-3\0cfd2b4014f1699f02c55d8d77c2d794\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:32:17-75
+48                android:value="androidx.startup" />
+48-->[androidx.emoji2:emoji2:1.0.0] C:\Users\dam\.gradle\caches\transforms-3\0cfd2b4014f1699f02c55d8d77c2d794\transformed\jetified-emoji2-1.0.0\AndroidManifest.xml:33:17-49
+49            <meta-data
+49-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dam\.gradle\caches\transforms-3\25cfadab9ead36f44aacb739cc227276\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:31:13-33:52
+50                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+50-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dam\.gradle\caches\transforms-3\25cfadab9ead36f44aacb739cc227276\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:32:17-78
+51                android:value="androidx.startup" />
+51-->[androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\dam\.gradle\caches\transforms-3\25cfadab9ead36f44aacb739cc227276\transformed\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:33:17-49
+52        </provider>
+53    </application>
+54
+55</manifest>

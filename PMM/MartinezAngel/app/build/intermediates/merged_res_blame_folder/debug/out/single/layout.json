@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Mori\\DAM\\PMM\\MartinezAngel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "C:\\Mori\\DAM\\PMM\\MartinezAngel\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Mori\\DAM\\PMM\\MartinezAngel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_lista_categorias.xml",
+        "source": "C:\\Mori\\DAM\\PMM\\MartinezAngel\\app\\src\\main\\res\\layout\\activity_lista_categorias.xml"
+    },
+    {
+        "merged": "C:\\Mori\\DAM\\PMM\\MartinezAngel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\categoria_item.xml",
+        "source": "C:\\Mori\\DAM\\PMM\\MartinezAngel\\app\\src\\main\\res\\layout\\categoria_item.xml"
+    },
+    {
+        "merged": "C:\\Mori\\DAM\\PMM\\MartinezAngel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Mori\\DAM\\PMM\\MartinezAngel\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Mori\\DAM\\PMM\\MartinezAngel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_categorias.xml",
+        "source": "C:\\Mori\\DAM\\PMM\\MartinezAngel\\app\\src\\main\\res\\layout\\activity_categorias.xml"
+    }
+]

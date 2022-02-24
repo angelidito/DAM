@@ -1,0 +1,10 @@
+com/examen/recmartinezangel/BuildConfig.java
+ com.examen.recmartinezangel.BuildConfig
+com/examen/recmartinezangel/databinding/ActivityMainBinding.java
+ com.examen.recmartinezangel.databinding.ActivityMainBinding
+com/examen/recmartinezangel/databinding/ActivityOptionsBinding.java
+ com.examen.recmartinezangel.databinding.ActivityOptionsBinding
+com/examen/recmartinezangel/databinding/ActivityFaltasBinding.java
+ com.examen.recmartinezangel.databinding.ActivityFaltasBinding
+com/examen/recmartinezangel/databinding/ActivityLoginBinding.java
+ com.examen.recmartinezangel.databinding.ActivityLoginBinding

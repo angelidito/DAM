@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Mori\\DAM\\PMM\\RecMartinezAngel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "C:\\Mori\\DAM\\PMM\\RecMartinezAngel\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Mori\\DAM\\PMM\\RecMartinezAngel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_options.xml",
+        "source": "C:\\Mori\\DAM\\PMM\\RecMartinezAngel\\app\\src\\main\\res\\layout\\activity_options.xml"
+    },
+    {
+        "merged": "C:\\Mori\\DAM\\PMM\\RecMartinezAngel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_faltas.xml",
+        "source": "C:\\Mori\\DAM\\PMM\\RecMartinezAngel\\app\\src\\main\\res\\layout\\activity_faltas.xml"
+    },
+    {
+        "merged": "C:\\Mori\\DAM\\PMM\\RecMartinezAngel\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Mori\\DAM\\PMM\\RecMartinezAngel\\app\\src\\main\\res\\layout\\activity_main.xml"
+    }
+]

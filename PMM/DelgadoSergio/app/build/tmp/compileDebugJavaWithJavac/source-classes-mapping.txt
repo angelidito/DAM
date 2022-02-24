@@ -1,0 +1,16 @@
+com/sde/delgadosergio/databinding/ActivityProductosBinding.java
+ com.sde.delgadosergio.databinding.ActivityProductosBinding
+com/sde/delgadosergio/databinding/ActivityConsultaCategoriasBinding.java
+ com.sde.delgadosergio.databinding.ActivityConsultaCategoriasBinding
+com/sde/delgadosergio/databinding/ItemCategoriaBinding.java
+ com.sde.delgadosergio.databinding.ItemCategoriaBinding
+com/sde/delgadosergio/databinding/ActivityInfoCadaProductoBinding.java
+ com.sde.delgadosergio.databinding.ActivityInfoCadaProductoBinding
+com/sde/delgadosergio/BuildConfig.java
+ com.sde.delgadosergio.BuildConfig
+com/sde/delgadosergio/databinding/ActivityLoginBinding.java
+ com.sde.delgadosergio.databinding.ActivityLoginBinding
+com/sde/delgadosergio/databinding/ItemProductoBinding.java
+ com.sde.delgadosergio.databinding.ItemProductoBinding
+com/sde/delgadosergio/databinding/ActivityMainBinding.java
+ com.sde.delgadosergio.databinding.ActivityMainBinding

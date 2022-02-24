@@ -1,0 +1,10 @@
+com/examen/martinezangel/databinding/ActivityMainBinding.java
+ com.examen.martinezangel.databinding.ActivityMainBinding
+com/examen/martinezangel/databinding/ActivityCategoriasBinding.java
+ com.examen.martinezangel.databinding.ActivityCategoriasBinding
+com/examen/martinezangel/BuildConfig.java
+ com.examen.martinezangel.BuildConfig
+com/examen/martinezangel/databinding/CategoriaItemBinding.java
+ com.examen.martinezangel.databinding.CategoriaItemBinding
+com/examen/martinezangel/databinding/ActivityLoginBinding.java
+ com.examen.martinezangel.databinding.ActivityLoginBinding

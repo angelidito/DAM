@@ -1,68 +1,67 @@
-CREATE NAMESPACE IF NOT EXISTS MoriNameSpace;
-
 
 create class Zona(
-	idZona INTEGER,
- 	nombreZona STRING,
- 	valorMetroZona INTEGER,
+	id INTEGER,
+ 	nombre STRING,
+ 	valorMetro INTEGER,
  	indiceRevalorizacion INTEGER
-   
  );
 
 create class Vivienda(
-	idVivienda INTEGER,
- 	nombre STRING,
- 	calle STRING,
+	id INTEGER,
+ 	metros int
+ 	direccion STRING,
  	piso INTEGER,
  	letra STRING
  );
  
 create class Cliente(
-	idCliente INTEGER,
+	id INTEGER,
  	DNI STRING,
  	nombre STRING,
  	apellidos STRING
  );
 
 create class Ventana(
-	idModelo INTEGER,
- 	nombreModeloVentana STRING,
- 	dimension INTEGER,
+	id INTEGER,
+ 	modelo STRING,
+ 	metros INTEGER,
  	orientacion STRING,
- 	aislamientoClimalite STRING
+ 	climalite BOOLEAN
  );
 
 
 ALTER CLASS Zona
 	ADD RELATIONSHIP contiene
-		REFERENCES SET (Vivienda)
+		RELATIONSHIP SET (Vivienda)
  	INVERSE Vivienda.estaEn;
 
  
 ALTER CLASS Vivienda
 	ADD RELATIONSHIP estaEn 
-		REFERENCES SET (Zona)
+		RELATIONSHIP SET (Zona)
 			CARDINALITY (0, 1)
 	INVERSE Zona.contiene;
 
  
 ALTER CLASS Vivienda
 	ADD RELATIONSHIP posiblePropietario 
-		REFERENCES SET (Cliente)
+		RELATIONSHIP SET (Cliente)
 	INVERSE Cliente.quiereComprar; 
 	
 ALTER CLASS Cliente
 	ADD RELATIONSHIP quiereComprar
-		REFERENCES SET (Vivienda)
+		RELATIONSHIP SET (Vivienda)
  	INVERSE Vivienda.posiblePropietario;
  
 
 ALTER CLASS Vivienda
-	ADD RELATIONSHIP tiene 
-		REFERENCES SET (Ventana)
+	ADD RELATIONSHIP tieneVentana 
+		RELATIONSHIP SET (Ventana)
 	INVERSE Ventana.colocadaEn; 
 	
 ALTER CLASS Ventana
 	ADD RELATIONSHIP colocadaEn
-		REFERENCES SET (Vivienda)
- 	INVERSE Vivienda.tiene;
+		RELATIONSHIP SET (Vivienda)
+ 	INVERSE Vivienda.tieneVentana;
+
+
