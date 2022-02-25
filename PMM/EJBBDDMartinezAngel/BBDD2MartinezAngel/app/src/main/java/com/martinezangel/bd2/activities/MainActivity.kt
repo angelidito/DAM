@@ -23,9 +23,10 @@ class MainActivity : AppCompatActivity() {
             .into(binding.imgCorporativa)
 
         Thread {
-            Thread.sleep(1500)
+            Thread.sleep(2500)
             intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            finish()
         }.start()
     }
 }

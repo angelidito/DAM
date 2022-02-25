@@ -22,8 +22,7 @@
 				android:layout_marginTop="30dp"
 				android:gravity="center"
 				android:text="@string/casos_fete"
-				android:textSize="42sp"
-				android:textStyle="bold"
+				android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
 				app:layout_constraintStart_toStartOf="parent"
 				app:layout_constraintTop_toTopOf="parent" />
 

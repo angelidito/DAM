@@ -1,9 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.InfoCasoActivity">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
 
+	<androidx.core.widget.NestedScrollView
+		android:id="@+id/InfoCasoNestedScrollView"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		tools:context=".activities.InfoCasoActivity">
+
+		<androidx.constraintlayout.widget.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:padding="25dp">
+
+			<TextView
+				android:id="@+id/lbl_nombre_caso"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:gravity="center"
+				android:textAppearance="?attr/textAppearanceHeadline5"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				tools:text="Titulo del caso" />
+
+			<TextView
+				android:id="@+id/fecha_gestion"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="25dp"
+				android:text="@string/n_caso"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/lbl_nombre_caso" />
+
+			<TextView
+				android:id="@+id/numero_caso"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginLeft="10dp"
+				app:layout_constraintStart_toEndOf="@+id/fecha_gestion"
+				app:layout_constraintTop_toTopOf="@+id/fecha_gestion"
+				tools:text="ASD232" />
+
+			<TextView
+				android:id="@+id/fecha_caso"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintTop_toTopOf="@+id/numero_caso"
+				tools:text="12-43-6546" />
+
+			<TextView
+				android:id="@+id/caracteristicas_caso"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="20dp"
+				app:layout_constraintStart_toStartOf="@+id/fecha_gestion"
+				app:layout_constraintTop_toBottomOf="@+id/fecha_gestion"
+				tools:text="SLKDJHFLS FOAISDYFU 97YDASKJFH KLJkljH LKL HLKSJ DHFLDKSFJHh lJHLHLkjhl hjlh dhflgkh gdj gdGD-x,z.mv xc,.zcnv,.zxzxv+asdif     90w43ir¡0934u
+				SHFSDF GDASFOASDHFG ASKDGF 9AS8DFGSIHDF GSJDGF DST 0AS8DT7FSAO DYFUGASDHF G0T7FGEOYHF " />
+
+			<TextView
+				android:id="@+id/lbl_titulo_gestiones"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="30dp"
+				android:text="@string/gestiones"
+				android:textAppearance="?attr/textAppearanceHeadline6"
+				app:layout_constraintStart_toStartOf="@id/caracteristicas_caso"
+				app:layout_constraintTop_toBottomOf="@id/caracteristicas_caso" />
+
+			<androidx.recyclerview.widget.RecyclerView
+				android:id="@+id/RecyclerViewGestiones"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="15dp"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/lbl_titulo_gestiones" />
+
+
+		</androidx.constraintlayout.widget.ConstraintLayout>
+	</androidx.core.widget.NestedScrollView>
+ç
+	<com.google.android.material.floatingactionbutton.FloatingActionButton
+		android:id="@+id/btn_anadir_gestion"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginEnd="15dp"
+		android:layout_marginBottom="90dp"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/InfoCasoNestedScrollView"
+		app:srcCompat="@android:drawable/ic_input_add" />
 </androidx.constraintlayout.widget.ConstraintLayout>

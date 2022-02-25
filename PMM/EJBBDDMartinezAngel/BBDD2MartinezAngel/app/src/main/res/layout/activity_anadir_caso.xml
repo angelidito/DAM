@@ -1,9 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".activities.AnadirCasoActivity">
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:paddingHorizontal="75dp"
+	tools:context=".activities.AnadirCasoActivity">
+
+	<TextView
+		android:id="@+id/lbl_titulo_anadir_caso"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+		android:layout_marginTop="40dp"
+		android:text="@string/anadir_caso"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<TextView
+		android:id="@+id/lbl_denominacion"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="80dp"
+		android:text="@string/denominacion"
+		app:layout_constraintStart_toStartOf="@+id/lbl_abogado"
+		app:layout_constraintTop_toTopOf="@+id/lbl_titulo_anadir_caso" />
+
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/til_denominacion_caso"
+		style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:endIconMode="clear_text"
+		app:layout_constraintStart_toStartOf="@+id/til_abogado"
+		app:layout_constraintTop_toBottomOf="@id/lbl_denominacion">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+	</com.google.android.material.textfield.TextInputLayout>
+
+	<!-- TextView con el texto de "Abogado" -->
+	<TextView
+		android:id="@+id/lbl_abogado"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="100dp"
+		android:text="@string/abogado"
+
+		app:layout_constraintStart_toStartOf="@+id/til_abogado"
+		app:layout_constraintTop_toTopOf="@+id/lbl_denominacion" />
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/til_abogado"
+		style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+		android:layout_width="match_parent"
+		android:layout_height="67dp"
+		app:layout_constraintStart_toStartOf="@id/lbl_abogado"
+		app:layout_constraintTop_toBottomOf="@id/lbl_abogado">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"/>
+	</com.google.android.material.textfield.TextInputLayout>
+
+
+	<TextView
+		android:id="@+id/lbl_caracteristicas"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="100dp"
+		android:text="@string/caracteristicas"
+		app:layout_constraintStart_toStartOf="@+id/lbl_abogado"
+		app:layout_constraintTop_toTopOf="@+id/lbl_abogado" />
+
+	<com.google.android.material.textfield.TextInputLayout
+		android:id="@+id/til_caracteristicas"
+		style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		app:layout_constraintStart_toStartOf="@+id/til_abogado"
+		app:layout_constraintTop_toBottomOf="@id/lbl_caracteristicas">
+
+		<com.google.android.material.textfield.TextInputEditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content" />
+	</com.google.android.material.textfield.TextInputLayout>
+
+
+	<!-- Botón de añadir -->
+	<com.google.android.material.button.MaterialButton
+		android:id="@+id/btn_aceptar"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="18dp"
+		android:text="@string/aceptar"
+		app:layout_constraintEnd_toEndOf="@+id/til_caracteristicas"
+		app:layout_constraintTop_toBottomOf="@+id/til_caracteristicas" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

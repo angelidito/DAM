@@ -1,10 +1,19 @@
 <resources>
-    <string name="app_name">BD2</string>
-    <string name="url">https://upload.wikimedia.org/wikipedia/commons/d/de/%C3%81lvaro_Baeza_Gui%C3%B1ez%2C_Abogado_Chileno.jpg</string>
-    <string name="usuario">Usuario:</string>
-    <string name="contrase_a">Contraseña:</string>
-    <string name="acceder">Acceder</string>
-    <string name="buffete_fete_acceso_a_usuarios">Buffete FETE: Acceso a usuarios</string>
-    <string name="bufete_fete">nombre app</string>
-    <string name="casos_fete">Casos FETE</string>
+	<string name="app_name">BD2</string>
+	<string name="url">https://upload.wikimedia.org/wikipedia/commons/d/de/%C3%81lvaro_Baeza_Gui%C3%B1ez%2C_Abogado_Chileno.jpg</string>
+	<string name="usuario">Usuario:</string>
+	<string name="contrase_a">Contraseña:</string>
+	<string name="acceder">Acceder</string>
+	<string name="buffete_fete_acceso_a_usuarios">Buffete FETE: Acceso a usuarios</string>
+	<string name="bufete_fete">BUFETE FETE</string>
+	<string name="casos_fete">Casos FETE</string>
+	<string name="n_caso">Nº caso:</string>
+	<string name="gestiones">Gestiones</string>
+	<string name="aceptar">Aceptar</string>
+	<string name="volver">Volver</string>
+	<string name="anadir_gestion">Añadir gestión</string>
+	<string name="anadir_caso">Añadir caso</string>
+	<string name="caracteristicas">Características</string>
+	<string name="abogado">Abogado</string>
+	<string name="denominacion">Denominación</string>
 </resources>

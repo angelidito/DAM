@@ -36,8 +36,8 @@ class BufeteDB(
 					"descripcion VARCHAR," +
 					"realizado char(2)" +
 					")",
-			"INSERT into USUARIOS values ('1453F', 'Juan Antonio', '1', '1', 'S')",
-			"INSERT into USUARIOS values ('2AJB3', 'Mario Sanchez', '2', '2', 'A')",
+			"INSERT into USUARIOS values ('111', 'Juan Antonio', '1', '1', 'S')",
+			"INSERT into USUARIOS values ('222', 'Mario Sanchez', '2', '2', 'A')",
 			"INSERT into CASOS (denominacion, fechaApertura, caracteristicas, abogado) values ('Caso 12343 de la abuela', '12-12-2012', 'Carantristicas del caso dsfgs f sfsd ', 111)",
 			"INSERT into CASOS (denominacion, fechaApertura, caracteristicas, abogado) values ('Caso 56435 de la abuela', '24-04-2014', 'Carantristicas del caso asdfkjajfg kdgskdsgaf s ', 111)",
 			"INSERT into CASOS (denominacion, fechaApertura, caracteristicas, abogado) values ('Clientes que nos demandan con razon', '09-09-2009', 'PFFFFFFF PEREZA DE CASO; VAMOS A PERDERLO', 222)",

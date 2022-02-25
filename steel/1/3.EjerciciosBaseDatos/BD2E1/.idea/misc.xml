@@ -3,7 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Mori/DAM/steel/1/3.EjerciciosBaseDatos/BD2E1/app/src/main/res/layout/activity_info_cada_caso.xml" value="0.225" />
         <entry key="..\:/Mori/DAM/steel/1/3.EjerciciosBaseDatos/BD2E1/app/src/main/res/layout/activity_main.xml" value="0.225" />
+        <entry key="..\:/Mori/DAM/steel/1/3.EjerciciosBaseDatos/BD2E1/app/src/main/res/layout/activity_nueva_gestion.xml" value="0.225" />
+        <entry key="..\:/Mori/DAM/steel/1/3.EjerciciosBaseDatos/BD2E1/app/src/main/res/layout/activity_nuevo_caso.xml" value="0.22" />
+        <entry key="..\:/Mori/DAM/steel/1/3.EjerciciosBaseDatos/BD2E1/app/src/main/res/layout/item_gestion.xml" value="0.225" />
         <entry key="..\:/Users/dam/Documents/AndroidStudio/3.EjerciciosBaseDatos/BD2DelgadoSergio/app/src/main/res/layout/activity_casos.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/dam/Documents/AndroidStudio/3.EjerciciosBaseDatos/BD2DelgadoSergio/app/src/main/res/layout/activity_info_cada_caso.xml" value="0.22" />
         <entry key="..\:/Users/dam/Documents/AndroidStudio/3.EjerciciosBaseDatos/BD2DelgadoSergio/app/src/main/res/layout/activity_login.xml" value="0.18" />

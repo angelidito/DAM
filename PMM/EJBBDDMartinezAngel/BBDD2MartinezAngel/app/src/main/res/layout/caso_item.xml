@@ -14,45 +14,35 @@
         android:padding="@dimen/common_padding_min">
 
         <TextView
-            android:id="@+id/numeroCaso"
+            android:id="@+id/numero_caso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceSubtitle2"
             android:maxLines="1"
-            android:gravity="right"
             tools:text="AS%$34"
-            android:ellipsize="end"
             android:padding="@dimen/common_padding_min"
-            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/lblNumeroCaso"
+            android:id="@+id/lbl_numero_caso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:gravity="right"
-            android:maxLines="1"
             android:padding="@dimen/common_padding_min"
-            android:text="Nº caso:"
+            android:text="@string/n_caso"
             android:textAppearance="?attr/textAppearanceSubtitle2"
-            android:textColor="@color/black"
-            app:layout_constraintEnd_toStartOf="@+id/numeroCaso"
+            app:layout_constraintEnd_toStartOf="@+id/numero_caso"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/denominacion"
+            android:id="@+id/denominacion_caso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?attr/textAppearanceSubtitle1"
-            android:maxLines="1"
-            android:ellipsize="end"
-            android:text="denominacion"
+            tools:text="Denominación del caso"
             android:padding="@dimen/common_padding_min"
-            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/numeroCaso"
+            app:layout_constraintTop_toBottomOf="@id/numero_caso"
             />
 
 

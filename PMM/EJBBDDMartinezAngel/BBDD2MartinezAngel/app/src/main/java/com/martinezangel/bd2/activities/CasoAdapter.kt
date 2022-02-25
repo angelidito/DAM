@@ -37,8 +37,8 @@ class CasoAdapter(private var casos: MutableList<Caso>, private var listener: Ev
         val caso = casos[position]
         with(holder) {
             setListener(caso)
-            binding.denominacion.text = caso.denominacion
-            binding.numeroCaso.text = caso.numeroCaso.toString()
+            binding.denominacionCaso.text = caso.denominacion
+            binding.numeroCaso.text = caso.numeroCaso
         }
     }
 

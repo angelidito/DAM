@@ -12,7 +12,7 @@ class LoginActivity : AppCompatActivity() {
 	private lateinit var database: BufeteDAO
 
 	companion object {
-		const val USUARIO_ACTIVO = "numeroColegiado"
+		const val USUARIO_ACTIVO = "usuario"
 	}
 
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
 		val contrasena = binding.txtContrasena.text.toString()
 
 		if (login.isEmpty() || contrasena.isEmpty()) {
-			Toast.makeText(this, "Rellene todos los campos, por favor.", Toast.LENGTH_SHORT).show()
+			Toast.makeText(this, "No ha rellenado todos los campos.", Toast.LENGTH_SHORT).show()
 			return
 		}
 
@@ -45,8 +45,10 @@ class LoginActivity : AppCompatActivity() {
 		}
 
 		intent = Intent(this, CasosActivity::class.java)
-		intent.putExtra(USUARIO_ACTIVO, usuario.numeroColegiado)
+		intent.putExtra(USUARIO_ACTIVO, usuario)
+		intent.putExtra("numeroColegiado", usuario.numeroColegiado)
 		startActivity(intent)
+		finish()
 
 
 	}
