@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Mori/DAM/PMM/EJBBDDMartinezAngel/BBDD1MartinezAngel/app/src/main/res/drawable/estado_favorito.xml" value="0.20462962962962963" />
+        <entry key="..\:/Mori/DAM/PMM/EJBBDDMartinezAngel/BBDD1MartinezAngel/app/src/main/res/drawable/estados.xml" value="0.20462962962962963" />
+        <entry key="..\:/Mori/DAM/PMM/EJBBDDMartinezAngel/BBDD1MartinezAngel/app/src/main/res/layout/activity_alojamientos.xml" value="0.225" />
+        <entry key="..\:/Mori/DAM/PMM/EJBBDDMartinezAngel/BBDD1MartinezAngel/app/src/main/res/layout/activity_carga.xml" value="0.2109375" />
+        <entry key="..\:/Mori/DAM/PMM/EJBBDDMartinezAngel/BBDD1MartinezAngel/app/src/main/res/layout/activity_main.xml" value="0.225" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
