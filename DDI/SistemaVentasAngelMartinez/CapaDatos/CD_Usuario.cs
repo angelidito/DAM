@@ -20,7 +20,7 @@ namespace CapaDatos
                 {
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("SELECT u.IdUsuario, u.Documento, u.NombreCompleto, u.Correo, u.Clave, u.Estado, r.IdRol,r.Descripcion");
-                    query.AppendLine("FROM usuario u inner join rol r ON u.idRol = r.IdRol");
+                    query.AppendLine("FROM usuario u INNER JOIN rol r ON u.idRol = r.IdRol");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;

@@ -19,12 +19,11 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT u.IdCategoria, u.Documento, u.NombreCompleto, u.Correo, u.Clave, u.Estado, r.IdRol,r.Descripcion");
-                    query.AppendLine("FROM Categoria u inner join rol r ON u.idRol = r.IdRol");
+                    query.AppendLine("SELECT u.IdCategoria, u.Documento, u.NombreCompleto, u.Correo, u.Clave, u.Estado, r.IdRol, r.Descripcion");
+                    query.AppendLine("FROM Categoria u INNER JOIN rol r ON u.idRol = r.IdRol");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
-
                     oconexion.Open();
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -35,14 +34,14 @@ namespace CapaDatos
                             {
                                 IdCategoria = Convert.ToInt32(dr["IdCategoria"]),
                                 Estado = Convert.ToBoolean(dr["Estado"]),
-                                Descripcion = dr["Descripcion"].ToString(),
+                                Descripcion = dr["Descripcion"].ToString()
                             });
-
                         }
                     }
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex.StackTrace);
                     lista = new List<Categoria>();
                 }
             }
@@ -63,9 +62,7 @@ namespace CapaDatos
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
-
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
                     idCategoriagenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
@@ -96,9 +93,7 @@ namespace CapaDatos
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
-
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
@@ -127,9 +122,7 @@ namespace CapaDatos
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
-
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
                     respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);

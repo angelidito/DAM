@@ -89,7 +89,7 @@ namespace CapaPresentacion
 				{
 					IdCategoria = Convert.ToInt32(((OpcionCombo)cbocategoria.SelectedItem).Valor)
 				},
-				Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1 ? true : false
+				Estado = Convert.ToInt32(((OpcionCombo)cboestado.SelectedItem).Valor) == 1
 			};
 
 			if (obj.IdProducto == 0)
@@ -213,7 +213,7 @@ namespace CapaPresentacion
 		{
 			if (Convert.ToInt32(txtId.Text) != 0)
 			{
-				if (MessageBox.Show("¿Desea eliminar el pr", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+				if (MessageBox.Show("¿Desea eliminar el producto? ", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
 				{
 					string mensaje = string.Empty;
 					Producto obj = new Producto()

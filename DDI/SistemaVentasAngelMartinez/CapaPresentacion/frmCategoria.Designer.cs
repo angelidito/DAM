@@ -318,7 +318,7 @@ namespace CapaPresentacion
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(162, 25);
             this.label1.TabIndex = 13;
-            this.label1.Text = "Detalle Categoria";
+            this.label1.Text = "Detalle Categoría";
             // 
             // txtIndice
             // 

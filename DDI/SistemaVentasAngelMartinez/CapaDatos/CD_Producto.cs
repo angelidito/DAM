@@ -22,7 +22,7 @@ namespace CapaDatos
                     StringBuilder query = new StringBuilder();
                     query.AppendLine("select IdProducto, Codigo, Nombre, p.Descripcion, c.IdCategoria, " +
                         "c.Descripcion[DescripcionCategoria], Stock,PrecioCompra,PrecioVenta FROM Producto p");
-                    query.AppendLine("inner join CATEGORIA c ON c.idCategoria = p.IdCategoria");
+                    query.AppendLine("INNER JOIN CATEGORIA c ON c.idCategoria = p.IdCategoria");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;

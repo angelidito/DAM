@@ -21,16 +21,10 @@ namespace CapaNegocio
 
             if (obj.Descripcion == "")
             {
-                Mensaje += "Es necesario la descripcion de la categoria \n";
-            }
-            if (Mensaje != string.Empty)
-            {
+                Mensaje += "Introduzca una descripción.\n";
                 return 0;
             }
-            else
-            {
-                return object_Categoria.Registrar(obj, out Mensaje);
-            }
+            return object_Categoria.Registrar(obj, out Mensaje);
         }
         public bool Editar(Categoria obj, out string Mensaje)
         {
@@ -38,16 +32,10 @@ namespace CapaNegocio
 
             if (obj.Descripcion == "")
             {
-                Mensaje += "Es necesario la descripcion de la categoria \n";
-            }
-            if (Mensaje != string.Empty)
-            {
+                Mensaje += "Introduzca una descripción.\n";
                 return false;
             }
-            else
-            {
-                return object_Categoria.Editar(obj, out Mensaje);
-            }
+            return object_Categoria.Editar(obj, out Mensaje);
         }
 
         public bool Eliminar(Categoria obj, out string Mensaje)

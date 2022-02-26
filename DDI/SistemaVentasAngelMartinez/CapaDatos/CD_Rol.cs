@@ -20,7 +20,7 @@ namespace CapaDatos
                 try
                 {
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("SELECT IdRol, Descripcion from ROL");
+                    query.AppendLine("SELECT IdRol, Descripcion FROM ROL");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;

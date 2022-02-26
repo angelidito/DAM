@@ -1,1 +1,6 @@
-
+C:\Users\dam\Documents\GitHub\DAM\DDI\SistemaVentasAngelMartinez\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\dam\Documents\GitHub\DAM\DDI\SistemaVentasAngelMartinez\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\dam\Documents\GitHub\DAM\DDI\SistemaVentasAngelMartinez\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\dam\Documents\GitHub\DAM\DDI\SistemaVentasAngelMartinez\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\dam\Documents\GitHub\DAM\DDI\SistemaVentasAngelMartinez\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\dam\Documents\GitHub\DAM\DDI\SistemaVentasAngelMartinez\CapaEntidad\obj\Debug\CapaEntidad.pdb
