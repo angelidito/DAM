@@ -1,10 +1,6 @@
 ﻿using CapaDatos;
 using CapaEntidad;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaNegocio
 {
@@ -22,28 +18,18 @@ namespace CapaNegocio
             Mensaje = string.Empty;
 
             if (obj.Codigo == "")
-            {
-                Mensaje += "Es necesario el codigo del Producto\n";
-            }
+                Mensaje += "Escriba un código para el producto\n";
 
             if (obj.Nombre == "")
-            {
-                Mensaje += "Es necesario el nombre del Producto\n";
-            }
+                Mensaje += "Escriba un nombre para el producto\n";
 
             if (obj.Descripcion == "")
-            {
-                Mensaje += "Es necesaria la Descripcion del Producto\n";
-            }
+                Mensaje += "Escriba una descripción para el producto\n";
 
-            if (Mensaje != string.Empty)
-            {
-                return 0;
-            }
-            else
-            {
+            if (Mensaje == string.Empty)
                 return objcd_Producto.Registrar(obj, out Mensaje);
-            }
+            else
+                return 0;
         }
 
         public bool Editar(Producto obj, out string Mensaje)
@@ -51,28 +37,18 @@ namespace CapaNegocio
             Mensaje = string.Empty;
 
             if (obj.Codigo == "")
-            {
-                Mensaje += "Es necesario el codigo del Producto\n";
-            }
+                Mensaje += "Escriba un código para el producto\n";
 
             if (obj.Nombre == "")
-            {
-                Mensaje += "Es necesario el nombre del Producto\n";
-            }
+                Mensaje += "Escriba un nombre para el producto\n";
 
             if (obj.Descripcion == "")
-            {
-                Mensaje += "Es necesaria la Descripcion del Producto\n";
-            }
+                Mensaje += "Escriba una descripción para el producto\n";
 
-            if (Mensaje != string.Empty)
-            {
-                return false;
-            }
-            else
-            {
+            if (Mensaje == string.Empty)
                 return objcd_Producto.Editar(obj, out Mensaje);
-            }
+            else
+                return false;
         }
 
         public bool Eliminar(Producto obj, out string Mensaje)

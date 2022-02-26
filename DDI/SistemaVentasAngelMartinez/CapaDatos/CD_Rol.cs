@@ -30,21 +30,21 @@ namespace CapaDatos
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         while (dr.Read())
-                        {
                             lista.Add(new Rol()
                             {
                                 IdRol = Convert.ToInt32(dr["IdRol"]),
                                 Descripcion = dr["Descripcion"].ToString()
                             });
-
-                        }
                     }
                 }
                 catch (Exception ex)
                 {
+                    Console.WriteLine(ex.StackTrace);
+
                     lista = new List<Rol>();
                 }
             }
+
             return lista;
         }
     }

@@ -3,9 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
@@ -18,15 +16,12 @@ namespace CapaDatos
             {
                 try
                 {
-
                     StringBuilder query = new StringBuilder();
-                    query.AppendLine("select IdProducto, Codigo, Nombre, p.Descripcion, c.IdCategoria, " +
-                        "c.Descripcion[DescripcionCategoria], Stock,PrecioCompra,PrecioVenta FROM Producto p");
-                    query.AppendLine("INNER JOIN CATEGORIA c ON c.idCategoria = p.IdCategoria");
+                    query.AppendLine("select IdProducto, Codigo, Nombre, p.Descripcion, c.IdCategoria, c.Descripcion[DescripcionCategoria], Stock, PrecioCompra, PrecioVenta ");
+                    query.AppendLine("FROM Producto p INNER JOIN CATEGORIA c ON c.idCategoria = p.IdCategoria");
 
                     SqlCommand cmd = new SqlCommand(query.ToString(), oconexion);
                     cmd.CommandType = CommandType.Text;
-
                     oconexion.Open();
 
                     using (SqlDataReader dr = cmd.ExecuteReader())
@@ -39,8 +34,11 @@ namespace CapaDatos
                                 Codigo = dr["Codigo"].ToString(),
                                 Nombre = dr["Nombre"].ToString(),
                                 Descripcion = dr["Descripcion"].ToString(),
-                                oCategoria = new Categoria() { IdCategoria = Convert.ToInt32(dr["IdCategoria"]), 
-                                    Descripcion = dr["DescripcionCategoria"].ToString()},
+                                oCategoria = new Categoria()
+                                {
+                                    IdCategoria = Convert.ToInt32(dr["IdCategoria"]),
+                                    Descripcion = dr["DescripcionCategoria"].ToString()
+                                },
                                 Stock = Convert.ToInt32(dr["Stock"].ToString()),
                                 PrecioCompra = Convert.ToInt32(dr["PrecioCompra"].ToString()),
                                 PrecioVenta = Convert.ToInt32(dr["PrecioVenta"].ToString()),
@@ -60,7 +58,7 @@ namespace CapaDatos
 
         public int Registrar(Producto obj, out String Mensaje)
         {
-            int idProductogenerado = 0;
+            int idProdCreado = 0;
             Mensaje = string.Empty;
 
             try
@@ -76,26 +74,24 @@ namespace CapaDatos
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
-
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
-                    idProductogenerado = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
+                    idProdCreado = Convert.ToInt32(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
-                idProductogenerado = 0;
+                idProdCreado = 0;
                 Mensaje = ex.Message;
             }
-            return idProductogenerado;
+            return idProdCreado;
         }
 
         public bool Editar(Producto obj, out String Mensaje)
         {
-            bool respuesta = false;
+            bool editado = false;
             Mensaje = string.Empty;
 
             try
@@ -112,26 +108,24 @@ namespace CapaDatos
                     cmd.Parameters.Add("Resultado", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
-
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
-                    respuesta = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
+                    editado = Convert.ToBoolean(cmd.Parameters["Resultado"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
-                respuesta = false;
+                editado = false;
                 Mensaje = ex.Message;
             }
-            return respuesta;
+            return editado;
         }
 
         public bool Eliminar(Producto obj, out String Mensaje)
         {
-            bool respuesta = false;
+            bool eliminado = false;
             Mensaje = string.Empty;
 
             try
@@ -143,21 +137,19 @@ namespace CapaDatos
                     cmd.Parameters.Add("Respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
                     cmd.Parameters.Add("Mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
                     cmd.CommandType = CommandType.StoredProcedure;
-
                     oconexion.Open();
-
                     cmd.ExecuteNonQuery();
 
-                    respuesta = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
+                    eliminado = Convert.ToBoolean(cmd.Parameters["Respuesta"].Value);
                     Mensaje = cmd.Parameters["Mensaje"].Value.ToString();
                 }
             }
             catch (Exception ex)
             {
-                respuesta = false;
+                eliminado = false;
                 Mensaje = ex.Message;
             }
-            return respuesta;
+            return eliminado;
         }
     }
 }
