@@ -1,0 +1,11 @@
+<resources>
+	<string name="app_name">BD1</string>
+	<string name="CIF_empresa">2836823F</string>
+	<string name="nombre_empresa">Alojamientos Aloha y no miento</string>
+	<string name="description_image_photo">Imagen del alojamiento</string>
+	<string name="alojamientos_aloha">Alojamientos Aloha</string>
+    <string name="llamar">Llamar</string>
+	<string name="email">Email</string>
+    <string name="logo">logo</string>
+    <string name="localidad">Localidad...</string>
+</resources>

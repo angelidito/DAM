@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoAlojamientoActivity">
+
+    <ImageView
+        android:id="@+id/info_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars"
+        />
+
+    <TextView
+        android:id="@+id/info_denominacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:text="DENOMINACIÓN"
+        android:textAppearance="?attr/textAppearanceHeadline6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_image" />
+
+    <TextView
+        android:id="@+id/info_localidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:text="LOCALIDAD"
+
+        android:textAppearance="?attr/textAppearanceBody2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_denominacion" />
+
+    <TextView
+        android:id="@+id/info_precio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:text="50.65€/noche"
+
+        android:textAppearance="?attr/textAppearanceBody1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_localidad" />
+
+    <TextView
+        android:id="@+id/info_detalles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:text="DETALLES DEL ALOJAMIENTO"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_precio" />
+
+    <TextView
+        android:id="@+id/info_actividades"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        tools:text="lISTA DE ACTIVIDADES"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_detalles" />
+
+    <Button
+        android:id="@+id/btn_correo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/email"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_llamar"
+        app:layout_constraintTop_toBottomOf="@+id/info_actividades" />
+
+    <Button
+        android:id="@+id/btn_llamar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="@string/llamar"
+
+        app:layout_constraintEnd_toStartOf="@+id/btn_correo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info_actividades" />
+
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/info_cbFavorite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@drawable/estados"
+        android:buttonTint="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
