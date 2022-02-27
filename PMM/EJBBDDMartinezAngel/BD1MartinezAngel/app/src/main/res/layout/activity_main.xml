@@ -49,8 +49,7 @@
 		android:layout_height="wrap_content"
 		app:layout_constraintEnd_toEndOf="parent"
 		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@id/btn_buscar"
-		tools:listitem="@layout/alojamiento_item" />
+		app:layout_constraintTop_toBottomOf="@id/btn_buscar"g />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

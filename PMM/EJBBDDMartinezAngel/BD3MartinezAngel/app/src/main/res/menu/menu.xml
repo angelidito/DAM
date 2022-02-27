@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android2="http://schemas.android.com/apk/res/android">
+    <item
+        android2:id="@+id/menuItemLista"
+        android2:title="@string/mi_lista" />
+    <item
+        android2:id="@+id/menuItemCategorias"
+        android2:title="@string/categor_as" />
+    <item
+        android2:id="@+id/menuItemProductos"
+        android2:title="@string/productos" />
+
+</menu>

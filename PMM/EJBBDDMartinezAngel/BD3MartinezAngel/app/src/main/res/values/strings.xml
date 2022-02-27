@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">BD3MartinezAngel</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="crear_categor_a">Crear categoría</string>
+    <string name="categor_as">Categorías</string>
+    <string name="productos">Productos</string>
+    <string name="mi_lista">Mi lista</string>
+    <string name="_1">1</string>
+    <string name="a_adir_producto">Añadir producto</string>
+    <string name="listas_de_compra">Listas de compra</string>
+    <string name="a_adir_lista">Añadir lista</string>
+    <string name="categor_a_">Categoría:</string>
+    <string name="a_adir_categor_a">Añadir categoría</string>
+    <string name="a_adir">Añadir</string>
+    <string name="nombre_de_la_lista">Nombre de la lista:</string>
+    <string name="url_de_la_imagen">URL de la imagen:</string>
+    <string name="categor_a">Categoría</string>
+    <string name="nombre">Nombre:</string>
+    <string name="a_z">A-z</string>
+    <string name="cats">Cats</string>
+    <string name="imagen_del_producto">imagen del producto</string>
 </resources>
